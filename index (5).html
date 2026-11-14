@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Школа Божої любові — School of God's Love. Leoni Studio.">
+<title>Школа Божої любові · School of God's Love</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{font-family:ui-rounded,"Nunito","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#3b3a5c;background:linear-gradient(180deg,#bfe6ff 0,#e6f6ff 35%,#fff8e7 100%) fixed;min-height:100vh;font-size:17px;line-height:1.5;overflow-x:hidden}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;touch-action:manipulation}
+#top{position:fixed;top:0;left:0;right:0;height:54px;z-index:20;display:flex;align-items:center;gap:6px;padding:0 8px;background:rgba(255,255,255,.92);box-shadow:0 2px 10px rgba(80,120,170,.18)}
+#top button{height:40px;min-width:40px;border-radius:14px;background:#fff3c4;font-weight:700;font-size:15px;padding:0 9px}
+#bBack{font-size:24px!important;background:#d9f0ff!important}
+#ttl{flex:1;min-width:0;font-weight:800;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#lng{display:flex;gap:3px}
+#lng button{background:#eef1f7;font-size:13px;padding:0 7px;min-width:42px}
+#lng button.on{background:#ffc93c;box-shadow:0 2px 0 #e0a200}
+#bMus.off{opacity:.45}
+#app{max-width:620px;margin:0 auto;padding:66px 12px 96px}
+.screen{display:none}
+.screen.on{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#nav{position:fixed;bottom:0;left:0;right:0;z-index:20;display:flex;justify-content:center;background:rgba(255,255,255,.96);box-shadow:0 -2px 10px rgba(80,120,170,.18);padding-bottom:env(safe-area-inset-bottom)}
+#nav button{flex:1;max-width:124px;min-width:0;height:62px;font-size:11px;font-weight:700;line-height:1.15;border-radius:14px;margin:4px 2px;overflow:hidden}
+#nav button b{display:block;font-size:23px;font-weight:400}
+#nav button.on{background:#fff3c4}
+h1{font-size:27px;margin:8px 0 0;text-align:center;line-height:1.2;color:#e8752a}
+h2{font-size:21px;margin:10px 0 6px;line-height:1.25}
+h3{font-size:18px;margin:8px 0 4px}
+.sub{text-align:center;margin:2px 0 10px;font-weight:600}
+.small{font-size:14px;opacity:.85}
+.center{text-align:center}
+.btn{display:block;width:100%;min-height:54px;padding:10px 16px;margin:9px 0;border-radius:20px;background:#ffc93c;box-shadow:0 4px 0 #e0a200;font-weight:800;font-size:18px;text-align:center}
+.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #e0a200}
+.btn.b2{background:#9be7c4;box-shadow:0 4px 0 #5fc79b}
+.btn.b3{background:#ffb3c1;box-shadow:0 4px 0 #f08aa0}
+.btn.b4{background:#d7ccff;box-shadow:0 4px 0 #ad9cf0}
+.btn.b5{background:#fff;box-shadow:0 4px 0 #cfd9e8}
+.row{display:flex;gap:9px}
+.row>*{flex:1;min-width:0}
+.btn,.opt,.item .tx{overflow-wrap:anywhere}
+.row .btn{font-size:16px;padding:8px 6px}
+.card{background:#fff;border-radius:22px;padding:14px 16px;margin:10px 0;box-shadow:0 4px 14px rgba(90,120,170,.14)}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.menu button{background:#fff;border-radius:22px;min-height:92px;padding:10px 6px;font-weight:800;font-size:15px;line-height:1.2;box-shadow:0 4px 0 #cfd9e8}
+.menu button b{display:block;font-size:30px;font-weight:400}
+.menu button:nth-child(4n+1){background:#fff1b8;box-shadow:0 4px 0 #ecd47a}
+.menu button:nth-child(4n+2){background:#c9f4de;box-shadow:0 4px 0 #94d9b6}
+.menu button:nth-child(4n+3){background:#ffd6de;box-shadow:0 4px 0 #f2a9b7}
+.menu button:nth-child(4n+4){background:#ddd4ff;box-shadow:0 4px 0 #b6a8ef}
+.menu button:active,.item:active{transform:translateY(2px)}
+.menu button:last-child:nth-child(odd){grid-column:1/3;min-height:64px}
+.item{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:#fff;border-radius:20px;padding:10px 12px;margin:8px 0;min-height:60px;box-shadow:0 3px 0 #cfd9e8;font-weight:700}
+.item .em{font-size:28px;width:40px;text-align:center;flex:none}
+.item .tx{flex:1;min-width:0}
+.item .tx small{display:block;font-weight:500;opacity:.8}
+.item .ok{font-size:20px;flex:none}
+.scene{display:block;width:100%;height:auto;border-radius:26px;box-shadow:0 6px 18px rgba(90,120,170,.25)}
+.say{display:flex;align-items:flex-end;gap:8px;margin:10px 0}
+.say .ch{width:66px;flex:none;animation:bob 2.4s ease-in-out infinite}
+.say .bub{background:#fff;border-radius:20px 20px 20px 6px;padding:10px 14px;box-shadow:0 3px 10px rgba(90,120,170,.15);flex:1;min-width:0}
+.say .bub b{display:block;font-size:13px;color:#e8752a}
+.ch svg{display:block;width:100%;height:auto}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes drift{from{transform:translateX(-90px)}to{transform:translateX(430px)}}
+@keyframes fly{0%{transform:translate(0,0)}25%{transform:translate(26px,-16px)}50%{transform:translate(52px,2px)}75%{transform:translate(22px,14px)}100%{transform:translate(0,0)}}
+@keyframes jump{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-16px) rotate(-6deg)}60%{transform:translateY(0) rotate(5deg)}}
+.spin,.sway,.fly,.bobs{transform-box:fill-box;transform-origin:center}
+.spin{animation:spin 26s linear infinite}
+.sway{transform-origin:50% 100%;animation:sway 3s ease-in-out infinite}
+.drift{animation:drift 40s linear infinite}
+.fly{animation:fly 7s ease-in-out infinite}
+.bobs{animation:bob 2s ease-in-out infinite}
+.cheer{display:flex;justify-content:center;gap:6px;margin:8px 0}
+.cheer .ch{width:22%;max-width:84px;animation:jump 1.1s ease-in-out infinite}
+.cheer .ch:nth-child(2){animation-delay:.15s}.cheer .ch:nth-child(3){animation-delay:.3s}.cheer .ch:nth-child(4){animation-delay:.45s}
+.illus{position:relative;height:150px;border-radius:24px;overflow:hidden;margin:6px 0 10px;box-shadow:0 4px 14px rgba(90,120,170,.18)}
+.illus i{position:absolute;display:block}
+.illus .isun{width:60px;height:60px;border-radius:50%;background:#ffd23f;right:18px;top:14px;box-shadow:0 0 0 10px rgba(255,210,63,.3);animation:bob 4s ease-in-out infinite}
+.illus .ihill{left:-10%;right:-10%;bottom:-70px;height:130px;border-radius:50%;background:#8ed973}
+.illus span{position:absolute;bottom:20px;font-size:50px;line-height:1;animation:bob 2.6s ease-in-out infinite}
+.illus .e1{left:12%}.illus .e2{left:50%;margin-left:-25px;bottom:46px;font-size:42px;animation-delay:.4s}.illus .e3{right:14%;animation-delay:.8s}
+.chip{display:inline-block;background:#e6f6ff;border-radius:14px;padding:3px 10px;font-size:14px;font-weight:700;margin:2px 0}
+.dots{display:flex;gap:6px;justify-content:center;margin:4px 0 8px}
+.dots i{width:28px;height:8px;border-radius:5px;background:#dfe6f0}
+.dots i.on{background:#ffc93c}
+.story p{margin:0 0 12px}
+.opt{display:block;width:100%;min-height:52px;margin:8px 0;padding:10px 14px;border-radius:18px;background:#fff;box-shadow:0 3px 0 #cfd9e8;font-weight:700;text-align:left}
+.opt.bad{opacity:.45;box-shadow:none}
+.opt.good{background:#c9f4de;box-shadow:0 3px 0 #94d9b6}
+.opt.sel{background:#fff1b8;box-shadow:0 3px 0 #ecd47a}
+.pairs{display:flex;gap:8px}
+.pairs>div{flex:1;min-width:0}
+.pairs .opt{font-size:15px;padding:8px 10px}
+.qhead{display:flex;justify-content:space-between;font-weight:800;margin:4px 2px}
+.qtext{font-size:20px;font-weight:800;margin:6px 2px 10px;line-height:1.3}
+.starpop{text-align:center;font-size:54px;line-height:1.1;animation:pop .7s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(0) rotate(-90deg);opacity:0}to{transform:none;opacity:1}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden}
+#fx i{position:absolute;top:-20px;width:10px;height:16px;border-radius:3px;animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+#modal{display:none;position:fixed;inset:0;z-index:40;background:rgba(60,80,120,.35);align-items:center;justify-content:center;padding:16px}
+#modal.on{display:flex}
+#modal .card{max-width:420px;width:100%}
+#toast{position:fixed;left:12px;right:12px;bottom:84px;z-index:45;display:none;background:#3b3a5c;color:#fff;border-radius:16px;padding:12px 14px;text-align:center;font-weight:600;max-width:560px;margin:0 auto}
+#toast.on{display:block}
+.tools{display:flex;gap:6px;margin:6px 0}
+.tools button{flex:1;min-height:46px;border-radius:14px;background:#fff;box-shadow:0 3px 0 #cfd9e8;font-weight:800;font-size:15px;padding:4px}
+.tools button.on{background:#ffc93c;box-shadow:0 3px 0 #e0a200}
+.page{background:#fffdf6;border-radius:22px;padding:16px;min-height:300px;box-shadow:0 4px 14px rgba(150,120,60,.18);border:2px solid #f3e6bd}
+.page p{margin:0 0 .8em;border-radius:10px;padding:2px 4px}
+.page .hl{background:#fff1a8}
+.pnav{display:flex;align-items:center;gap:8px;margin:10px 0}
+.pnav button{width:64px;height:54px;border-radius:18px;background:#ffc93c;box-shadow:0 4px 0 #e0a200;font-size:24px;font-weight:800}
+.pnav div{flex:1;text-align:center;font-weight:700}
+.hud{display:flex;justify-content:space-around;background:#fff;border-radius:16px;padding:8px;font-weight:800;margin:6px 0}
+.cv{display:block;width:100%;height:58vh;min-height:280px;max-height:520px;border-radius:22px;touch-action:none;background:#a8e68f;box-shadow:0 4px 14px rgba(90,120,170,.2)}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.mem button{aspect-ratio:3/4;min-height:78px;border-radius:16px;background:#ffc93c;box-shadow:0 3px 0 #e0a200;font-size:26px;font-weight:800;padding:2px;overflow:hidden}
+.mem button.op{background:#fff;box-shadow:0 3px 0 #cfd9e8}
+.mem button.ok{background:#c9f4de;box-shadow:0 3px 0 #94d9b6}
+.mem button small{display:block;font-size:11px;line-height:1.1}
+.mz{display:grid;gap:0;width:100%;max-width:430px;margin:8px auto;border-radius:14px;overflow:hidden;background:#fff6d8;border:4px solid #5fb85a;touch-action:none}
+.mz div{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:clamp(13px,4.6vw,24px);line-height:1}
+.mz .w{background:#6cc66a;border-radius:22%}
+.dpad{display:grid;grid-template-columns:repeat(3,62px);grid-template-rows:repeat(2,56px);gap:6px;justify-content:center;margin:8px 0}
+.dpad button{border-radius:16px;background:#ffc93c;box-shadow:0 4px 0 #e0a200;font-size:24px;font-weight:800}
+.plots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.plots button{min-height:118px;border-radius:20px;background:linear-gradient(180deg,#e9f9ff 0,#e9f9ff 55%,#b98556 55%,#a06d42 100%);font-size:40px;padding:6px 2px;box-shadow:0 3px 0 #cfd9e8}
+.plots button small{display:block;font-size:12px;font-weight:800;color:#fff;margin-top:6px;line-height:1.15}
+.plots button.bl{background:linear-gradient(180deg,#fff6c9 0,#fff6c9 55%,#7fcf6c 55%,#5fb85a 100%)}
+.map{position:relative;width:100%;padding-top:110%;border-radius:22px;overflow:hidden;box-shadow:0 4px 14px rgba(90,120,170,.2)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;transform:translate(-50%,-50%);background:#fff;border-radius:16px;padding:5px 8px;min-height:48px;font-weight:800;font-size:12px;line-height:1.1;box-shadow:0 3px 0 #cfd9e8;white-space:nowrap}
+.pin b{display:block;font-size:22px;font-weight:400}
+.pin.v{background:#c9f4de}
+.rbw{display:block;width:60%;margin:0 auto}
+.band{display:block;width:100%;min-height:46px;margin:6px 0;border-radius:16px;color:#fff;font-weight:800;font-size:17px;text-shadow:0 1px 2px rgba(0,0,0,.45);box-shadow:0 3px 0 rgba(0,0,0,.14)}
+.band.lit{opacity:.5}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.fgrid button{min-height:150px;border-radius:22px;background:#fff;box-shadow:0 4px 0 #cfd9e8;padding:10px 8px;font-weight:800;font-size:15px;line-height:1.25}
+.fgrid button b{display:block;font-size:34px;font-weight:400}
+.fgrid button.op{background:#fff1b8;box-shadow:0 4px 0 #ecd47a;font-weight:600;font-size:14px}
+.xy{display:flex;gap:5px;align-items:flex-end;height:170px;margin:8px 0}
+.xy button{flex:1;border-radius:12px;box-shadow:0 4px 0 rgba(0,0,0,.14);font-weight:800;color:#fff}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.stat div{background:#fff;border-radius:20px;padding:10px 4px;font-weight:800;box-shadow:0 3px 10px rgba(90,120,170,.14)}
+.stat b{display:block;font-size:30px;font-weight:400}
+.stat small{display:block;font-size:12px;line-height:1.15}
+.badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.badges div{background:#fff;border-radius:18px;text-align:center;padding:8px 2px;font-size:26px;filter:grayscale(1);opacity:.4}
+.badges div.on{filter:none;opacity:1;background:#fff1b8}
+.badges small{display:block;font-size:11px;font-weight:800}
+input[type=text]{width:100%;font:inherit;font-size:19px;padding:12px 14px;border-radius:16px;border:2px solid #ffd978;background:#fff;color:inherit}
+input[type=range]{width:100%;height:34px}
+#dc{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 4px 14px rgba(90,120,170,.25);margin:10px 0}
+.foot{text-align:center;font-size:13px;opacity:.75;margin:16px 0 0}
+#printbox{display:none}
+body.noanim *,body.noanim *::before{animation:none!important;transition:none!important}
+body.paused *{animation-play-state:paused!important}
+@media(max-width:350px){body{font-size:16px}h1{font-size:23px}.menu button{font-size:14px;min-height:84px}#ttl{font-size:14px}.pin{font-size:11px;padding:4px 6px}.dpad{grid-template-columns:repeat(3,56px)}}
+@media(orientation:landscape) and (max-height:480px){.cv{height:70vh;min-height:200px}#nav button{height:48px}#nav button b{font-size:18px}.menu{grid-template-columns:repeat(3,1fr)}.menu button:last-child:nth-child(odd){grid-column:auto;min-height:92px}}
+@media print{body{background:#fff}body>*{display:none!important}#printbox{display:block!important}#printbox img{width:100%}}
+
+</style>
+</head>
+<body>
+<header id="top"><button id="bBack" aria-label="Back">‹</button><div id="ttl"></div><div id="lng"><button id="lUk">УКР</button><button id="lEn">ENG</button></div><button id="bMus" aria-label="Music">🎵</button></header>
+<main id="app"></main>
+<nav id="nav"></nav>
+<div id="modal"></div><div id="toast" role="status"></div><div id="fx"></div><div id="printbox"></div>
+<noscript>Для роботи сайту потрібен JavaScript. / JavaScript is required.</noscript>
+<script>
+var LS = [];
+LS.push({
+em: ["👨", "❤️", "👦"], game: "hearts",
+t: "Бог — мій люблячий Тато|God Is My Loving Dad",
+ref: "Луки 15:11–32; 1 Івана 4:8|Luke 15:11–32; 1 John 4:8",
+su: [
+"Одного суботнього ранку Марко з татом пішли на великий ярмарок. Там було стільки цікавого! Пахло медовими пряниками, грала весела музика, а над головами гойдалися різнокольорові кульки. Марко тримав тата за руку й крутив головою на всі боки.",
+"Раптом він побачив клоуна на високих ходулях. Клоун жонглював яблуками й смішно кланявся. Марко відпустив татову руку — лише на хвилинку! — і побіг подивитися ближче. А коли озирнувся, тата поруч не було. Довкола ходили самі незнайомі люди.",
+"Маркові стало тривожно. «А що, як тато розсердиться? — подумав він. — Я ж сам відпустив руку». Він сів на лавку біля каруселі й тихенько заплакав.",
+"А тато в цей час уже шукав сина. Він обійшов усі ятки, зазирнув до каруселі, розпитував продавців. Він не думав про те, хто винен. Він думав лише про одне: «Де мій хлопчик? Я мушу його знайти!»",
+"І ось тато побачив знайому синю курточку. Він побіг — справді побіг, як хлопчисько! — підхопив Марка на руки й міцно-міцно обійняв. «Я знайшов тебе! Як же я радий!» — сказав тато. Він не сварився. Він сміявся, і очі його сяяли.",
+"Увечері, коли вони пили чай із пряниками, Марко запитав: «Тату, а ти не сердився на мене?» Тато усміхнувся: «Я тебе люблю, синку. Коли любиш, найголовніше — бути разом». Потім він додав: «Знаєш, Ісус розповідав, що Бог — саме такий Тато. Він любить нас не за те, що ми слухняні чи найкращі. Він любить, бо ми Його діти».",
+"Марко замислився. «Тобто Бог теж мене шукає, коли мені сумно чи страшно?» — «Так, — кивнув тато. — Біблія каже дуже просто: Бог є любов. Він завжди поруч, завжди радий тобі й ніколи не перестане тебе любити».",
+"«А якщо я знову загублюся?» — запитав Марко. Тато підморгнув: «Тоді я знову тебе знайду. Хоч сто разів. Мені не набридне». Марко засміявся й притулився до татового плеча. Від тата пахло пряниками й домом.",
+"Тієї ночі Марко заснув з усмішкою. Йому було тепло й спокійно, бо він знав: у нього є тато на землі й люблячий Тато на небі."],
+se: [
+"One Saturday morning Marko and his dad went to a big fair. There was so much to see! The air smelled of honey gingerbread, cheerful music was playing, and colourful balloons swayed above their heads. Marko held his dad’s hand and kept turning his head in every direction.",
+"Suddenly he saw a clown on tall stilts. The clown was juggling apples and bowing in a funny way. Marko let go of his dad’s hand — only for a minute! — and ran to look closer. When he turned around, Dad was not there. Only strangers were walking by.",
+"Marko felt worried. “What if Dad gets angry?” he thought. “I let go of his hand myself.” He sat down on a bench near the merry-go-round and quietly began to cry.",
+"Meanwhile Dad was already looking for his son. He walked past every stall, checked the merry-go-round and asked the sellers. He was not thinking about whose fault it was. He had only one thought: “Where is my boy? I must find him!”",
+"And then Dad saw a familiar blue jacket. He ran — really ran, like a little boy! — picked Marko up and hugged him very, very tight. “I found you! I am so glad!” said Dad. He did not scold. He was laughing, and his eyes were shining.",
+"In the evening, when they were drinking tea with gingerbread, Marko asked, “Dad, weren’t you angry with me?” Dad smiled. “I love you, son. When you love someone, the most important thing is to be together.” Then he added, “You know, Jesus told us that God is exactly this kind of Dad. He does not love us because we are obedient or the best. He loves us because we are His children.”",
+"Marko thought about it. “So God looks for me too, when I am sad or scared?” “Yes,” Dad nodded. “The Bible says it very simply: God is love. He is always near, always glad to see you, and He will never stop loving you.”",
+"“What if I get lost again?” Marko asked. Dad winked. “Then I will find you again. Even a hundred times. I will never get tired of it.” Marko laughed and leaned against Dad’s shoulder. Dad smelled of gingerbread and home.",
+"That night Marko fell asleep with a smile. He felt warm and calm, because he knew: he has a dad on earth and a loving Dad in heaven."],
+v: "Своїми словами: «Бог є любов» (1 Івана 4:8). А Ісус розповів про батька, який побачив сина ще здалеку, побіг назустріч і обійняв його (Луки 15:20).|In simple words: “God is love” (1 John 4:8). And Jesus told about a father who saw his son from far away, ran to meet him and hugged him (Luke 15:20).",
+idea: "Бог — добрий Небесний Тато. Він любить тебе завжди: коли в тебе все виходить і коли щось не вдається.|God is a kind Heavenly Dad. He loves you always: when everything works out and when something goes wrong.",
+ex: ["Коли мама чи тато обіймають тебе після важкого дня — це маленька картинка Божої любові.|When Mum or Dad hugs you after a hard day, it is a little picture of God’s love.",
+"Коли ти помилився в зошиті, тебе люблять так само, як і до помилки.|When you make a mistake in your notebook, you are loved just as much as before.",
+"Коли тобі сумно, можна сказати: «Тату Небесний, будь поруч». Він чує.|When you are sad, you can say, “Heavenly Dad, be near me.” He hears."],
+end: "Ти — улюблена Божа дитина. Сьогодні й завжди!|You are God’s beloved child. Today and always!",
+q: [
+{k: "mc", q: "Що зробив тато, коли знайшов Марка?|What did Dad do when he found Marko?", o: ["Насварив його|Scolded him", "Міцно обійняв і зрадів|Hugged him tight and was glad", "Пішов додому сам|Went home alone"], a: 1, h: "Згадай, як сяяли татові очі.|Remember how Dad’s eyes were shining.", e: "Тато зрадів! Так само Бог радіє кожній своїй дитині.|Dad was full of joy! In the same way God is glad about each of His children."},
+{k: "tf", q: "Бог любить нас лише тоді, коли ми поводимося ідеально.|God loves us only when we behave perfectly.", a: 0, h: "Чи тато любив Марка тільки за слухняність?|Did Dad love Marko only for being obedient?", e: "Бог любить нас завжди, бо ми Його діти.|God loves us always, because we are His children."},
+{k: "fill", q: "Біблія каже: Бог є ___.|The Bible says: God is ___.", o: ["любов|love", "далеко|far away", "суворість|strictness"], a: 0, h: "Це найтепліше слово на світі.|It is the warmest word in the world.", e: "«Бог є любов» — так написано в 1 Івана 4:8.|“God is love” — that is written in 1 John 4:8."},
+{k: "pair", q: "З’єднай пари з історії.|Match the pairs from the story.", p: [["Марко|Marko", "загубився на ярмарку|got lost at the fair"], ["Тато|Dad", "шукав і знайшов|searched and found"], ["Бог|God", "є любов|is love"]], h: "Подумай, хто що робив в історії.|Think about who did what in the story.", e: "Чудово! Той, хто любить, шукає і знаходить.|Wonderful! The one who loves searches and finds."},
+{k: "mc", q: "Яким Ісус показав нам Бога?|How did Jesus show God to us?", o: ["Байдужим до людей|Not caring about people", "Тим, кого треба боятися|Someone to be afraid of", "Люблячим Отцем|A loving Father"], a: 2, h: "Як Ісус називав Бога в молитві?|What did Jesus call God in prayer?", e: "Ісус називав Бога Отцем — добрим і люблячим.|Jesus called God Father — kind and loving."}]
+});
+LS.push({
+em: ["🧒", "✨", "👧"], game: "memory",
+t: "Ісус показав нам Отця|Jesus Showed Us the Father",
+ref: "Івана 14:9; Івана 3:16; Марка 10:13–16|John 14:9; John 3:16; Mark 10:13–16",
+su: [
+"Давним-давно люди часто питали одне одного: «А який Він — Бог?» Ніхто не міг Його побачити. Дехто думав, що Бог дуже далеко. Інші гадали, що Він суворий і до Нього страшно підійти. Люди просто не знали.",
+"І тоді прийшов Ісус. Він ходив від міста до міста, від села до села, і всюди, де Він з’являвся, ставало світліше — ніби сонце виходило з-за хмар.",
+"Одного дня мами привели до Ісуса своїх дітей. Малеча галасувала, сміялася й штовхалася. Учні Ісуса насупилися: «Не заважайте! Учитель утомився». Та Ісус сказав: «Пустіть дітей до Мене й не забороняйте їм!» Він брав малюків на руки, обіймав і благословляв кожного.",
+"Ісус торкався хворих — і вони одужували. Він сідав за стіл із тими, з ким ніхто не хотів дружити. Він нагодував цілий натовп голодних людей п’ятьма хлібинами й двома рибками. Він ніколи нікого не проганяв.",
+"Якось учень на ім’я Пилип попросив: «Господи, покажи нам Отця — і нам цього досить!» Ісус подивився на нього лагідно й відповів: «Пилипе, хто бачив Мене, той бачив Отця».",
+"Ось яка чудова таємниця! Хочеш знати, який Бог? Подивися на Ісуса. Ісус обіймав дітей — отже, Отець радіє дітям. Ісус був добрим до всіх — отже, Отець добрий. Ісус нікого не лякав — отже, й Отця не треба боятися.",
+"А ще Ісус сказав слова, які знають у всьому світі: Бог так полюбив світ, що віддав Свого Сина, щоб кожен, хто вірить у Нього, мав вічне життя.",
+"А одного разу Ісус розповів людям, як молитися. Він не сказав: «Звертайтеся до Бога дуже урочисто й здалеку». Він сказав просто: «Кажіть: Отче наш». Тобто — наш Тату. Так може сказати кожен: і дорослий, і зовсім маленький. Бо Бог — не чужий і далекий Володар. Він — рідний Отець, який завжди радий почути твій голос. Можеш спробувати вже сьогодні.",
+"Тому, коли ти читаєш історії про Ісуса, пам’ятай: це не просто давні оповідки. Це портрет Отця, намальований любов’ю. І на цьому портреті Бог усміхається до тебе."],
+se: [
+"Long, long ago people often asked one another, “What is God like?” Nobody could see Him. Some thought God was very far away. Others imagined He was strict and scary to come close to. People simply did not know.",
+"And then Jesus came. He walked from town to town, from village to village, and wherever He appeared it became brighter — as if the sun had come out from behind the clouds.",
+"One day mothers brought their children to Jesus. The little ones were noisy, laughing and pushing. Jesus’ disciples frowned: “Do not disturb Him! The Teacher is tired.” But Jesus said, “Let the children come to Me, and do not stop them!” He took the little ones in His arms, hugged them and blessed each one.",
+"Jesus touched sick people — and they got well. He sat at the table with those nobody wanted to be friends with. He fed a whole crowd of hungry people with five loaves and two small fish. He never sent anyone away.",
+"Once a disciple named Philip asked, “Lord, show us the Father, and that will be enough for us!” Jesus looked at him gently and answered, “Philip, whoever has seen Me has seen the Father.”",
+"What a wonderful secret! Do you want to know what God is like? Look at Jesus. Jesus hugged children — so the Father is glad about children. Jesus was kind to everyone — so the Father is kind. Jesus did not frighten anyone — so there is no need to be afraid of the Father.",
+"Jesus also said words that are known all over the world: God loved the world so much that He gave His Son, so that everyone who believes in Him may have eternal life.",
+"And once Jesus told people how to pray. He did not say, “Speak to God very solemnly and from far away.” He simply said, “Say: Our Father.” That means — our Dad. Anyone can say it: a grown-up and a very little child. Because God is not a distant stranger. He is a dear Father who is always glad to hear your voice. You can try it today.",
+"So when you read the stories about Jesus, remember: they are not just old tales. They are a portrait of the Father, painted with love. And in this portrait God is smiling at you."],
+v: "Своїми словами: Ісус сказав: «Хто бачив Мене, той бачив Отця» (Івана 14:9). Бог так полюбив світ, що дав Свого Сина, щоб ми мали вічне життя (Івана 3:16).|In simple words: Jesus said, “Whoever has seen Me has seen the Father” (John 14:9). God loved the world so much that He gave His Son so that we may have eternal life (John 3:16).",
+idea: "Щоб дізнатися, який Бог, подивися на Ісуса: Він добрий, уважний і радий кожній дитині.|To find out what God is like, look at Jesus: He is kind, attentive and glad to see every child.",
+ex: ["Коли читаєш, як Ісус обіймав дітей, уяви, що Він так само радий тобі.|When you read how Jesus hugged the children, imagine He is just as glad to see you.",
+"Коли хтось каже, що Бог страшний, згадай: Ісус нікого не лякав.|When someone says God is scary, remember: Jesus never frightened anyone.",
+"Коли ділишся з другом, ти теж показуєш, який добрий наш Отець.|When you share with a friend, you also show how kind our Father is."],
+end: "Дивлячись на Ісуса, ти бачиш усмішку Отця!|Looking at Jesus, you see the Father’s smile!",
+q: [
+{k: "mc", q: "Хто попросив: «Покажи нам Отця»?|Who asked, “Show us the Father”?", o: ["Пилип|Philip", "Клоун із ярмарку|A clown from the fair", "Закхей|Zacchaeus"], a: 0, h: "Це був один з учнів Ісуса, його ім’я починається на «П».|He was one of Jesus’ disciples; his name starts with “Ph”.", e: "Так, це Пилип. А Ісус відповів: «Хто бачив Мене, той бачив Отця».|Yes, Philip. And Jesus answered, “Whoever has seen Me has seen the Father.”"},
+{k: "tf", q: "Ісус прогнав дітей, бо був зайнятий.|Jesus sent the children away because He was busy.", a: 0, h: "Згадай слова: «Пустіть дітей до Мене».|Remember the words: “Let the children come to Me.”", e: "Ісус обійняв і благословив дітей. Він завжди радий їм!|Jesus hugged and blessed the children. He is always glad to see them!"},
+{k: "fill", q: "«Хто бачив Мене, той бачив ___».|“Whoever has seen Me has seen the ___.”", o: ["царя|king", "Отця|Father", "ангела|angel"], a: 1, h: "Пилип просив показати саме Його.|This is exactly whom Philip asked to see.", e: "Ісус показує нам, який Отець.|Jesus shows us what the Father is like."},
+{k: "order", q: "Розстав події: Ісус і діти.|Put the events in order: Jesus and the children.", s: ["Мами привели дітей до Ісуса|Mothers brought children to Jesus", "Учні хотіли їх зупинити|The disciples wanted to stop them", "Ісус сказав: «Пустіть дітей до Мене»|Jesus said, “Let the children come to Me”", "Ісус обійняв і благословив дітей|Jesus hugged and blessed the children"], h: "Спочатку хтось прийшов, а обійми були наприкінці.|First someone came, and the hugs were at the end.", e: "Саме так! Ісус завжди знаходить час для дітей.|Exactly! Jesus always has time for children."},
+{k: "mc", q: "Як дізнатися, який Бог?|How can we find out what God is like?", o: ["Боятися й ховатися|Be afraid and hide", "Подивитися на Ісуса|Look at Jesus", "Ніяк не можна|There is no way"], a: 1, h: "Хто став для нас портретом Отця?|Who became the Father’s portrait for us?", e: "Ісус — найкращий портрет Отця.|Jesus is the best portrait of the Father."}]
+});
+LS.push({
+em: ["👵", "🎁", "👧"], game: "rainbow",
+t: "Благодать — чудовий подарунок|Grace Is a Wonderful Gift",
+ref: "Ефесян 2:8–10|Ephesians 2:8–10",
+su: [
+"Олі виповнилося вісім років. Зранку у двері подзвонили — на порозі стояла бабуся Віра з великою коробкою, перев’язаною жовтою стрічкою. «З днем народження, моя ластівко!»",
+"Оля розв’язала стрічку й ахнула. У коробці лежав справжній набір художниці: тридцять шість фарб, пензлики, альбом і маленький мольберт. Саме про такий вона мріяла цілий рік!",
+"Та раптом Оля спохмурніла. «Це ж, мабуть, дуже дорого», — подумала вона. Дівчинка побігла до кімнати, взяла свою скарбничку-совеня й висипала на стіл усі монетки. «Бабусю, ось. Я заплачу тобі за подарунок».",
+"Бабуся лагідно засміялася й накрила монетки долонею. «Сонечко, подарунок не купують. Якщо ти заплатиш, це буде вже покупка. А я дарую, бо люблю тебе».",
+"«Але ж я не завжди була чемна, — тихо сказала Оля. — Я розбила твою чашку. І сперечалася з тобою». — «Подарунок — це не медаль за поведінку, — відповіла бабуся. — Він не від твоїх заслуг. Він від моєї любові».",
+"«А що ж мені тоді робити?» — «Просто прийми. Скажи «дякую» і малюй собі на радість!»",
+"Оля малювала цілий день. А ввечері принесла бабусі картину: бабуся в саду серед соняшників. «Це плата?» — підморгнула бабуся. «Ні! — засміялася Оля. — Це подяка. Мені просто дуже захотілося тебе потішити».",
+"Тоді бабуся обійняла внучку й сказала: «Знаєш, Божа любов — така сама. У Біблії вона має гарне ім’я — благодать. Там написано: ви спасенні благодаттю, і це не від вас — це Божий дар. Його не можна заробити добрими справами, тож ніхто не може хвалитися».",
+"Оля подивилася на свій мольберт. «Тобто Бог любить мене так само, як ти, бабусю? Просто так?» — «Ще більше, ластівко. І Його любов не закінчується ні в день народження, ні в жоден інший день. Вона — щоранку нова». Оля аж підстрибнула від радості.",
+"«А добрі справи тоді навіщо?» — запитала Оля. «А навіщо ти намалювала мені картину? — усміхнулася бабуся. — Не щоб заслужити любов. А тому, що тебе вже люблять. Бог створив нас для добрих справ, і вони виростають із радості — як квіти із землі після теплого дощу»."],
+se: [
+"Olia turned eight. In the morning the doorbell rang — Grandma Vira was standing at the door with a big box tied with a yellow ribbon. “Happy birthday, my little swallow!”",
+"Olia untied the ribbon and gasped. Inside the box was a real artist’s set: thirty-six paints, brushes, a sketchbook and a small easel. It was exactly what she had been dreaming of for a whole year!",
+"But suddenly Olia frowned. “This must be very expensive,” she thought. The girl ran to her room, took her little owl piggy bank and poured all the coins onto the table. “Grandma, here. I will pay you for the present.”",
+"Grandma laughed gently and covered the coins with her hand. “Sweetheart, a gift is not bought. If you pay, it becomes a purchase. I am giving it because I love you.”",
+"“But I was not always good,” Olia said quietly. “I broke your cup. And I argued with you.” “A gift is not a medal for behaviour,” Grandma answered. “It does not come from what you deserve. It comes from my love.”",
+"“Then what should I do?” “Just accept it. Say ‘thank you’ and paint for joy!”",
+"Olia painted all day long. In the evening she brought Grandma a picture: Grandma in the garden among sunflowers. “Is this a payment?” Grandma winked. “No!” Olia laughed. “It is a thank-you. I just really wanted to make you happy.”",
+"Then Grandma hugged her granddaughter and said, “You know, God’s love is just the same. In the Bible it has a beautiful name — grace. It says: you are saved by grace, and this is not from yourselves — it is the gift of God. It cannot be earned by good deeds, so nobody can boast.”",
+"Olia looked at her easel. “So God loves me the way you do, Grandma? Just because?” “Even more, my little swallow. And His love does not end on a birthday or on any other day. It is new every morning.” Olia jumped for joy.",
+"“Then what are good deeds for?” Olia asked. “Why did you paint me a picture?” Grandma smiled. “Not to earn love. But because you are already loved. God made us for good deeds, and they grow out of joy — like flowers from the ground after warm rain.”"],
+v: "Своїми словами: ми спасенні благодаттю через віру, і це не від нас — це Божий дар, не за справи, щоб ніхто не хвалився. Бог створив нас для добрих справ (Ефесян 2:8–10).|In simple words: we are saved by grace through faith, and this is not from ourselves — it is God’s gift, not for our deeds, so that no one can boast. God made us for good deeds (Ephesians 2:8–10).",
+idea: "Благодать — це подарунок Божої любові. Його не купують і не заробляють — його приймають із радістю.|Grace is the gift of God’s love. It is not bought or earned — it is received with joy.",
+ex: ["Сонце світить усім зранку — його не треба заслуговувати. Так і Божа любов.|The sun shines for everyone in the morning — you do not have to deserve it. God’s love is like that.",
+"Коли тебе пригощають просто так, скажи «дякую» й радій — не треба «відробляти».|When someone treats you just because, say “thank you” and enjoy — no need to “pay it back”.",
+"Коли допомагаєш мамі, роби це з радості, а не щоб тебе більше любили: тебе вже люблять.|When you help Mum, do it out of joy, not to be loved more: you are already loved."],
+end: "Божу любов не треба заробляти. Вона вже твоя!|You do not have to earn God’s love. It is already yours!",
+q: [
+{k: "mc", q: "Що Оля хотіла зробити з монетками?|What did Olia want to do with her coins?", o: ["Купити морозиво|Buy ice cream", "Заплатити за подарунок|Pay for the present", "Сховати їх|Hide them"], a: 1, h: "Вона висипала їх на стіл перед бабусею.|She poured them onto the table in front of Grandma.", e: "Оля хотіла заплатити, але подарунок не купують.|Olia wanted to pay, but a gift is not bought."},
+{k: "tf", q: "Благодать можна купити добрими справами.|Grace can be bought with good deeds.", a: 0, h: "Що бабуся сказала про подарунок і покупку?|What did Grandma say about a gift and a purchase?", e: "Благодать — це дар. Її приймають, а не купують.|Grace is a gift. It is received, not bought."},
+{k: "fill", q: "Благодать — це Божий ___.|Grace is God’s ___.", o: ["іспит|exam", "борг|debt", "подарунок|gift"], a: 2, h: "Його перев’язують стрічкою й дарують із любов’ю.|It is tied with a ribbon and given with love.", e: "Так! «Це Божий дар» (Ефесян 2:8).|Yes! “It is the gift of God” (Ephesians 2:8)."},
+{k: "pair", q: "З’єднай слово з поясненням.|Match the word with its meaning.", p: [["Подарунок|Gift", "приймають із радістю|is received with joy"], ["Покупка|Purchase", "оплачують грошима|is paid for with money"], ["Подяка|Thank-you", "виростає з радості|grows out of joy"]], h: "За що платять, а що дарують просто так?|What do we pay for, and what is given freely?", e: "Молодець! Благодать — це подарунок, а не покупка.|Well done! Grace is a gift, not a purchase."},
+{k: "mc", q: "Чому ми робимо добрі справи?|Why do we do good deeds?", o: ["Бо нас уже люблять|Because we are already loved", "Щоб заробити Божу любов|To earn God’s love", "Щоб нас хвалили|To be praised"], a: 0, h: "Згадай, чому Оля намалювала картину.|Remember why Olia painted the picture.", e: "Добрі справи виростають із радості, що нас люблять.|Good deeds grow out of the joy of being loved."}]
+});
+LS.push({
+em: ["🧔", "🏡", "🚶"], game: "maze",
+t: "Батько, який чекав сина|The Father Who Waited for His Son",
+ref: "Луки 15:11–32|Luke 15:11–32",
+su: [
+"Цю історію розповів сам Ісус. Жив собі батько, і мав він двох синів, великий дім і широкі поля. Одного дня молодший син сказав: «Тату, дай мені мою частку майна. Я хочу жити сам». Батькові стало сумно, але він дав. Бо любов нікого не тримає силою.",
+"Син зібрав речі й вирушив у далекий край. Там він жив весело: бенкети, нове вбрання, багато «друзів». Та гроші розтанули швидко, як сніг навесні. А разом із грошима зникли й «друзі».",
+"У тому краї настав голод. Юнак найнявся пасти свиней. Він був такий голодний, що ладен був їсти свинячий корм, та й того йому ніхто не давав.",
+"Тоді він згадав дім. «У мого батька навіть наймити мають удосталь хліба! Піду до нього й скажу: «Тату, я вчинив погано. Я вже не вартий зватися твоїм сином. Візьми мене хоч наймитом». Усю дорогу він повторював ці слова, щоб не забути.",
+"А батько щодня виходив на дорогу й дивився вдалину. І ось одного дня він побачив далеко-далеко знайому постать. Серце батька сповнилося ніжністю. Він побіг назустріч — поважний господар біг, як хлопчик! — кинувся синові на шию й поцілував його.",
+"Син почав свою промову: «Тату, я вже не вартий…» Та батько навіть не дав йому договорити. «Швидше! — гукнув він слугам. — Принесіть найкращий одяг, перстень на руку, сандалі на ноги! Готуйте бенкет! Мій син загубився — і знайшовся!»",
+"І почалося свято з музикою й танцями. Старший брат повертався з поля, почув музику й образився: «Я стільки років працюю, а свято — для нього?» Батько вийшов і до нього: «Сину, ти завжди зі мною, і все моє — твоє. Ходімо радіти разом: твій брат повернувся!»",
+"Того вечора в домі було світло й гамірно. Син сидів поруч із батьком у новому вбранні й ніяк не міг повірити: його не просто пустили на поріг — йому раділи, як найдорожчому гостеві.",
+"Ісус розповів цю історію, щоб ми знали, який наш Небесний Отець. Двері Його дому завжди відчинені. Він не чекає від нас виправдань і завчених промов. Він чекає на нас самих — і біжить назустріч першим."],
+se: [
+"Jesus Himself told this story. There was a father who had two sons, a big house and wide fields. One day the younger son said, “Dad, give me my share of everything. I want to live on my own.” The father felt sad, but he gave it. Because love does not hold anyone by force.",
+"The son packed his things and set off for a faraway land. He lived merrily there: feasts, new clothes, many “friends”. But the money melted quickly, like snow in spring. And together with the money the “friends” disappeared too.",
+"A famine came to that land. The young man took a job feeding pigs. He was so hungry that he was ready to eat the pigs’ food, but nobody gave him even that.",
+"Then he remembered home. “Even my father’s workers have plenty of bread! I will go to him and say, ‘Dad, I did wrong. I am no longer worthy to be called your son. Take me as a hired worker.’” All the way he kept repeating these words so he would not forget them.",
+"And the father went out to the road every day and looked into the distance. One day he saw a familiar figure far, far away. The father’s heart filled with tenderness. He ran to meet him — a respected master running like a boy! — threw his arms around his son and kissed him.",
+"The son began his speech: “Dad, I am no longer worthy…” But the father did not even let him finish. “Quick!” he called to the servants. “Bring the best robe, a ring for his hand, sandals for his feet! Prepare a feast! My son was lost — and is found!”",
+"And a celebration began, with music and dancing. The older brother was coming back from the field, heard the music and felt hurt: “I have worked for so many years, and the party is for him?” The father went out to him as well: “Son, you are always with me, and everything I have is yours. Come, let us rejoice together: your brother has come back!”",
+"That evening the house was bright and noisy. The son sat next to his father in his new robe and could hardly believe it: he had not just been let in at the door — he was welcomed like the dearest guest.",
+"Jesus told this story so that we would know what our Heavenly Father is like. The door of His house is always open. He does not wait for excuses and rehearsed speeches. He waits for us — and He is the first to run to meet us."],
+v: "Своїми словами: «Коли син був ще далеко, батько побачив його, змилосердився, побіг, обійняв і поцілував його» (Луки 15:20).|In simple words: “While the son was still far away, his father saw him, was filled with compassion, ran, hugged him and kissed him” (Luke 15:20).",
+idea: "До Отця завжди можна повернутися. Він не згадує образ — Він радіє і влаштовує свято.|You can always come back to the Father. He does not bring up the past — He rejoices and prepares a feast.",
+ex: ["Якщо ти зробив щось не так, не ховайся: підійди до мами чи тата й розкажи. Тебе люблять.|If you did something wrong, do not hide: go to Mum or Dad and tell them. You are loved.",
+"Коли друг просить пробачення, зустрінь його, як той батько: з відкритим серцем.|When a friend says sorry, meet them like that father did: with an open heart.",
+"Коли хтось отримав більше уваги, згадай слова батька: «Все моє — твоє». Любові вистачить усім.|When someone gets more attention, remember the father’s words: “Everything I have is yours.” There is enough love for everyone."],
+end: "Двері Отцівського дому завжди відчинені для тебе!|The door of the Father’s house is always open for you!",
+q: [
+{k: "order", q: "Розстав події притчі в правильному порядку.|Put the events of the parable in the right order.", s: ["Син попросив свою частку|The son asked for his share", "Він пішов у далекий край|He went to a faraway land", "Голодний, він пас свиней|Hungry, he fed pigs", "Батько побіг йому назустріч|The father ran to meet him"], h: "Історія починається вдома й закінчується вдома.|The story begins at home and ends at home.", e: "Так! А наприкінці було велике свято.|Yes! And at the end there was a great feast."},
+{k: "mc", q: "Що зробив батько, коли побачив сина здалеку?|What did the father do when he saw his son far away?", o: ["Зачинив двері|Closed the door", "Чекав на вибачення|Waited for an apology", "Побіг, обійняв і поцілував|Ran, hugged and kissed him"], a: 2, h: "Він зробив це, як хлопчик, — дуже швидко!|He did it like a boy — very quickly!", e: "Батько побіг першим. Такий наш Небесний Отець.|The father ran first. That is what our Heavenly Father is like."},
+{k: "tf", q: "Батько спершу змусив сина попрацювати наймитом.|The father first made his son work as a hired worker.", a: 0, h: "Чи дав батько синові договорити промову?|Did the father let his son finish his speech?", e: "Ні! Батько одразу дав найкращий одяг, перстень і влаштував свято.|No! The father gave the best robe and a ring at once and prepared a feast."},
+{k: "fill", q: "«Мій син загубився — і ___!»|“My son was lost — and is ___!”", o: ["знайшовся|found", "запізнився|late", "покараний|punished"], a: 0, h: "Протилежне до «загубився».|The opposite of “lost”.", e: "Загубився — і знайшовся! Яка радість!|Lost — and found! What joy!"},
+{k: "mc", q: "Що батько сказав старшому синові?|What did the father say to the older son?", o: ["«Іди працюй далі»|“Go back to work”", "«Усе моє — твоє»|“Everything I have is yours”", "«Ти тут зайвий»|“You are not needed here”"], a: 1, h: "Батько любить обох синів однаково.|The father loves both sons the same.", e: "«Ти завжди зі мною, і все моє — твоє». Любові вистачає всім.|“You are always with me, and everything I have is yours.” There is enough love for all."}]
+});
+
+LS.push({
+em: ["⛈️", "💗", "🌈"], game: "hearts",
+t: "Любов сильніша за страх|Love Is Stronger Than Fear",
+ref: "1 Івана 4:18|1 John 4:18",
+su: [
+"Уночі над містом розгулялася гроза. Блискавка освітлювала кімнату білим світлом, а грім гуркотів так, що аж шибки дзвеніли. Тимко натягнув ковдру до самого носа. Тіні на стіні здавалися йому кудлатими велетнями.",
+"«Мамо!» — тихенько покликав він. Мама прийшла одразу. Вона не сказала: «Як не соромно, ти ж уже великий». Вона сіла поруч, обійняла Тимка й прошепотіла: «Я тут. Я з тобою».",
+"Грім іще гуркотів, але сталося диво: страх почав зменшуватися. Він танув, як сніжка в теплій долоні. «Мамо, а чому, коли ти поруч, мені не так страшно?» — запитав Тимко.",
+"«Бо любов сильніша за страх, — відповіла мама. — Страх каже: «Ти сам». А любов каже: «Я з тобою». І коли любов поруч, страхові доводиться відступати».",
+"Тимко трохи помовчав. «А в школі один хлопчик казав, що Бог за всіма стежить і карає за кожну помилку. Я злякався». Мама погладила його по голові. «Згадай Ісуса. Хіба Він лякав дітей? Він їх обіймав. У Біблії написано: в любові немає страху, досконала любов проганяє страх. Бог — не той, кого треба боятися. Він — Той, до кого біжать, коли страшно».",
+"Потім вони разом рахували секунди між блискавкою й громом: «Один, два, три, чотири…» З кожним разом виходило більше. «Бачиш, гроза йде геть», — сказала мама. А ще вона показала, як дихати, коли тривожно: повільно вдихнути, ніби нюхаєш квітку, і повільно видихнути, ніби задуваєш свічку.",
+"«Боятися іноді — це нормально, — додала мама. — Усі люди часом бояться, навіть дорослі. Просто не залишайся зі страхом сам на сам. Розкажи мені, татові чи бабусі. І Богові теж можна сказати: «Мені страшно, будь поруч».",
+"Тимко позіхнув. Грім уже бурчав десь далеко-далеко, ніби старий кіт за стіною. «Мамо, посидь ще трішки», — попросив він. «Звичайно, посиджу», — сказала мама й заспівала тиху колискову. За хвилину Тимко вже спав.",
+"Вранці світило сонце, а над дахами стояла веселка. Тимко взяв фломастери й намалював маленьку сіру хмаринку, а над нею — величезне червоне серце. «Це гроза, а це любов, — пояснив він мамі. — Любов більша»."],
+se: [
+"At night a thunderstorm broke out over the town. Lightning lit the room with white light, and the thunder rumbled so loudly that the windows rattled. Tymko pulled the blanket right up to his nose. The shadows on the wall looked like shaggy giants to him.",
+"“Mum!” he called quietly. Mum came at once. She did not say, “Shame on you, you are a big boy.” She sat beside him, hugged Tymko and whispered, “I am here. I am with you.”",
+"The thunder still rumbled, but something wonderful happened: the fear began to shrink. It melted like a snowball in a warm hand. “Mum, why is it not so scary when you are near?” Tymko asked.",
+"“Because love is stronger than fear,” Mum answered. “Fear says, ‘You are alone.’ Love says, ‘I am with you.’ And when love is near, fear has to step back.”",
+"Tymko was silent for a while. “At school a boy said that God watches everyone and punishes every mistake. I got scared.” Mum stroked his hair. “Think of Jesus. Did He frighten children? He hugged them. The Bible says: there is no fear in love; perfect love drives out fear. God is not someone to be afraid of. He is the One you run to when you are scared.”",
+"Then they counted the seconds between the lightning and the thunder together: “One, two, three, four…” Each time there were more. “See, the storm is going away,” said Mum. She also showed him how to breathe when he feels worried: breathe in slowly, as if smelling a flower, and breathe out slowly, as if blowing out a candle.",
+"“Being afraid sometimes is normal,” Mum added. “Everyone is afraid at times, even grown-ups. Just do not stay alone with your fear. Tell me, Dad or Grandma. And you can tell God too: ‘I am scared, be near me.’”",
+"Tymko yawned. The thunder was now grumbling somewhere far, far away, like an old cat behind the wall. “Mum, stay a little longer,” he asked. “Of course I will,” said Mum, and she sang a quiet lullaby. A minute later Tymko was asleep.",
+"In the morning the sun was shining, and a rainbow stood over the roofs. Tymko took his markers and drew a small grey cloud, and above it — a huge red heart. “This is the storm, and this is love,” he explained to Mum. “Love is bigger.”"],
+v: "Своїми словами: «У любові немає страху, але досконала любов проганяє страх» (1 Івана 4:18).|In simple words: “There is no fear in love, but perfect love drives out fear” (1 John 4:18).",
+idea: "Бога не треба боятися. Його любов поруч, і поруч із нею страх стає маленьким.|There is no need to be afraid of God. His love is near, and next to it fear becomes small.",
+ex: ["Коли страшно в темряві, поклич когось із рідних і скажи Богові: «Будь поруч».|When you are scared in the dark, call someone from your family and tell God, “Be near me.”",
+"Перед контрольною зроби «квітку й свічку»: повільний вдих і повільний видих.|Before a test do the “flower and candle”: a slow breath in and a slow breath out.",
+"Якщо хтось лякає тебе Богом, згадай: Ісус обіймав дітей, а не лякав.|If someone tries to scare you with God, remember: Jesus hugged children, He did not frighten them."],
+end: "Любов завжди більша за будь-яку хмаринку!|Love is always bigger than any cloud!",
+q: [
+{k: "mc", q: "Що зробила мама, коли Тимко покликав її?|What did Mum do when Tymko called her?", o: ["Прийшла й обійняла|Came and hugged him", "Сказала, що він уже великий|Said he was a big boy", "Не почула|Did not hear"], a: 0, h: "Вона прошепотіла: «Я з тобою».|She whispered, “I am with you.”", e: "Мама прийшла одразу. Любов завжди поспішає на допомогу.|Mum came at once. Love always hurries to help."},
+{k: "tf", q: "Коли страшно, добре розповісти про це дорослому, якому довіряєш.|When you are scared, it is good to tell a grown-up you trust.", a: 1, h: "Що мама порадила Тимкові?|What did Mum advise Tymko?", e: "Так! Не залишайся зі страхом сам на сам.|Yes! Do not stay alone with your fear."},
+{k: "fill", q: "Досконала любов проганяє ___.|Perfect love drives out ___.", o: ["радість|joy", "страх|fear", "друзів|friends"], a: 1, h: "Те, що танув, як сніжка в теплій долоні.|The thing that melted like a snowball in a warm hand.", e: "«Досконала любов проганяє страх» (1 Івана 4:18).|“Perfect love drives out fear” (1 John 4:18)."},
+{k: "pair", q: "Хто що каже? З’єднай.|Who says what? Match.", p: [["Страх каже|Fear says", "«Ти сам»|“You are alone”"], ["Любов каже|Love says", "«Я з тобою»|“I am with you”"], ["Довіра каже|Trust says", "«Я можу попросити про допомогу»|“I can ask for help”"]], h: "Згадай мамині слова про страх і любов.|Remember Mum’s words about fear and love.", e: "Саме так! Любов завжди каже: «Я з тобою».|Exactly! Love always says, “I am with you.”"},
+{k: "mc", q: "Хто для нас Бог, коли нам страшно?|Who is God for us when we are scared?", o: ["Той, хто стежить і карає|The one who watches and punishes", "Той, кому байдуже|The one who does not care", "Той, до кого можна бігти|The One we can run to"], a: 2, h: "Як Ісус ставився до дітей?|How did Jesus treat children?", e: "Бог — Той, до кого біжать, коли страшно.|God is the One we run to when we are scared."}]
+});
+LS.push({
+em: ["🌅", "🌱", "🕊️"], game: "journey",
+t: "Вічне життя у Христі|Eternal Life in Christ",
+ref: "Івана 11:25–26; Івана 17:3|John 11:25–26; John 17:3",
+su: [
+"У селі Віфанія жили дві сестри — Марта й Марія — та їхній брат Лазар. Вони були добрими друзями Ісуса. Він любив приходити до них у гості, сидіти за столом і розмовляти.",
+"Та одного разу Лазар тяжко захворів. Сестри послали до Ісуса звістку. Коли ж Ісус прийшов до Віфанії, Лазар уже помер. Усі в домі плакали, і серця сестер були повні смутку.",
+"Марта вибігла Ісусові назустріч зі сльозами на очах. Ісус не сказав їй: «Не плач». Він побачив, як сумують Його друзі, — і заплакав разом із ними. У Біблії так і написано: «Ісус заплакав». Він поруч із нами, коли нам сумно.",
+"А потім Ісус сказав Марті дивовижні слова: «Я — воскресіння і життя. Хто вірить у Мене, той житиме». Марта відповіла: «Так, Господи, я вірю».",
+"Вони пішли до печери, де поховали Лазаря. Ісус подякував Отцеві й голосно покликав: «Лазарю, вийди!» І Лазар вийшов — живий! Сльози смутку стали сльозами радості. Сестри обіймали брата, а люди довкола не могли повірити своїм очам.",
+"Так Ісус показав: життя сильніше за смерть, а любов Отця ніколи не закінчується.",
+"А що таке вічне життя? Одного разу Ісус пояснив це в молитві: вічне життя — це знати Отця й Ісуса Христа. Тобто це не просто «дуже-дуже довго». Це дружба з Богом — справжня, тепла й жива.",
+"Уяви маленьке джерельце в лісі. Воно дзюрчить уже сьогодні, а далі стає струмком, річкою і тече аж до моря. Так і вічне життя: воно починається не колись потім, а вже зараз — щоразу, коли ти розмовляєш з Богом, радієш сонцю, любиш і довіряєш.",
+"Марта, Марія й Лазар знову сиділи з Ісусом за одним столом, сміялися й розмовляли. Вони зрозуміли найголовніше: поруч з Ісусом не треба боятися ні сьогоднішнього дня, ні завтрашнього. Бо Той, хто дарує життя, — їхній Друг. І твій Друг також. Він знає твоє ім’я і радий кожній розмові з тобою.",
+"Тож вічне життя — це подарунок, який можна відкривати щодня. І ця дружба з Богом не закінчиться ніколи."],
+se: [
+"In the village of Bethany lived two sisters, Martha and Mary, and their brother Lazarus. They were good friends of Jesus. He loved to visit them, sit at their table and talk.",
+"But one day Lazarus became very ill. The sisters sent word to Jesus. When Jesus came to Bethany, Lazarus had already died. Everyone in the house was crying, and the sisters’ hearts were full of sorrow.",
+"Martha ran out to meet Jesus with tears in her eyes. Jesus did not tell her, “Do not cry.” He saw how sad His friends were — and He cried together with them. The Bible says just that: “Jesus wept.” He is close to us when we are sad.",
+"Then Jesus said amazing words to Martha: “I am the resurrection and the life. Whoever believes in Me will live.” Martha answered, “Yes, Lord, I believe.”",
+"They went to the cave where Lazarus had been buried. Jesus thanked the Father and called out loudly, “Lazarus, come out!” And Lazarus came out — alive! Tears of sorrow became tears of joy. The sisters hugged their brother, and the people around could not believe their eyes.",
+"This is how Jesus showed that life is stronger than death, and the Father’s love never ends.",
+"And what is eternal life? Once Jesus explained it in a prayer: eternal life is knowing the Father and Jesus Christ. So it is not just “a very, very long time”. It is friendship with God — real, warm and alive.",
+"Imagine a tiny spring in the forest. It is already bubbling today, and later it becomes a stream, then a river, and flows all the way to the sea. Eternal life is like that: it does not begin some day later, it begins now — every time you talk with God, enjoy the sunshine, love and trust.",
+"Martha, Mary and Lazarus sat at one table with Jesus again, laughing and talking. They understood the most important thing: next to Jesus there is no need to be afraid of today or of tomorrow. Because the One who gives life is their Friend. And your Friend too. He knows your name and is glad of every talk with you.",
+"So eternal life is a gift you can open every day. And this friendship with God will never end."],
+v: "Своїми словами: Ісус сказав: «Я — воскресіння і життя. Хто вірить у Мене, той житиме» (Івана 11:25). «Вічне життя — це знати Тебе, єдиного правдивого Бога, та Ісуса Христа» (Івана 17:3).|In simple words: Jesus said, “I am the resurrection and the life. Whoever believes in Me will live” (John 11:25). “Eternal life is to know You, the only true God, and Jesus Christ” (John 17:3).",
+idea: "Вічне життя — це дружба з Богом, яка починається вже сьогодні й ніколи не закінчується.|Eternal life is friendship with God that begins today and never ends.",
+ex: ["Коли вранці кажеш: «Доброго ранку, Отче!» — ти вже живеш цією дружбою.|When you say in the morning, “Good morning, Father!” you are already living this friendship.",
+"Коли сумуєш за кимось, згадай: Ісус плакав разом із друзями й Він поруч.|When you miss someone, remember: Jesus cried with His friends, and He is near.",
+"Коли садиш насінину й бачиш паросток, подумай: Бог любить дарувати життя.|When you plant a seed and see a sprout, think: God loves to give life."],
+end: "Дружба з Богом — назавжди. І вона вже почалася!|Friendship with God is forever. And it has already begun!",
+q: [
+{k: "mc", q: "Що Ісус сказав Марті?|What did Jesus say to Martha?", o: ["«Не плач і йди додому»|“Do not cry and go home”", "«Я — воскресіння і життя»|“I am the resurrection and the life”", "«Я запізнився»|“I am too late”"], a: 1, h: "У цих словах є слово «життя».|These words contain the word “life”.", e: "«Я — воскресіння і життя» (Івана 11:25).|“I am the resurrection and the life” (John 11:25)."},
+{k: "tf", q: "Ісус заплакав разом зі своїми друзями.|Jesus wept together with His friends.", a: 1, h: "У Біблії є дуже короткий вірш про це.|There is a very short Bible verse about it.", e: "Так. Ісус поруч, коли нам сумно.|Yes. Jesus is close when we are sad."},
+{k: "fill", q: "Вічне життя — це знати ___.|Eternal life is knowing ___.", o: ["Отця та Ісуса|the Father and Jesus", "багато правил|many rules", "усі відповіді|all the answers"], a: 0, h: "Це про дружбу, а не про правила.|It is about friendship, not rules.", e: "Вічне життя — це знати Отця й Ісуса (Івана 17:3).|Eternal life is knowing the Father and Jesus (John 17:3)."},
+{k: "order", q: "Розстав події історії про Лазаря.|Put the events of the Lazarus story in order.", s: ["Лазар захворів|Lazarus became ill", "Ісус прийшов до Віфанії|Jesus came to Bethany", "Ісус плакав разом із сестрами|Jesus wept with the sisters", "Лазар вийшов живий|Lazarus came out alive"], h: "Радість була в самому кінці.|The joy came at the very end.", e: "Так! Смуток перетворився на радість.|Yes! Sorrow turned into joy."},
+{k: "mc", q: "Коли починається вічне життя?|When does eternal life begin?", o: ["Ніколи|Never", "Тільки колись дуже нескоро|Only some day far away", "Уже зараз, у дружбі з Богом|Right now, in friendship with God"], a: 2, h: "Згадай джерельце, що дзюрчить уже сьогодні.|Remember the spring that is already bubbling today.", e: "Вічне життя починається вже зараз!|Eternal life begins right now!"}]
+});
+LS.push({
+em: ["🌹", "🌼", "🌻"], game: "garden",
+t: "Я цінний і любимий|I Am Precious and Loved",
+ref: "Псалом 139:14; Луки 12:6–7|Psalm 139:14; Luke 12:6–7",
+su: [
+"На гуртку малювання всі малювали улюблених тварин. Даринка намалювала кота. Потім глянула на аркуш сусідки Ілони — там скакав кінь, зовсім як справжній! Даринка подивилася на свого кота: вуха криві, хвіст як ковбаска. Вона швидко сховала малюнок у рюкзак.",
+"Додому Даринка прийшла сумна. Дідусь Петро помітив це й покликав її в сад: «Допоможеш мені полити квіти?»",
+"У саду дідусь запитав: «Як гадаєш, яка квітка тут найкраща?» Даринка роззирнулася. Троянда була пишна й гордовита. Ромашка — проста й весела. Соняшник виріс вищий за паркан. А незабудки були зовсім крихітні. «Не знаю… Вони всі різні».",
+"«А чи треба ромашці сумувати, що вона не троянда?» Даринка засміялася: «Ні! Ромашка ж — ромашка!» — «А ти — Даринка, — сказав дідусь. — Ніхто у світі не малює котів так, як ти. Бог створив кожного особливим. У Біблії є слова: «Я дивовижно створений».",
+"«Але Ілона малює краще». — «Ілона малює інакше. Ти можеш у неї повчитися й порадіти її коневі. Ти від цього не станеш меншою. Твоя цінність — не оцінка в щоденнику. Ти цінна, бо ти є. Бо тебе любить Бог і любимо ми».",
+"Дідусь показав на горобчика, що купався в калюжі. «Ісус казав: жоден горобчик не забутий у Бога. І навіть волосинки на твоїй голові всі пораховані. Ти дорожча за багатьох горобчиків!»",
+"Даринка дістала малюнок, домалювала котові вуса й сонце над головою. А наступного дня сказала Ілоні: «У тебе чудовий кінь!» Ілона зраділа: «А в тебе кіт такий смішний і добрий! Навчиш мене малювати такі очі?»",
+"Увечері дідусь додав: «Цінувати себе — це ще й дбати про себе. Відпочивати, коли втомилася. Казати «ні», коли тобі щось неприємно. Просити про допомогу. І так само дбайливо ставитися до інших, бо вони теж — Божі квіти».",
+"«Діду, а ти теж особливий?» — запитала Даринка. «Аякже! — засміявся дідусь. — Ніхто у світі не розповідає про горобчиків так довго, як я». І вони обоє розреготалися.",
+"Даринка повісила кота над своїм ліжком. Він був неідеальний. Він був її. І він їй дуже подобався."],
+se: [
+"At the art club everyone was drawing their favourite animals. Darynka drew a cat. Then she glanced at her neighbour Ilona’s sheet — a horse was galloping there, just like a real one! Darynka looked at her cat: crooked ears, a tail like a sausage. She quickly hid the drawing in her backpack.",
+"Darynka came home sad. Grandpa Petro noticed and called her into the garden: “Will you help me water the flowers?”",
+"In the garden Grandpa asked, “Which flower here do you think is the best?” Darynka looked around. The rose was grand and proud. The daisy was simple and cheerful. The sunflower had grown taller than the fence. And the forget-me-nots were tiny. “I do not know… They are all different.”",
+"“Should the daisy be sad that it is not a rose?” Darynka laughed. “No! A daisy is a daisy!” “And you are Darynka,” said Grandpa. “Nobody in the world draws cats the way you do. God made everyone special. The Bible has these words: ‘I am wonderfully made.’”",
+"“But Ilona draws better.” “Ilona draws differently. You can learn from her and be glad about her horse. That will not make you smaller. Your worth is not a mark in a school diary. You are precious because you are you. Because God loves you, and so do we.”",
+"Grandpa pointed to a sparrow bathing in a puddle. “Jesus said: not one sparrow is forgotten by God. And even the hairs on your head are all counted. You are worth more than many sparrows!”",
+"Darynka took out her drawing and added whiskers to the cat and a sun above its head. The next day she told Ilona, “Your horse is wonderful!” Ilona beamed. “And your cat is so funny and kind! Will you teach me to draw eyes like that?”",
+"In the evening Grandpa added, “Valuing yourself also means taking care of yourself. Resting when you are tired. Saying ‘no’ when something feels unpleasant. Asking for help. And treating others just as carefully, because they are God’s flowers too.”",
+"“Grandpa, are you special too?” Darynka asked. “Of course!” Grandpa laughed. “Nobody in the world talks about sparrows for as long as I do.” And they both burst out laughing.",
+"Darynka hung the cat above her bed. It was not perfect. It was hers. And she liked it very much."],
+v: "Своїми словами: «Дякую Тобі, що я так дивовижно створений» (Псалом 139:14). Ісус сказав: жоден горобчик не забутий у Бога; ви дорожчі за багатьох горобчиків (Луки 12:6–7).|In simple words: “I thank You that I am so wonderfully made” (Psalm 139:14). Jesus said: not one sparrow is forgotten by God; you are worth more than many sparrows (Luke 12:6–7).",
+idea: "Ти цінний не за оцінки чи перемоги. Ти цінний, бо ти є і тебе любить Бог.|You are precious not for marks or victories. You are precious because you are you and God loves you.",
+ex: ["Коли в когось виходить краще, скажи: «Класно!» — і продовжуй робити по-своєму.|When someone does something better, say, “Great!” — and keep doing it your own way.",
+"Якщо втомився — відпочинь. Дбати про себе — це добре.|If you are tired, rest. Taking care of yourself is good.",
+"Якщо тобі щось неприємно, можна сказати «ні» й розповісти дорослому, якому довіряєш.|If something feels unpleasant, you can say “no” and tell a grown-up you trust."],
+end: "У всьому світі є лише один такий, як ти. І тебе дуже люблять!|There is only one you in the whole world. And you are deeply loved!",
+q: [
+{k: "mc", q: "Що дідусь показав Даринці в саду?|What did Grandpa show Darynka in the garden?", o: ["Що всі квіти різні й гарні|That all flowers are different and lovely", "Що троянда найкраща|That the rose is the best", "Що квіти треба зрізати|That flowers must be cut"], a: 0, h: "Троянда, ромашка, соняшник, незабудки…|Rose, daisy, sunflower, forget-me-nots…", e: "Кожна квітка особлива. Як і кожна дитина!|Every flower is special. Just like every child!"},
+{k: "tf", q: "Ромашці треба сумувати, що вона не троянда.|A daisy should be sad that it is not a rose.", a: 0, h: "Що відповіла Даринка й засміялася?|What did Darynka answer, laughing?", e: "Ні! Ромашка прекрасна, бо вона ромашка.|No! A daisy is beautiful because it is a daisy."},
+{k: "fill", q: "Я цінний, бо ___.|I am precious because ___.", o: ["я ніколи не помиляюся|I never make mistakes", "я найкращий у класі|I am the best in class", "мене любить Бог|God loves me"], a: 2, h: "Цінність — не оцінка в щоденнику.|Worth is not a mark in a school diary.", e: "Ти цінний, бо ти є і тебе любить Бог.|You are precious because you are you and God loves you."},
+{k: "pair", q: "З’єднай слова Ісуса.|Match the words of Jesus.", p: [["Горобчик|A sparrow", "не забутий у Бога|is not forgotten by God"], ["Волосинки|Your hairs", "усі пораховані|are all counted"], ["Ти|You", "дорожчий за багатьох горобчиків|are worth more than many sparrows"]], h: "Про це дідусь розповів біля калюжі.|Grandpa told about it near the puddle.", e: "Бог знає й любить тебе до найменшої волосинки!|God knows and loves you down to the tiniest hair!"},
+{k: "mc", q: "Що Даринка сказала Ілоні наступного дня?|What did Darynka say to Ilona the next day?", o: ["Нічого|Nothing", "«У тебе чудовий кінь!»|“Your horse is wonderful!”", "«Я малюю краще»|“I draw better”"], a: 1, h: "Вона щиро порадувала подругу.|She gladdened her friend sincerely.", e: "Радіти за інших легко, коли знаєш, що й ти цінний.|It is easy to be glad for others when you know you are precious too."}]
+});
+LS.push({
+em: ["🛴", "🤝", "💛"], game: "memory",
+t: "Прощення та доброта|Forgiveness and Kindness",
+ref: "Луки 10:30–37; Ефесян 4:32|Luke 10:30–37; Ephesians 4:32",
+su: [
+"Максим і Данило були сусідами й найкращими друзями. Якось Максимові подарували новенький самокат. «Дай покататися!» — попросив Данило. Він розігнався, не помітив бордюр — бабах! Переднє колесо зігнулося.",
+"«Ти його зламав! — закричав Максим. — Я з тобою більше не дружу!» Данило почервонів і побіг додому. Обом було дуже зле.",
+"Максим сидів на ґанку надутий. До нього підсіла бабуся Ганна. Вона вислухала все, а потім сказала: «Розповім тобі історію, яку розповідав Ісус».",
+"«Один чоловік ішов дорогою, і на нього напали розбійники. Вони побили його й залишили при дорозі. Повз проходили двоє поважних людей. Вони побачили бідолаху, але пройшли мимо. А потім їхав самарянин — чужинець з іншого народу. Він зупинився, перев’язав рани, посадив чоловіка на свого ослика, відвіз до заїзду й заплатив господареві, щоб той про нього подбав».",
+"«А чому він зупинився?» — запитав Максим. «Бо мав добре серце. Милосердя — це коли бачиш чужу біду й не проходиш мимо».",
+"«Данилові зараз теж біда, — вела далі бабуся. — Йому соромно й сумно. Та й тобі нелегко: образа лежить на серці, як важкий камінь. Пробачити — означає покласти цей камінь на землю».",
+"«Але ж колесо все одно криве!» — «Так. Пробачити — не означає сказати, що нічого не сталося. Це означає вирішити, що друг важливіший за колесо. А колесо можна полагодити разом».",
+"Максим пішов до сусідів. Данило відчинив двері із заплаканими очима: «Пробач. Я не хотів». — «Я пробачаю. І ти пробач, що я кричав».",
+"Разом із Даниловим татом вони вирівняли колесо. Данило сам приніс зі своєї скарбнички гроші на новий болтик — ніхто його не змушував, йому просто хотілося допомогти. А ввечері друзі каталися по черзі й реготали на весь двір.",
+"Бабуся Ганна дивилася на них із ґанку й усміхалася. «Бачиш, — сказала вона Максимовій мамі, — самокат полагодили за пів години. А дружбу — за одну хвилину. Досить було двох слів: «пробач» і «пробачаю».",
+"У Біблії написано: «Будьте добрі одне до одного, милосердні, прощайте одне одному, як і Бог простив вам»."],
+se: [
+"Maksym and Danylo were neighbours and best friends. One day Maksym was given a brand-new scooter. “Let me have a ride!” Danylo asked. He sped up, did not notice the kerb — bang! The front wheel got bent.",
+"“You broke it!” Maksym shouted. “I am not your friend any more!” Danylo turned red and ran home. Both of them felt awful.",
+"Maksym sat on the porch sulking. Grandma Hanna sat down next to him. She listened to everything and then said, “Let me tell you a story that Jesus told.”",
+"“A man was walking along a road, and robbers attacked him. They beat him and left him by the roadside. Two respected men passed by. They saw the poor man but walked on. Then a Samaritan came riding — a stranger from another people. He stopped, bandaged the wounds, put the man on his own donkey, took him to an inn and paid the innkeeper to take care of him.”",
+"“Why did he stop?” Maksym asked. “Because he had a kind heart. Mercy is when you see someone’s trouble and do not pass by.”",
+"“Danylo is in trouble now too,” Grandma went on. “He feels ashamed and sad. And it is not easy for you either: the hurt lies on your heart like a heavy stone. To forgive means to put that stone down on the ground.”",
+"“But the wheel is still bent!” “Yes. Forgiving does not mean saying that nothing happened. It means deciding that your friend matters more than the wheel. And the wheel can be fixed together.”",
+"Maksym went to the neighbours’ house. Danylo opened the door with teary eyes: “I am sorry. I did not mean to.” “I forgive you. And forgive me for shouting.”",
+"Together with Danylo’s dad they straightened the wheel. Danylo brought money from his own piggy bank for a new bolt — nobody made him, he simply wanted to help. And in the evening the friends took turns riding and laughed so the whole yard could hear.",
+"Grandma Hanna watched them from the porch and smiled. “See,” she said to Maksym’s mum, “the scooter took half an hour to fix. And the friendship took one minute. Two words were enough: ‘sorry’ and ‘I forgive you’.”",
+"The Bible says: “Be kind to one another, tender-hearted, forgiving one another, as God forgave you.”"],
+v: "Своїми словами: «Будьте добрі одне до одного, милосердні, прощайте одне одному, як і Бог через Христа простив вам» (Ефесян 4:32).|In simple words: “Be kind to one another, tender-hearted, forgiving one another, as God in Christ forgave you” (Ephesians 4:32).",
+idea: "Прощення звільняє серце від важкого каменя, а доброта помічає чужу біду й допомагає.|Forgiveness frees the heart from a heavy stone, and kindness notices someone’s trouble and helps.",
+ex: ["Якщо посварився з другом, зроби перший крок: «Пробач, давай миритися».|If you quarrelled with a friend, take the first step: “Sorry, let us make up.”",
+"Якщо хтось упав на перерві, підійди й допоможи підвестися.|If someone falls down at break time, go and help them up.",
+"Якщо тебе скривдили й тобі боляче, розкажи дорослому. Пробачати не означає терпіти кривду мовчки.|If someone hurt you and it is painful, tell a grown-up. Forgiving does not mean putting up with hurt in silence."],
+end: "Добре серце робить світ теплішим. У тебе саме таке!|A kind heart makes the world warmer. You have one just like that!",
+q: [
+{k: "mc", q: "Хто допоміг побитому чоловікові на дорозі?|Who helped the beaten man on the road?", o: ["Розбійники|The robbers", "Самарянин|The Samaritan", "Ніхто|Nobody"], a: 1, h: "Це був чужинець з іншого народу.|He was a stranger from another people.", e: "Самарянин зупинився й подбав про нього.|The Samaritan stopped and took care of him."},
+{k: "tf", q: "Пробачити — означає вдавати, що нічого не сталося.|To forgive means to pretend that nothing happened.", a: 0, h: "Що бабуся сказала про колесо?|What did Grandma say about the wheel?", e: "Пробачити — це вирішити, що друг важливіший за колесо.|To forgive is to decide your friend matters more than the wheel."},
+{k: "fill", q: "«Будьте добрі одне до одного, ___ одне одному».|“Be kind to one another, ___ one another.”", o: ["прощайте|forgive", "забувайте|forget", "перемагайте|defeat"], a: 0, h: "Так вчинив Максим на порозі Данила.|That is what Maksym did at Danylo’s door.", e: "«Прощайте одне одному» (Ефесян 4:32).|“Forgiving one another” (Ephesians 4:32)."},
+{k: "order", q: "Розстав події історії про друзів.|Put the events of the friends’ story in order.", s: ["Данило зігнув колесо самоката|Danylo bent the scooter wheel", "Максим розсердився й накричав|Maksym got angry and shouted", "Бабуся розповіла історію Ісуса|Grandma told the story of Jesus", "Друзі помирилися й полагодили колесо|The friends made up and fixed the wheel"], h: "Спочатку — бабах, наприкінці — сміх.|First a bang, laughter at the end.", e: "Так! Примирення — найкращий кінець історії.|Yes! Making up is the best ending."},
+{k: "mc", q: "На що схожа образа в цій історії?|What is a hurt feeling like in this story?", o: ["На пір’їнку|A feather", "На важкий камінь на серці|A heavy stone on the heart", "На цукерку|A sweet"], a: 1, h: "Її можна покласти на землю.|You can put it down on the ground.", e: "Пробачити — це покласти камінь на землю. Стає легко!|To forgive is to put the stone down. It feels light!"}]
+});
+
+LS.push({
+em: ["🚲", "🤲", "🐦"], game: "maze",
+t: "Віра — це довіра|Faith Is Trust",
+ref: "Приповісті 3:5; Матвія 6:26|Proverbs 3:5; Matthew 6:26",
+su: [
+"Яринці подарували двоколісний велосипед. Тато відкрутив маленькі бічні коліщатка й сказав: «Час кататися по-справжньому!» Яринка сіла на сидіння — і велосипед одразу захитався. Ой, як лячно!",
+"«Я триматиму сидіння, — пообіцяв тато. — Ти просто крути педалі й дивися вперед». — «А ти не відпустиш?» — «Я буду поруч. Обіцяю».",
+"Яринка натиснула на педалі. Вона не бачила татової руки, бо та була позаду. Та вона подумала: «Тато ще ніколи мене не підводив. Він ловив мене з гірки. Він завжди приходив по мене в садочок. Отже, йому можна довіряти».",
+"І вона поїхала! Спершу повільно, потім швидше. Вітер лоскотав щоки, а тато біг поруч. Один раз Яринка впала на траву. Тато допоміг підвестися, подмухав на коліно й усміхнувся: «Падати — це частина навчання. Ще раз?» — «Ще раз!»",
+"Увечері Яринка запитала: «Тату, а що таке віра? Бабуся каже: «Май віру в Бога». Тато подумав і відповів: «Віра — це довіра. Сьогодні ти довіряла мені. Не тому, що бачила мою руку, а тому, що знаєш мене. З Богом так само: ми Його не бачимо, але знаємо, який Він, бо Ісус нам Його показав».",
+"«Ісус якось сказав: погляньте на пташок. Вони не сіють і не збирають у комори, а Небесний Отець годує їх. А ви ж для Нього ще дорожчі!»",
+"«А якщо мені все одно буде страшно?» — «Тоді так і скажи: «Боже, мені трошки страшно. Будь поруч». Це теж довіра. Віра — не іспит, який можна не скласти. Це рука, за яку можна триматися».",
+"«А якщо я не все розумію?» — «І я не все розумію, — засміявся тато. — Довіряти — не означає знати всі відповіді. Це означає знати, Хто тебе любить».",
+"Яринка довго дивилася у вікно, де на гілці сиділи два горобчики. «Вони зовсім не хвилюються», — сказала вона. «Бо знають, що про них дбають, — відповів тато. — І про тебе теж».",
+"У Біблії є такі слова: «Довіряй Господу всім своїм серцем». Яринка повторила їх пошепки, обійняла тата й побігла дивитися на свій велосипед. Завтра вона знову кататиметься. І вже зовсім не боятиметься."],
+se: [
+"Yarynka got a two-wheeled bicycle. Dad unscrewed the little side wheels and said, “Time to ride for real!” Yarynka sat on the seat — and the bicycle began to wobble at once. Oh, how scary!",
+"“I will hold the seat,” Dad promised. “You just pedal and look ahead.” “You will not let go?” “I will be right beside you. I promise.”",
+"Yarynka pushed the pedals. She could not see Dad’s hand because it was behind her. But she thought, “Dad has never let me down. He caught me at the slide. He always came for me at kindergarten. So I can trust him.”",
+"And off she went! Slowly at first, then faster. The wind tickled her cheeks, and Dad ran alongside. Once Yarynka fell onto the grass. Dad helped her up, blew on her knee and smiled: “Falling is part of learning. Once more?” “Once more!”",
+"In the evening Yarynka asked, “Dad, what is faith? Grandma says, ‘Have faith in God.’” Dad thought and answered, “Faith is trust. Today you trusted me. Not because you saw my hand, but because you know me. It is the same with God: we do not see Him, but we know what He is like, because Jesus showed Him to us.”",
+"“Jesus once said: look at the birds. They do not sow or gather into barns, and yet the Heavenly Father feeds them. And you are even more precious to Him!”",
+"“What if I am still scared?” “Then just say so: ‘God, I am a little scared. Be near me.’ That is trust too. Faith is not an exam you can fail. It is a hand you can hold.”",
+"“And what if I do not understand everything?” “I do not understand everything either,” Dad laughed. “Trusting does not mean knowing all the answers. It means knowing Who loves you.”",
+"Yarynka looked out of the window for a long time; two sparrows were sitting on a branch. “They are not worried at all,” she said. “Because they know they are cared for,” Dad answered. “And so are you.”",
+"The Bible has these words: “Trust in the Lord with all your heart.” Yarynka repeated them in a whisper, hugged Dad and ran to look at her bicycle. Tomorrow she would ride again. And she would not be afraid at all."],
+v: "Своїми словами: «Довіряй Господу всім своїм серцем» (Приповісті 3:5). «Погляньте на птахів небесних: Отець ваш Небесний годує їх. Хіба ви не дорожчі за них?» (Матвія 6:26).|In simple words: “Trust in the Lord with all your heart” (Proverbs 3:5). “Look at the birds of the air: your Heavenly Father feeds them. Are you not worth more than they?” (Matthew 6:26).",
+idea: "Вірити — означає довіряти Богові, як дитина довіряє люблячому татові.|To believe means to trust God the way a child trusts a loving dad.",
+ex: ["Коли сідаєш на стілець, ти не перевіряєш кожну ніжку — ти довіряєш. Так і з Богом.|When you sit on a chair you do not check every leg — you trust. It is the same with God.",
+"Коли хвилюєшся перед виступом, скажи: «Боже, будь поруч» — і зроби крок.|When you are nervous before a performance, say, “God, be near me” — and take a step.",
+"Коли чогось не розумієш, можна чесно запитати. Запитання — це не слабка віра, а цікавість.|When you do not understand something, you can honestly ask. Questions are not weak faith, they are curiosity."],
+end: "Віра — це рука, за яку можна триматися. Вона завжди простягнута до тебе!|Faith is a hand you can hold. It is always reaching out to you!",
+q: [
+{k: "mc", q: "Чому Яринка довіряла татові?|Why did Yarynka trust her dad?", o: ["Бо бачила його руку|Because she saw his hand", "Бо знала, що він її не підводив|Because she knew he had never let her down", "Бо він наказав|Because he ordered her"], a: 1, h: "Рука була позаду, але Яринка знала тата.|The hand was behind her, but Yarynka knew her dad.", e: "Довіра росте, коли ми знаємо того, хто нас любить.|Trust grows when we know the one who loves us."},
+{k: "tf", q: "Віра — це іспит, який можна не скласти.|Faith is an exam you can fail.", a: 0, h: "Тато порівняв віру з рукою.|Dad compared faith to a hand.", e: "Віра — не іспит. Це рука, за яку можна триматися.|Faith is not an exam. It is a hand you can hold."},
+{k: "fill", q: "Віра — це ___.|Faith is ___.", o: ["довіра|trust", "змагання|a competition", "таємниця для дорослих|a secret for grown-ups"], a: 0, h: "Це слово є в назві уроку.|This word is in the lesson title.", e: "Віра — це довіра Богові.|Faith is trust in God."},
+{k: "pair", q: "З’єднай пари.|Match the pairs.", p: [["Пташок|The birds", "годує Небесний Отець|are fed by the Heavenly Father"], ["Тато|Dad", "біг поруч із велосипедом|ran beside the bicycle"], ["Яринка|Yarynka", "крутила педалі й довіряла|pedalled and trusted"]], h: "Хто що робив у цій історії?|Who did what in this story?", e: "Так! А ти для Отця дорожчий за всіх пташок.|Yes! And you are worth more to the Father than all the birds."},
+{k: "mc", q: "Що можна сказати Богові, коли страшно?|What can you say to God when you are scared?", o: ["Нічого, треба мовчати|Nothing, you must be silent", "«Боже, мені страшно. Будь поруч»|“God, I am scared. Be near me”", "«Я більше не вірю»|“I do not believe any more”"], a: 1, h: "Чесні слова — це теж довіра.|Honest words are trust too.", e: "Богові можна чесно сказати про все.|You can honestly tell God about everything."}]
+});
+LS.push({
+em: ["🐦", "🕊️", "🌳"], game: "rainbow",
+t: "Свобода у Христі|Freedom in Christ",
+ref: "Галатів 5:1, 13|Galatians 5:1, 13",
+su: [
+"Назар із дідусем Степаном ішли стежкою повз грядки. Раптом із полуниці почулося тоненьке: «Пі-пі-пі!» У старій сітці, якою накривали ягоди, заплутався щиглик. Він бив крильцями, але нитки тримали міцно.",
+"Дідусь обережно взяв пташку в долоні. «Тихенько, маленький. Назаре, неси ножиці». Назар різав нитку за ниткою. Він відчував, як швидко-швидко б’ється крихітне серденько.",
+"Нарешті остання нитка впала. Щиглик хвильку посидів на долоні, стріпнув пір’ячком — і злетів на верхівку вишні. А там заспівав так дзвінко, що аж листя затремтіло.",
+"«Діду, а давай візьмемо його в клітку! Я годуватиму його найкращим зерном!» Дідусь похитав головою: «А чи співав би він у клітці так, як зараз? Він створений, щоб літати».",
+"Вони сіли на лавку. «Знаєш, люди теж заплутуються в сітках, — сказав дідусь. — Тільки в невидимих. Одна сітка — страх: «Я недостатньо хороший». Інша — думка: «Любов треба заслужити». Ще одна — образа. Ісус прийшов, щоб перерізати ці нитки. У Біблії написано: Христос визволив нас для свободи — тож стійте й не заплутуйтеся знову».",
+"«То свобода — це коли можна робити все, що схочеш? Не вчити уроки і їсти самі цукерки?» Дідусь засміявся: «Щиглик вільний. Та хіба він летить у шибку чи клює своїх друзів? Свобода — не для того, щоб шкодити собі чи іншим. У Біблії далі сказано: ви покликані до свободи, тож любов’ю служіть одне одному. Свобода — це крила. А любов підказує, куди летіти».",
+"«А обов’язки?» — «Відповідальність — теж не клітка. Коли ти годуєш кота, бо любиш його, а не тому, що боїшся сварки, — ти і вільний, і добрий водночас».",
+"Наступного дня Назар із дідусем зняли стару сітку й повісили на вишні годівничку. І щиглик прилетів — сам, з власної волі. Він клював насіння й поглядав на Назара блискучим оком.",
+"«Ось вона, найкраща дружба, — сказав дідусь. — Без клітки».",
+"Щиглик дзьобнув останню зернину, цвірінькнув щось веселе й полетів у синє небо. Але Назар знав: завтра він прилетить знову. Бо туди, де тебе люблять, завжди хочеться повертатися.",
+"Назар усміхнувся. Йому здалося, що в нього самого за спиною теж є маленькі крила."],
+se: [
+"Nazar and Grandpa Stepan were walking along the path past the garden beds. Suddenly a thin “Peep-peep-peep!” came from the strawberries. A goldfinch was tangled in the old net that covered the berries. It beat its wings, but the threads held tight.",
+"Grandpa carefully took the bird in his hands. “Easy, little one. Nazar, bring the scissors.” Nazar cut thread after thread. He could feel the tiny heart beating fast, fast.",
+"At last the final thread fell. The goldfinch sat on the palm for a moment, shook its feathers — and flew up to the top of the cherry tree. There it sang so brightly that the leaves seemed to tremble.",
+"“Grandpa, let us keep it in a cage! I will feed it the best seeds!” Grandpa shook his head. “Would it sing in a cage the way it sings now? It was made to fly.”",
+"They sat down on a bench. “You know, people get tangled in nets too,” said Grandpa. “Only invisible ones. One net is fear: ‘I am not good enough.’ Another is the thought: ‘Love must be earned.’ One more is a grudge. Jesus came to cut these threads. The Bible says: Christ set us free for freedom — so stand firm and do not get tangled again.”",
+"“So freedom is when you can do anything you want? Skip homework and eat only sweets?” Grandpa laughed. “The goldfinch is free. But does it fly into a window or peck its friends? Freedom is not for harming yourself or others. The Bible goes on: you were called to freedom, so serve one another with love. Freedom is wings. And love shows where to fly.”",
+"“And what about duties?” “Responsibility is not a cage either. When you feed the cat because you love it, and not because you are afraid of being scolded, you are both free and kind at the same time.”",
+"The next day Nazar and Grandpa took down the old net and hung a bird feeder on the cherry tree. And the goldfinch came — by itself, of its own free will. It pecked the seeds and glanced at Nazar with a shiny eye.",
+"“Here it is, the best kind of friendship,” said Grandpa. “Without a cage.”",
+"The goldfinch pecked the last seed, chirped something cheerful and flew off into the blue sky. But Nazar knew it would come again tomorrow. Because you always want to return to where you are loved.",
+"Nazar smiled. It seemed to him that he, too, had little wings behind his back."],
+v: "Своїми словами: «Христос визволив нас для свободи, тож стійте» (Галатів 5:1). «Ви покликані до свободи… любов’ю служіть одне одному» (Галатів 5:13).|In simple words: “Christ set us free for freedom, so stand firm” (Galatians 5:1). “You were called to freedom… serve one another with love” (Galatians 5:13).",
+idea: "Ісус звільняє нас від страху й думки, що любов треба заслужити. Свобода — це крила, а любов показує, куди летіти.|Jesus frees us from fear and from the thought that love must be earned. Freedom is wings, and love shows where to fly.",
+ex: ["Ти вільний сказати: «Я помилився» — і тебе не перестануть любити.|You are free to say, “I made a mistake” — and you will not stop being loved.",
+"Ти вільний обирати добре: поділитися, допомогти, зупинити сварку.|You are free to choose what is good: to share, to help, to stop a quarrel.",
+"Коли прибираєш іграшки, бо дбаєш про дім, а не зі страху, — це відповідальність вільної людини.|When you tidy your toys because you care about your home, not out of fear, that is the responsibility of a free person."],
+end: "У тебе є крила свободи. Лети туди, де любов!|You have wings of freedom. Fly to where love is!",
+q: [
+{k: "mc", q: "У чому заплутався щиглик?|What was the goldfinch tangled in?", o: ["У старій сітці|In an old net", "У гілках вишні|In cherry branches", "У дідусевій шапці|In Grandpa’s hat"], a: 0, h: "Нею накривали полуницю.|It covered the strawberries.", e: "У сітці. Назар із дідусем перерізали нитки.|In a net. Nazar and Grandpa cut the threads."},
+{k: "tf", q: "Свобода — це робити що завгодно, навіть якщо це шкодить іншим.|Freedom means doing anything, even if it hurts others.", a: 0, h: "Хіба вільний щиглик клює своїх друзів?|Does the free goldfinch peck its friends?", e: "Свобода — це крила, а любов підказує, куди летіти.|Freedom is wings, and love shows where to fly."},
+{k: "fill", q: "«Любов’ю ___ одне одному».|“___ one another with love.”", o: ["керуйте|Rule", "служіть|Serve", "хваліться|Boast to"], a: 1, h: "Це означає допомагати й дбати.|It means helping and caring.", e: "«Любов’ю служіть одне одному» (Галатів 5:13).|“Serve one another with love” (Galatians 5:13)."},
+{k: "order", q: "Розстав події історії про щиглика.|Put the events of the goldfinch story in order.", s: ["Назар і дідусь почули писк|Nazar and Grandpa heard a peep", "Вони перерізали нитки|They cut the threads", "Щиглик злетів і заспівав|The goldfinch flew up and sang", "Пташка сама прилетіла до годівнички|The bird came to the feeder by itself"], h: "Годівничку повісили наступного дня.|The feeder was hung the next day.", e: "Так! Найкраща дружба — без клітки.|Yes! The best friendship has no cage."},
+{k: "mc", q: "Які «невидимі сітки» перерізає Ісус?|Which “invisible nets” does Jesus cut?", o: ["Шнурки на кросівках|Shoelaces", "Страх і думку, що любов треба заслужити|Fear and the thought that love must be earned", "Дружбу|Friendship"], a: 1, h: "Про них дідусь розповів на лавці.|Grandpa spoke about them on the bench.", e: "Ісус звільняє від страху. Любов — це подарунок!|Jesus frees us from fear. Love is a gift!"}]
+});
+LS.push({
+em: ["👧", "🍎", "👧"], game: "garden",
+t: "Як любити інших|How to Love Others",
+ref: "Івана 13:34; 1 Коринтян 13:4–7|John 13:34; 1 Corinthians 13:4–7",
+su: [
+"У понеділок до третього «Б» прийшла нова дівчинка. «Це Мілана, — сказала вчителька. — Вона переїхала до нас з іншого міста». Мілана стояла біля дверей і міцно притискала до себе рюкзак.",
+"На перерві всі побігли гратися в квача. Мілана залишилася сама біля вікна. Софійка це помітила. Їй дуже хотілося гратися, та вона згадала свій перший день у басейні: тоді з нею ніхто не заговорив, і було так самотньо.",
+"Софійка підійшла до вікна. «Привіт! Я Софійка. Хочеш гратися з нами?» Мілана вперше за цілий день усміхнулася.",
+"На обіді з’ясувалося, що Мілана забула вдома канапку. Софійка розламала свою булочку навпіл і дала їй яблуко. Після уроків вона показала, де бібліотека й де найкраща гойдалка у дворі.",
+"Та не все було просто. Софійчина подружка Катя надулася: «То ти тепер із новенькою дружиш, а не зі мною?» Софійка взяла її за руку: «Катю, ти моя подруга. Любов — не пиріг, який закінчується. Її вистачить на всіх. Ходімо втрьох!»",
+"Удома Софійка розповіла все мамі. «Ти зробила саме те, про що просив Ісус, — сказала мама. — Він казав: «Любіть одне одного, як Я полюбив вас». Любов — це не лише слова. Це справи: помітити, привітатися, поділитися, вислухати, заступитися».",
+"Мама розгорнула Біблію й прочитала: любов терпляча й добра, вона не заздрить, не вихваляється, не шукає лише свого. «Спробуй поставити сюди своє ім’я: «Софійка терпляча, Софійка добра…» Софійка захихотіла: «Я ще тільки вчуся». — «Ми всі вчимося, — усміхнулася мама. — І вчитися нам легко, бо нас самих полюбили першими».",
+"«А якщо хтось не захоче зі мною дружити?» — «Таке буває. Ти не мусиш усім подобатися. Але можеш до всіх ставитися по-доброму — і берегти себе теж».",
+"Наступного ранку Софійка прийшла до школи раніше й поклала на Міланину парту маленьку записку: «Гарного дня!» Мілана прочитала, озирнулася й помахала їй рукою. Від цього в Софійки на серці стало тепло-тепло.",
+"За тиждень на естафеті Софійка, Катя й Мілана стали найдружнішою командою. А Мілана подарувала Софійці листівку з трьома дівчатками й написом: «Дякую, що ти мене помітила»."],
+se: [
+"On Monday a new girl came to class 3B. “This is Milana,” said the teacher. “She has moved here from another town.” Milana stood by the door, hugging her backpack tightly.",
+"At break time everyone ran off to play tag. Milana stayed alone by the window. Sofiika noticed. She really wanted to play, but she remembered her own first day at the swimming pool: nobody spoke to her then, and she felt so lonely.",
+"Sofiika walked up to the window. “Hi! I am Sofiika. Do you want to play with us?” Milana smiled for the first time that day.",
+"At lunch it turned out that Milana had left her sandwich at home. Sofiika broke her bun in half and gave her an apple. After lessons she showed her where the library was and where to find the best swing in the yard.",
+"But not everything was simple. Sofiika’s friend Katia sulked: “So now you are friends with the new girl and not with me?” Sofiika took her hand. “Katia, you are my friend. Love is not a pie that runs out. There is enough for everyone. Let us go, all three of us!”",
+"At home Sofiika told Mum everything. “You did exactly what Jesus asked,” said Mum. “He said, ‘Love one another as I have loved you.’ Love is not only words. It is actions: to notice, to say hello, to share, to listen, to stand up for someone.”",
+"Mum opened the Bible and read: love is patient and kind, it does not envy, does not boast, does not seek only its own. “Try putting your name here: ‘Sofiika is patient, Sofiika is kind…’” Sofiika giggled. “I am only learning.” “We are all learning,” Mum smiled. “And it is easy for us to learn, because we ourselves were loved first.”",
+"“What if someone does not want to be my friend?” “That happens. You do not have to be liked by everyone. But you can treat everyone kindly — and take care of yourself too.”",
+"The next morning Sofiika came to school early and put a little note on Milana’s desk: “Have a nice day!” Milana read it, looked around and waved to her. That made Sofiika’s heart feel very, very warm.",
+"A week later, at the relay race, Sofiika, Katia and Milana were the friendliest team. And Milana gave Sofiika a card with three girls on it and the words: “Thank you for noticing me.”"],
+v: "Своїми словами: Ісус сказав: «Любіть одне одного, як Я полюбив вас» (Івана 13:34). Любов терпляча й добра, не заздрить і не вихваляється (1 Коринтян 13:4).|In simple words: Jesus said, “Love one another as I have loved you” (John 13:34). Love is patient and kind, it does not envy or boast (1 Corinthians 13:4).",
+idea: "Любити — це помічати інших і робити добро. Нам легко любити, бо нас самих полюбили першими.|To love is to notice others and do good. It is easy for us to love because we were loved first.",
+ex: ["У школі: підійди до того, хто стоїть сам, і запроси до гри.|At school: go up to someone standing alone and invite them to play.",
+"Удома: запитай маму чи тата: «Як минув твій день?» — і вислухай.|At home: ask Mum or Dad, “How was your day?” — and listen.",
+"У дворі: якщо когось дражнять, не смійся з усіма — стань поруч або поклич дорослого.|In the yard: if someone is being teased, do not laugh along — stand beside them or call a grown-up."],
+end: "Твоя доброта може зробити чийсь день щасливим!|Your kindness can make someone’s day happy!",
+q: [
+{k: "mc", q: "Що зробила Софійка на перерві?|What did Sofiika do at break time?", o: ["Запросила Мілану гратися|Invited Milana to play", "Пройшла повз|Walked past", "Посміялася з новенької|Laughed at the new girl"], a: 0, h: "Вона підійшла до вікна й сказала «Привіт!».|She went up to the window and said “Hi!”", e: "Софійка помітила Мілану. З цього починається любов.|Sofiika noticed Milana. That is where love begins."},
+{k: "tf", q: "Любов — як пиріг: якщо дати одному, іншим не вистачить.|Love is like a pie: if you give some to one person, there is not enough for others.", a: 0, h: "Що Софійка сказала Каті?|What did Sofiika tell Katia?", e: "Любові вистачить на всіх!|There is enough love for everyone!"},
+{k: "fill", q: "«Любіть одне одного, як Я ___ вас».|“Love one another as I have ___ you.”", o: ["перевірив|tested", "полюбив|loved", "навчив|taught"], a: 1, h: "Ісус перший зробив це для нас.|Jesus did this for us first.", e: "«Як Я полюбив вас» (Івана 13:34).|“As I have loved you” (John 13:34)."},
+{k: "pair", q: "З’єднай справу любові з прикладом.|Match the act of love with an example.", p: [["Помітити|To notice", "підійти до того, хто сам|go up to someone who is alone"], ["Поділитися|To share", "дати половину булочки|give half of your bun"], ["Вислухати|To listen", "запитати: «Як ти?»|ask, “How are you?”"]], h: "Згадай, що робила Софійка протягом дня.|Remember what Sofiika did during the day.", e: "Чудово! Любов — це справи.|Wonderful! Love is actions."},
+{k: "mc", q: "Чому нам легко вчитися любити?|Why is it easy for us to learn to love?", o: ["Бо нас самих полюбили першими|Because we were loved first", "Бо за це дають оцінки|Because we get marks for it", "Бо так наказали|Because we were ordered to"], a: 0, h: "Так сказала мама, закривши Біблію.|That is what Mum said over the Bible.", e: "Ми любимо, бо Бог перший полюбив нас.|We love because God loved us first."}]
+});
+LS.push({
+em: ["🎉", "🌈", "🎂"], game: "journey",
+t: "Велике свято Божої любові|The Great Celebration of God’s Love",
+ref: "Римлян 8:38–39; 1 Івана 4:16|Romans 8:38–39; 1 John 4:16",
+su: [
+"У саду біля Школи Божої любові готувалося велике свято. Сонечко Радість розвішувало на деревах світлі гірлянди. Зайчик Добрик носив морквяні пиріжки. Пташка Надійка повторювала святкову пісеньку. А Ведмедик Мирко ставив довгий-предовгий стіл — щоб місця вистачило всім.",
+"Першими прийшли діти. Марко привів тата. Оля принесла фарби. Тимко — малюнок із великим серцем. Даринка — свого смішного кота. Максим і Данило приїхали на одному самокаті. Яринка — на велосипеді. Назар приніс годівничку, а Софійка прийшла разом із Міланою та Катею.",
+"«Нехай кожен розкаже, що він відкрив!» — защебетала Надійка.",
+"«Бог — люблячий Тато. Він шукає нас і радіє нам», — сказав Марко. «Благодать — це подарунок, його не купують», — додала Оля. «Любов сильніша за страх», — мовив Тимко. «Я цінна такою, як я є», — усміхнулася Даринка.",
+"«Пробачити — це покласти важкий камінь на землю», — сказали разом Максим і Данило. «Віра — це довіра», — озвалася Яринка. «Свобода — це крила, а любов показує, куди летіти», — промовив Назар. «А любов — це справи», — закінчила Софійка.",
+"Ведмедик Мирко тихенько запитав: «А якщо хтось усе це забуде? Або знову помилиться?» Сонечко засяяло ще яскравіше: «Тоді в головному нічого не зміниться. У Біблії написано: ніщо не може відлучити нас від Божої любові. Ні висота, ні глибина, ні сьогоднішній день, ні завтрашній».",
+"«Пам’ятаєте батька з історії Ісуса? — додала Надійка. — Його двері завжди відчинені, і він сам влаштовує свято. Наше свято — маленька картинка тієї великої радості. Тут є місце для кожного. Зайвих немає».",
+"Заграла музика, і всі стали в хоровод. Над садом засяяла веселка. Зайчик Добрик підстрибнув: «А школа ж не закінчується! Щодня є новий урок любові: удома, у школі й у дворі!»",
+"Надійка заспівала: «Бог є любов, і хто живе в любові, той живе в Бозі, а Бог — у ньому».",
+"Ведмедик Мирко розрізав великий медовий пиріг, і кожен отримав по шматочку. Найдивніше, що пиріг ніяк не закінчувався: скільки не роздавали, його ставало ще більше. «Це як любов», — прошепотіла Софійка.",
+"І ти, любий друже, теж був на цьому святі. Ти пройшов увесь шлях. Запам’ятай найголовніше: тебе люблять. Сьогодні, завтра й завжди."],
+se: [
+"In the garden near the School of God’s Love a great celebration was being prepared. Sunny Joy was hanging bright garlands on the trees. Bunny Dobryk was carrying carrot pies. Birdie Nadiyka was practising a festive song. And Teddy Myrko was setting a long, long table — so that there would be room for everyone.",
+"The children came first. Marko brought his dad. Olia brought her paints. Tymko brought a drawing with a big heart. Darynka brought her funny cat. Maksym and Danylo arrived on one scooter. Yarynka came on her bicycle. Nazar brought a bird feeder, and Sofiika came together with Milana and Katia.",
+"“Let everyone tell what they have discovered!” chirped Nadiyka.",
+"“God is a loving Dad. He looks for us and is glad about us,” said Marko. “Grace is a gift; it is not bought,” added Olia. “Love is stronger than fear,” said Tymko. “I am precious just as I am,” smiled Darynka.",
+"“To forgive is to put a heavy stone down,” Maksym and Danylo said together. “Faith is trust,” said Yarynka. “Freedom is wings, and love shows where to fly,” said Nazar. “And love is actions,” Sofiika finished.",
+"Teddy Myrko asked quietly, “What if someone forgets all this? Or makes a mistake again?” Sunny shone even brighter: “Then nothing changes in what matters most. The Bible says: nothing can separate us from God’s love. Neither height nor depth, neither today nor tomorrow.”",
+"“Remember the father from Jesus’ story?” Nadiyka added. “His door is always open, and he himself prepares the feast. Our celebration is a little picture of that great joy. There is a place here for everyone. Nobody is left out.”",
+"Music began to play, and everyone joined a circle dance. A rainbow shone above the garden. Bunny Dobryk jumped up: “But the school does not end! Every day there is a new lesson of love: at home, at school and in the yard!”",
+"Nadiyka sang: “God is love, and whoever lives in love lives in God, and God lives in them.”",
+"Teddy Myrko cut a big honey pie, and everyone got a piece. The strangest thing was that the pie never ran out: the more they shared, the more there was. “It is like love,” Sofiika whispered.",
+"And you, dear friend, were at this celebration too. You have walked the whole way. Remember the most important thing: you are loved. Today, tomorrow and always."],
+v: "Своїми словами: ніщо у всьому світі не може відлучити нас від Божої любові (Римлян 8:38–39). «Бог є любов, і хто перебуває в любові, той перебуває в Бозі» (1 Івана 4:16).|In simple words: nothing in the whole world can separate us from God’s love (Romans 8:38–39). “God is love, and whoever lives in love lives in God” (1 John 4:16).",
+idea: "Божа любов — назавжди. Ніщо не може її забрати, і місце на святі є для кожного.|God’s love is forever. Nothing can take it away, and there is a place at the celebration for everyone.",
+ex: ["Перед сном згадай три речі, за які ти вдячний сьогодні.|Before sleep, think of three things you are thankful for today.",
+"Розкажи комусь із рідних свою улюблену історію зі школи любові.|Tell someone in your family your favourite story from the school of love.",
+"Завтра зроби одну добру справу — просто так, із радості.|Tomorrow do one kind thing — just because, out of joy."],
+end: "Вітаємо! Ти пройшов усю Школу Божої любові. Тебе люблять — завжди!|Congratulations! You have completed the whole School of God’s Love. You are loved — always!",
+q: [
+{k: "mc", q: "Що може відлучити нас від Божої любові?|What can separate us from God’s love?", o: ["Погана оцінка|A bad mark", "Помилка|A mistake", "Ніщо|Nothing"], a: 2, h: "Ні висота, ні глибина, ні сьогодні, ні завтра…|Neither height nor depth, neither today nor tomorrow…", e: "Ніщо! Божа любов — назавжди (Римлян 8:38–39).|Nothing! God’s love is forever (Romans 8:38–39)."},
+{k: "tf", q: "На святі місце знайшлося для кожного.|There was a place for everyone at the celebration.", a: 1, h: "Навіщо Мирко ставив довгий-предовгий стіл?|Why did Myrko set a long, long table?", e: "Так! У Божій любові зайвих немає.|Yes! In God’s love nobody is left out."},
+{k: "fill", q: "«Бог є любов, і хто живе в любові, той живе в ___».|“God is love, and whoever lives in love lives in ___.”", o: ["Бозі|God", "замку|a castle", "хмарах|the clouds"], a: 0, h: "Про це співала Надійка.|Nadiyka sang about it.", e: "«Той перебуває в Бозі» (1 Івана 4:16).|“Lives in God” (1 John 4:16)."},
+{k: "order", q: "Розстав події свята.|Put the events of the celebration in order.", s: ["Помічники готували сад|The helpers prepared the garden", "Прийшли діти|The children came", "Кожен розповів про своє відкриття|Everyone shared their discovery", "Усі стали в хоровод під веселкою|Everyone danced in a circle under the rainbow"], h: "Спочатку готують, наприкінці танцюють.|First they prepare, at the end they dance.", e: "Яке гарне свято! І ти теж на ньому.|What a lovely celebration! And you are there too."},
+{k: "mc", q: "Де триває школа любові щодня?|Where does the school of love go on every day?", o: ["Ніде, вона закінчилася|Nowhere, it is over", "Удома, у школі й у дворі|At home, at school and in the yard", "Тільки в книжках|Only in books"], a: 1, h: "Про це підстрибуючи сказав Добрик.|Dobryk said it, jumping up.", e: "Щодня є новий урок любові!|Every day there is a new lesson of love!"}]
+});
+
+var JOURNEY = [
+{n: "Вифлеєм|Bethlehem", em: "⭐", x: 66, y: 86, s: "У маленькому Вифлеємі народився Ісус. Ангели сповістили пастухам велику радість для всіх людей, і пастухи поспішили привітати Немовля, яке лежало в яслах. Бог прийшов до нас не грізним царем, а маленькою дитиною — щоб ніхто Його не боявся. (Луки 2:8–16)|In little Bethlehem Jesus was born. Angels told shepherds of great joy for all people, and the shepherds hurried to greet the Baby lying in a manger. God came to us not as a fearsome king but as a little child — so that nobody would be afraid of Him. (Luke 2:8–16)", q: "Ким Бог прийшов до нас у Вифлеємі?|How did God come to us in Bethlehem?", o: ["Грізним царем|As a fearsome king", "Маленькою дитиною|As a little child", "Сильним вітром|As a strong wind"], a: 1},
+{n: "Назарет|Nazareth", em: "🔨", x: 30, y: 31, s: "У Назареті Ісус ріс у родині Марії та Йосипа. Він учився, допомагав у теслярській майстерні, грався з друзями. Біблія каже, що Він зростав у мудрості й у любові в Бога та людей. Бог знає, як це — бути дитиною! (Луки 2:51–52)|In Nazareth Jesus grew up in the family of Mary and Joseph. He studied, helped in the carpenter’s workshop and played with friends. The Bible says He grew in wisdom and in favour with God and people. God knows what it is like to be a child! (Luke 2:51–52)", q: "Що Ісус робив у Назареті?|What did Jesus do in Nazareth?", o: ["Ріс, учився й допомагав|Grew, learned and helped", "Жив у палаці|Lived in a palace", "Ховався від людей|Hid from people"], a: 0},
+{n: "Галілейське море|Sea of Galilee", em: "⛵", x: 64, y: 11, s: "Одного вечора Ісус з учнями плив човном. Знялася буря, хвилі заливали човен, і учні злякалися. Ісус підвівся й сказав вітрові та хвилям: «Тихо!» І настала велика тиша. З Ісусом у човні можна бути спокійним. (Марка 4:35–41)|One evening Jesus was sailing in a boat with His disciples. A storm arose, waves were filling the boat, and the disciples were frightened. Jesus stood up and said to the wind and the waves, “Be still!” And there was a great calm. With Jesus in the boat you can be at peace. (Mark 4:35–41)", q: "Що сталося після слів Ісуса?|What happened after Jesus spoke?", o: ["Буря посилилася|The storm grew stronger", "Човен поплив назад|The boat went back", "Настала велика тиша|There was a great calm"], a: 2},
+{n: "Єрихон|Jericho", em: "🌳", x: 76, y: 50, s: "У Єрихоні жив Закхей. Люди його не любили, а він дуже хотів побачити Ісуса. Закхей був малий на зріст, тож виліз на дерево. Ісус зупинився, глянув угору й сказав: «Закхею, злізай! Сьогодні Я буду гостем у твоєму домі». Закхей так зрадів, що вирішив роздати багато свого добра бідним. (Луки 19:1–10)|In Jericho lived Zacchaeus. People did not like him, but he really wanted to see Jesus. Zacchaeus was short, so he climbed a tree. Jesus stopped, looked up and said, “Zacchaeus, come down! Today I will be a guest in your house.” Zacchaeus was so glad that he decided to give much of what he had to the poor. (Luke 19:1–10)", q: "Що Ісус сказав Закхеєві?|What did Jesus say to Zacchaeus?", o: ["«Сьогодні Я буду в тебе в гостях»|“Today I will be your guest”", "«Сиди на дереві»|“Stay in the tree”", "«Я тебе не знаю»|“I do not know you”"], a: 0},
+{n: "Єрусалим|Jerusalem", em: "🌅", x: 34, y: 67, s: "У Єрусалимі сталося найбільше диво. Рано-вранці в неділю жінки прийшли до гробниці Ісуса й побачили, що вона порожня. Ангел сказав: «Його тут немає — Він воскрес!» Ісус живий! Життя й любов перемогли назавжди. (Луки 24:1–6)|In Jerusalem the greatest wonder happened. Early on Sunday morning women came to the tomb of Jesus and saw that it was empty. An angel said, “He is not here — He has risen!” Jesus is alive! Life and love have won forever. (Luke 24:1–6)", q: "Що сказав ангел жінкам?|What did the angel tell the women?", o: ["«Приходьте завтра»|“Come back tomorrow”", "«Він воскрес!»|“He has risen!”", "«Ідіть геть»|“Go away”"], a: 1}
+];
+
+var FATHER = [
+["Отець любить|The Father loves", "Бог є любов. Він любить тебе не «за щось», а просто тому, що ти Його дитина.|God is love. He loves you not “for something” but simply because you are His child.", "1 Івана 4:8|1 John 4:8", "❤️"],
+["Отець добрий|The Father is good", "Кожен добрий дар приходить згори, від Отця світла. У Ньому немає темряви.|Every good gift comes from above, from the Father of lights. There is no darkness in Him.", "Якова 1:17; 1 Івана 1:5|James 1:17; 1 John 1:5", "☀️"],
+["Отець знає тебе|The Father knows you", "Він знає твоє ім’я, твої мрії і навіть скільки волосинок у тебе на голові.|He knows your name, your dreams and even how many hairs are on your head.", "Луки 12:7|Luke 12:7", "🐦"],
+["Отець чекає|The Father waits", "Як батько з притчі, Він виглядає тебе й перший біжить назустріч.|Like the father in the parable, He looks out for you and is the first to run to meet you.", "Луки 15:20|Luke 15:20", "🏡"],
+["Отець дбає|The Father cares", "Він годує пташок і вбирає квіти. А ти для Нього ще дорожчий.|He feeds the birds and dresses the flowers. And you are even more precious to Him.", "Матвія 6:26–30|Matthew 6:26–30", "🌷"],
+["Отець дарує|The Father gives", "Його любов — це подарунок, благодать. Її не треба заробляти.|His love is a gift, grace. You do not have to earn it.", "Ефесян 2:8|Ephesians 2:8", "🎁"],
+["Отець поруч|The Father is near", "Коли тобі сумно чи страшно, Він поруч. Йому можна розповісти все.|When you are sad or scared, He is near. You can tell Him everything.", "Псалом 23:4|Psalm 23:4", "🤗"],
+["Отець дає життя|The Father gives life", "Знати Отця й Ісуса — це вічне життя. Ця дружба ніколи не закінчиться.|Knowing the Father and Jesus is eternal life. This friendship will never end.", "Івана 17:3|John 17:3", "🌈"]
+];
+
+var RAIN = [
+["#ff6b6b", "Любов|Love", "Біблія каже: Бог є …|The Bible says: God is …"],
+["#ff9f43", "Радість|Joy", "Вона наповнює серце, коли нам добре разом.|It fills the heart when we are happy together."],
+["#f7c531", "Світло|Light", "Ісус сказав: «Я — … для світу».|Jesus said, “I am the … of the world.”"],
+["#3fbf7f", "Життя|Life", "Ісус дарує його — справжнє й вічне.|Jesus gives it — real and everlasting."],
+["#38b6e8", "Мир|Peace", "Спокій у серці, коли ми миримося, а не сваримося.|Calm in the heart when we make up instead of quarrelling."],
+["#5c7cfa", "Довіра|Trust", "Віра — це … Богові.|Faith is … in God."],
+["#a66bf0", "Благодать|Grace", "Подарунок Божої любові, який не треба заробляти.|The gift of God’s love that does not have to be earned."]
+];
+
+var MEMO = [["❤️", "Любов|Love"], ["🕊️", "Мир|Peace"], ["🎁", "Благодать|Grace"], ["🌈", "Обітниця|Promise"], ["🐑", "Овечка|Lamb"], ["🍞", "Хліб|Bread"], ["💡", "Світло|Light"], ["⭐", "Зірка|Star"]];
+
+var KIND = ["Обійми сьогодні когось із рідних.|Hug someone in your family today.", "Скажи комусь: «Дякую, що ти є!»|Tell someone, “Thank you for being you!”", "Допоможи накрити на стіл.|Help set the table.", "Поділися смаколиком із другом.|Share a treat with a friend.", "Скажи добре слово тому, хто сумує.|Say a kind word to someone who is sad.", "Прибери свої іграшки без нагадування.|Tidy up your toys without being reminded."];
+
+/* School of God's Love — Leoni Studio. Single-file app, no external requests. */
+var KEY = "sgl_v1";
+function defState() {
+  var red = false;
+  try { red = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  return {lang: "uk", music: true, sfx: true, vol: 0.6, anim: !red, done: {}, quiz: {}, stars: 0, hearts: 0, flowers: 0, bm: [], last: null, fs: 19, rec: {}, name: "", date: "", tune: 0};
+}
+function loadST() {
+  var d = defState(), k;
+  try {
+    var raw = window.localStorage.getItem(KEY);
+    if (raw) { var o = JSON.parse(raw); for (k in o) { if (Object.prototype.hasOwnProperty.call(d, k)) d[k] = o[k]; } }
+  } catch (e) {}
+  return d;
+}
+var ST = loadST();
+var LANG = ST.lang === "en" ? "en" : "uk";
+var V = {n: "home"};
+function save() { try { window.localStorage.setItem(KEY, JSON.stringify(ST)); } catch (e) {} }
+function tr(s) { var p = String(s).split("|"); return (LANG === "en" && p.length > 1) ? p[1] : p[0]; }
+function el(id) { return document.getElementById(id); }
+function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+function shuffle(a) { var b = a.slice(), i, j, t; for (i = b.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1)); t = b[i]; b[i] = b[j]; b[j] = t; } return b; }
+function range(n) { var a = [], i; for (i = 0; i < n; i++) a.push(i); return a; }
+function doneCount() { var c = 0, i; for (i = 0; i < LS.length; i++) if (ST.done[i]) c++; return c; }
+
+function hook(node, fn, fast) {
+  var fired = false;
+  if (fast) {
+    node.addEventListener("touchstart", function (e) { e.preventDefault(); fired = true; fn(e); setTimeout(function () { fired = false; }, 450); }, {passive: false});
+  }
+  node.addEventListener("click", function (e) { if (fired) return; fn(e); });
+}
+function bind(root) {
+  var ns = root.querySelectorAll("[data-a]"), i;
+  for (i = 0; i < ns.length; i++) {
+    (function (node) {
+      var p = node.getAttribute("data-a").split(":");
+      hook(node, function (e) { if (ACT[p[0]]) ACT[p[0]](p[1], p[2], node, e); }, node.getAttribute("data-f") === "1");
+    })(ns[i]);
+  }
+}
+function B(label, act, cls) { return '<button class="btn ' + (cls || "") + '" data-a="' + act + '">' + label + "</button>"; }
+
+/* ---------- characters ---------- */
+function sunInner() {
+  var s = '<g class="spin">', a, i;
+  for (i = 0; i < 10; i++) { a = i * Math.PI / 5; s += '<line x1="' + (50 + 33 * Math.cos(a)).toFixed(1) + '" y1="' + (50 + 33 * Math.sin(a)).toFixed(1) + '" x2="' + (50 + 45 * Math.cos(a)).toFixed(1) + '" y2="' + (50 + 45 * Math.sin(a)).toFixed(1) + '" stroke="#ffb703" stroke-width="6" stroke-linecap="round"/>'; }
+  return s + '</g><circle cx="50" cy="50" r="27" fill="#ffd23f"/><circle cx="41" cy="46" r="3.5" fill="#5a3d1e"/><circle cx="59" cy="46" r="3.5" fill="#5a3d1e"/><path d="M39 56 Q50 67 61 56" stroke="#5a3d1e" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="34" cy="55" r="4" fill="#ff9aa2" opacity=".75"/><circle cx="66" cy="55" r="4" fill="#ff9aa2" opacity=".75"/>';
+}
+var SV = '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">';
+var CH = {
+  sun: {n: "Сонечко Радість|Sunny Joy", s: SV + sunInner() + "</svg>"},
+  bunny: {n: "Зайчик Добрик|Bunny Dobryk", s: SV + '<ellipse cx="37" cy="24" rx="9" ry="21" fill="#fff" stroke="#e4d6cf" stroke-width="2"/><ellipse cx="63" cy="24" rx="9" ry="21" fill="#fff" stroke="#e4d6cf" stroke-width="2"/><ellipse cx="37" cy="26" rx="4" ry="14" fill="#ffc2cf"/><ellipse cx="63" cy="26" rx="4" ry="14" fill="#ffc2cf"/><circle cx="50" cy="62" r="29" fill="#fff" stroke="#e4d6cf" stroke-width="2"/><circle cx="40" cy="57" r="3.6" fill="#4a3b33"/><circle cx="60" cy="57" r="3.6" fill="#4a3b33"/><ellipse cx="50" cy="66" rx="4" ry="3" fill="#ff8fa3"/><path d="M43 72 Q50 79 57 72" stroke="#4a3b33" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="47" y="74" width="6" height="6" rx="1.5" fill="#fff" stroke="#d9cbc4"/><circle cx="33" cy="68" r="4.5" fill="#ffc2cf" opacity=".7"/><circle cx="67" cy="68" r="4.5" fill="#ffc2cf" opacity=".7"/></svg>'},
+  bird: {n: "Пташка Надійка|Birdie Nadiyka", s: SV + '<path d="M44 26 Q50 10 56 26" fill="#39aee0"/><circle cx="50" cy="55" r="29" fill="#5cc8f0"/><ellipse cx="50" cy="66" rx="17" ry="15" fill="#eafaff"/><ellipse cx="24" cy="60" rx="9" ry="15" fill="#39aee0"/><ellipse cx="76" cy="60" rx="9" ry="15" fill="#39aee0"/><circle cx="40" cy="47" r="4" fill="#2d3a55"/><circle cx="60" cy="47" r="4" fill="#2d3a55"/><circle cx="41.3" cy="45.6" r="1.3" fill="#fff"/><circle cx="61.3" cy="45.6" r="1.3" fill="#fff"/><polygon points="44,54 56,54 50,63" fill="#ff9f43"/><path d="M42 85 v8 M58 85 v8" stroke="#ff9f43" stroke-width="3" stroke-linecap="round"/></svg>'},
+  bear: {n: "Ведмедик Мирко|Teddy Myrko", s: SV + '<circle cx="27" cy="30" r="12" fill="#b9794a"/><circle cx="73" cy="30" r="12" fill="#b9794a"/><circle cx="27" cy="30" r="6" fill="#f3d9b8"/><circle cx="73" cy="30" r="6" fill="#f3d9b8"/><circle cx="50" cy="56" r="32" fill="#c98d5b"/><ellipse cx="50" cy="66" rx="16" ry="13" fill="#f3d9b8"/><circle cx="38" cy="50" r="3.8" fill="#3d2a1c"/><circle cx="62" cy="50" r="3.8" fill="#3d2a1c"/><ellipse cx="50" cy="60" rx="5" ry="3.6" fill="#3d2a1c"/><path d="M43 68 Q50 75 57 68" stroke="#3d2a1c" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="30" cy="62" r="4.5" fill="#ff9aa2" opacity=".6"/><circle cx="70" cy="62" r="4.5" fill="#ff9aa2" opacity=".6"/></svg>'}
+};
+function say(who, text) { return '<div class="say"><div class="ch">' + CH[who].s + '</div><div class="bub"><b>' + tr(CH[who].n) + "</b>" + text + "</div></div>"; }
+function cheer() { return '<div class="cheer"><div class="ch">' + CH.sun.s + '</div><div class="ch">' + CH.bunny.s + '</div><div class="ch">' + CH.bird.s + '</div><div class="ch">' + CH.bear.s + "</div></div>"; }
+function sceneSVG() {
+  var s = '<svg class="scene" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd3ff"/><stop offset="1" stop-color="#e8f8ff"/></linearGradient></defs><rect width="400" height="240" fill="url(#sk)"/>';
+  var c = ["#ff6b6b", "#ff9f43", "#f7c531", "#3fbf7f", "#38b6e8", "#5c7cfa", "#a66bf0"], i;
+  for (i = 0; i < 7; i++) s += '<circle cx="215" cy="215" r="' + (168 - i * 7) + '" fill="none" stroke="' + c[i] + '" stroke-width="7" opacity=".85"/>';
+  s += '<g class="drift"><circle cx="0" cy="38" r="14" fill="#fff"/><circle cx="18" cy="32" r="18" fill="#fff"/><circle cx="38" cy="40" r="13" fill="#fff"/></g>';
+  s += '<g class="drift" style="animation-duration:58s;animation-delay:-25s"><circle cx="0" cy="78" r="10" fill="#fff"/><circle cx="14" cy="73" r="14" fill="#fff"/><circle cx="30" cy="80" r="10" fill="#fff"/></g>';
+  s += '<g transform="translate(10,4) scale(.86)">' + sunInner() + "</g>";
+  s += '<ellipse cx="90" cy="262" rx="230" ry="88" fill="#a6e58a"/><ellipse cx="300" cy="270" rx="250" ry="92" fill="#8ed973"/>';
+  s += '<rect x="88" y="150" width="9" height="34" rx="3" fill="#a06d42"/><circle cx="92" cy="138" r="24" fill="#5fc56a"/><circle cx="78" cy="148" r="14" fill="#6fd27a"/>';
+  s += '<rect x="318" y="146" width="9" height="36" rx="3" fill="#a06d42"/><circle cx="322" cy="132" r="26" fill="#5fc56a"/><circle cx="338" cy="146" r="14" fill="#6fd27a"/>';
+  s += '<rect x="150" y="124" width="100" height="70" rx="6" fill="#fff3d6" stroke="#f0cf8a" stroke-width="2"/><polygon points="138,128 200,84 262,128" fill="#ff8a7a"/><rect x="189" y="154" width="22" height="40" rx="10" fill="#b9794a"/><rect x="160" y="138" width="20" height="20" rx="4" fill="#bfe6ff" stroke="#fff" stroke-width="2"/><rect x="220" y="138" width="20" height="20" rx="4" fill="#bfe6ff" stroke="#fff" stroke-width="2"/><text x="200" y="121" font-size="17" text-anchor="middle">❤️</text>';
+  var fl = [["🌷", 40, 218], ["🌼", 70, 232], ["🌻", 128, 226], ["🌷", 272, 228], ["🌼", 300, 214], ["🌻", 362, 226], ["🌸", 16, 236], ["🌸", 384, 208]];
+  for (i = 0; i < fl.length; i++) s += '<text class="sway" style="animation-delay:-' + (i * 0.4) + 's" x="' + fl[i][1] + '" y="' + fl[i][2] + '" font-size="20" text-anchor="middle">' + fl[i][0] + "</text>";
+  s += '<text class="fly" x="112" y="100" font-size="16">🦋</text><text class="fly" style="animation-delay:-3s;animation-duration:9s" x="262" y="72" font-size="14">🦋</text>';
+  s += '<text class="bobs" x="296" y="56" font-size="15">🐦</text><text class="bobs" style="animation-delay:-1s" x="330" y="116" font-size="14">🐦</text>';
+  s += '<text class="bobs" x="118" y="206" font-size="26" text-anchor="middle">👧</text><text class="bobs" style="animation-delay:-.7s" x="282" y="204" font-size="26" text-anchor="middle">🧒</text><text class="bobs" style="animation-delay:-1.2s" x="166" y="216" font-size="20" text-anchor="middle">🐰</text><text class="bobs" style="animation-delay:-.3s" x="238" y="216" font-size="20" text-anchor="middle">🐻</text>';
+  return s + "</svg>";
+}
+function illus(i) {
+  var h = (i * 31 + 190) % 360, L = LS[i];
+  return '<div class="illus" style="background:linear-gradient(180deg,hsl(' + h + ',85%,84%),hsl(' + ((h + 40) % 360) + ',90%,93%))"><i class="isun"></i><i class="ihill"></i><span class="e1">' + L.em[0] + '</span><span class="e2">' + L.em[1] + '</span><span class="e3">' + L.em[2] + "</span></div>";
+}
+
+/* ---------- audio (Web Audio, procedural) ---------- */
+var AC = null, MG = null, MUS = null, SFXG = null, MT = null, mNext = 0, mStep = 0, mPat = null;
+var SCALE = [261.63, 293.66, 329.63, 392, 440, 523.25, 587.33, 659.25, 783.99, 880];
+var TUNES = [{n: "Ранок|Morning", seed: 7, bpm: 92}, {n: "Сад|Garden", seed: 23, bpm: 74}, {n: "Свято|Party", seed: 41, bpm: 118}];
+function audioInit() {
+  if (AC) return;
+  var C = window.AudioContext || window.webkitAudioContext;
+  if (!C) return;
+  try {
+    AC = new C();
+    MG = AC.createGain(); MG.gain.value = ST.vol; MG.connect(AC.destination);
+    MUS = AC.createGain(); MUS.gain.value = 0.45; MUS.connect(MG);
+    SFXG = AC.createGain(); SFXG.gain.value = 0.9; SFXG.connect(MG);
+  } catch (e) { AC = null; }
+}
+function tone(f, t, d, type, v, dest, att) {
+  var o = AC.createOscillator(), g = AC.createGain();
+  o.type = type; o.frequency.value = f;
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.linearRampToValueAtTime(v, t + (att || 0.012));
+  g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+  o.connect(g); g.connect(dest); o.start(t); o.stop(t + d + 0.05);
+}
+function bell(f, t, v) { tone(f, t, 0.6, "sine", v, SFXG); tone(f * 2, t, 0.3, "triangle", v * 0.3, SFXG); }
+function sfx(n) {
+  if (!AC || !ST.sfx || AC.state !== "running") return;
+  var t = AC.currentTime + 0.01, i;
+  if (n === "ok") { bell(880, t, 0.25); bell(1174.7, t + 0.09, 0.25); bell(1568, t + 0.18, 0.25); }
+  else if (n === "no") { tone(349.2, t, 0.25, "triangle", 0.16, SFXG); tone(293.7, t + 0.14, 0.35, "triangle", 0.16, SFXG); }
+  else if (n === "tap") { tone(660, t, 0.08, "sine", 0.12, SFXG); }
+  else if (n === "pick") { bell(987.8, t, 0.2); }
+  else if (n === "win") { var w = [523.25, 659.25, 783.99, 1046.5, 1318.5]; for (i = 0; i < w.length; i++) bell(w[i], t + i * 0.11, 0.24); }
+}
+function rng(seed) { var s = seed; return function () { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; }; }
+function buildTune() {
+  var T = TUNES[ST.tune] || TUNES[0], r = rng(T.seed), mel = [], i, cur = 4, roots = [130.81, 110, 174.61, 196], ch = [];
+  for (i = 0; i < 32; i++) {
+    if (r() < 0.28 && i % 4 !== 0) { mel.push(-1); continue; }
+    cur += Math.floor(r() * 5) - 2; if (cur < 0) cur = 1; if (cur > 9) cur = 8;
+    mel.push(cur);
+  }
+  mel[31] = -1; mel[28] = 5; mel[0] = 4;
+  for (i = 0; i < 4; i++) ch.push(roots[Math.floor(r() * 4)]);
+  ch[0] = 130.81; ch[3] = 196;
+  mPat = {mel: mel, ch: ch, step: 60 / T.bpm / 2, r: r};
+}
+function playStep(i, t) {
+  var m = mPat.mel[i], d = mPat.step;
+  if (m >= 0) { tone(SCALE[m], t, 0.55, "sine", 0.2, MUS); tone(SCALE[m] * 2, t, 0.22, "triangle", 0.045, MUS); }
+  if (i % 8 === 0) { var c = mPat.ch[i / 8]; tone(c, t, d * 8, "triangle", 0.09, MUS, 0.05); tone(c * 1.5, t, d * 8, "sine", 0.06, MUS, 0.05); tone(c * 2, t + d * 4, d * 4, "sine", 0.05, MUS, 0.05); }
+  if (i % 16 === 8) { tone(SCALE[(mPat.mel[i] >= 0 ? mPat.mel[i] : 4)] * 2, t, d * 6, "sine", 0.05, MUS, 0.35); }
+  if (Math.random() < 0.05) { var o = AC.createOscillator(), g = AC.createGain(); o.type = "sine"; o.frequency.setValueAtTime(2300, t); o.frequency.linearRampToValueAtTime(3300, t + 0.07); o.frequency.linearRampToValueAtTime(2600, t + 0.15); g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.035, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.17); o.connect(g); g.connect(MUS); o.start(t); o.stop(t + 0.2); }
+}
+function sched() {
+  if (!AC || AC.state !== "running") return;
+  if (mNext < AC.currentTime) mNext = AC.currentTime + 0.05;
+  while (mNext < AC.currentTime + 0.45) { playStep(mStep, mNext); mNext += mPat.step; mStep = (mStep + 1) % 32; }
+}
+function startMusic() { if (!AC || MT || !ST.music) return; buildTune(); mNext = AC.currentTime + 0.1; mStep = 0; MT = setInterval(sched, 120); }
+function stopMusic() { if (MT) { clearInterval(MT); MT = null; } }
+function unlock() {
+  audioInit();
+  if (AC && AC.state === "suspended" && !document.hidden) { try { AC.resume(); } catch (e) {} }
+  if (ST.music) startMusic();
+  document.removeEventListener("pointerdown", unlock, true);
+  document.removeEventListener("touchstart", unlock, true);
+  document.removeEventListener("keydown", unlock, true);
+}
+
+/* ---------- effects ---------- */
+var fxT = null, toastT = null;
+function confetti() {
+  if (!ST.anim) return;
+  var c = ["#ff6b6b", "#ffc93c", "#3fbf7f", "#38b6e8", "#a66bf0", "#ff9f43"], s = "", i;
+  for (i = 0; i < 44; i++) s += '<i style="left:' + (Math.random() * 100).toFixed(1) + "%;background:" + c[i % 6] + ";animation-delay:" + (Math.random() * 0.9).toFixed(2) + "s;animation-duration:" + (2.2 + Math.random() * 1.6).toFixed(2) + 's"></i>';
+  el("fx").innerHTML = s;
+  if (fxT) clearTimeout(fxT);
+  fxT = setTimeout(function () { el("fx").innerHTML = ""; fxT = null; }, 5000);
+}
+function toast(msg) {
+  var t = el("toast"); t.textContent = msg; t.className = "on";
+  if (toastT) clearTimeout(toastT);
+  toastT = setTimeout(function () { t.className = ""; toastT = null; }, 4200);
+}
+function modal(html) { var m = el("modal"); m.innerHTML = '<div class="card">' + html + "</div>"; m.className = "on"; bind(m); }
+function closeModal() { var m = el("modal"); m.className = ""; m.innerHTML = ""; }
+
+/* ---------- router ---------- */
+var VIEWS = {}, AFTER = {}, ACT = {};
+var TITLES = {home: "Школа Божої любові|School of God’s Love", school: "Моя біблійна школа|My Bible School", lesson: "Урок|Lesson", book: "Книга Божої любові|The Book of God’s Love", reader: "Книга Божої любові|The Book of God’s Love", quizmenu: "Вікторина|Quiz", quiz: "Вікторина|Quiz", games: "Біблійні пригоди|Bible Adventures", father: "Дізнатися про Отця|About the Father", music: "Музика та радість|Music and Joy", awards: "Мої нагороди|My Awards", diploma: "Диплом|Diploma", parents: "Для батьків|For Parents", settings: "Налаштування|Settings"};
+var PARENT = {lesson: "school", reader: "book", quiz: "quizmenu", diploma: "awards"};
+var NAVS = [["home", "🏠", "Головна|Home"], ["school", "🎓", "Школа|School"], ["book", "📖", "Книга|Book"], ["games", "🌈", "Ігри|Games"], ["awards", "🏆", "Нагороди|Awards"]];
+function scr(name) {
+  var s = el("s-" + name);
+  if (!s) { s = document.createElement("div"); s.className = "screen"; s.id = "s-" + name; el("app").appendChild(s); }
+  return s;
+}
+function show(name) { var all = el("app").children, i; for (i = 0; i < all.length; i++) all[i].className = "screen" + (all[i].id === "s-" + name ? " on" : ""); }
+function leave() {
+  if (V.stop) { V.stop(); V.stop = null; }
+  if (V.tm) { clearTimeout(V.tm); V.tm = null; }
+  stopSpeak(); closeModal();
+}
+function go(name, p) {
+  var old = V.n;
+  leave();
+  if (old !== name && el("s-" + old)) el("s-" + old).innerHTML = "";
+  V = p || {}; V.n = name;
+  draw();
+  window.scrollTo(0, 0);
+}
+function draw() {
+  if (V.stop) { V.stop(); V.stop = null; }
+  var s = scr(V.n);
+  s.innerHTML = VIEWS[V.n]();
+  show(V.n);
+  bind(s);
+  if (AFTER[V.n]) AFTER[V.n](s);
+  chrome();
+}
+function chrome() {
+  var t = TITLES[V.n], i, g;
+  if (V.n.indexOf("g_") === 0) { g = gameInfo(V.n.slice(2)); t = g[2]; }
+  if (V.n === "lesson") t = tr("Урок|Lesson") + " " + (V.i + 1);
+  el("ttl").textContent = tr(t);
+  el("bBack").style.visibility = V.n === "home" ? "hidden" : "visible";
+  el("lUk").className = LANG === "uk" ? "on" : ""; el("lEn").className = LANG === "en" ? "on" : "";
+  el("bMus").className = ST.music ? "" : "off";
+  el("bMus").setAttribute("aria-label", tr("Музика|Music"));
+  el("bBack").setAttribute("aria-label", tr("Назад|Back"));
+  for (i = 0; i < NAVS.length; i++) { el("n-" + NAVS[i][0]).innerHTML = "<b>" + NAVS[i][1] + "</b>" + tr(NAVS[i][2]); el("n-" + NAVS[i][0]).className = (V.n === NAVS[i][0] ? "on" : ""); }
+  document.documentElement.lang = LANG;
+  document.title = tr("Школа Божої любові|School of God’s Love");
+  document.body.className = (ST.anim ? "" : "noanim") + (document.hidden ? " paused" : "");
+}
+function goBack() {
+  if (V.n === "home") return;
+  if (V.n === "g_journey" && V.st === "play" && V.loc != null) { V.loc = null; draw(); return; }
+  if (V.n.indexOf("g_") === 0) { if (V.ret != null) go("lesson", {i: V.ret, s: 3}); else go("games"); return; }
+  go(PARENT[V.n] || "home");
+}
+ACT.go = function (n) { sfx("tap"); go(n); };
+ACT.close = function () { closeModal(); };
+ACT.lang = function (l) { if (l === LANG) return; LANG = ST.lang = l; save(); stopSpeak(); draw(); };
+ACT.tog = function (k) {
+  ST[k] = !ST[k]; save();
+  if (k === "music") { if (ST.music) { audioInit(); startMusic(); } else stopMusic(); }
+  draw();
+};
+
+/* ---------- home ---------- */
+VIEWS.home = function () {
+  var d = doneCount(), g;
+  if (d === 0) g = tr("Привіт, друже! Я Сонечко Радість. Ласкаво просимо до школи, де всіх люблять! З чого почнемо?|Hello, friend! I am Sunny Joy. Welcome to the school where everyone is loved! Where shall we start?");
+  else if (d < 12) g = tr("Радий тебе бачити знову! Ти вже пройшов уроків: |So glad to see you again! Lessons you have completed: ") + d + tr(" із 12. Ходімо далі?| of 12. Shall we go on?");
+  else g = tr("Ти пройшов усю школу! Твій диплом чекає в «Моїх нагородах». Тебе люблять!|You have completed the whole school! Your diploma is waiting in “My Awards”. You are loved!");
+  var m = [["📖", "Читати книгу|Read the Book", "book"], ["🎓", "Моя біблійна школа|My Bible School", "school"], ["🎮", "Грати у вікторину|Play the Quiz", "quizmenu"], ["🌈", "Біблійні пригоди|Bible Adventures", "games"], ["❤️", "Дізнатися про Отця|Learn about the Father", "father"], ["🎵", "Музика та радість|Music and Joy", "music"], ["🏆", "Мої нагороди|My Awards", "awards"], ["👨‍👩‍👧", "Для батьків|For Parents", "parents"], ["⚙️", "Налаштування|Settings", "settings"]];
+  var s = sceneSVG() + "<h1>🌞 " + tr("ШКОЛА БОЖОЇ ЛЮБОВІ|SCHOOL OF GOD’S LOVE") + '</h1><p class="sub small alt">' + tr("School of God’s Love · Eternal Life in Grace|Школа Божої любові · Вічне життя у благодаті") + '</p><p class="sub">' + tr("Пізнавай любов Отця, відкривай благодать і радій життю!|Discover the Father’s love, explore grace and enjoy life!") + "</p>" + say("sun", g) + '<div class="menu">', i;
+  for (i = 0; i < m.length; i++) s += '<button data-a="go:' + m[i][2] + '"><b>' + m[i][0] + "</b>" + tr(m[i][1]) + "</button>";
+  return s + '</div><p class="foot">Leoni Studio — School of God’s Love<br>' + tr("Бог є любов. Життя у благодаті — це радість!|God is love. Life in grace is joy!") + "</p>";
+};
+
+/* ---------- school & lessons ---------- */
+VIEWS.school = function () {
+  var s = say("sun", tr("Обирай будь-який урок! Усі двері відчинені, поспішати нікуди.|Choose any lesson! All the doors are open and there is no hurry.")), i;
+  for (i = 0; i < LS.length; i++) s += '<button class="item" data-a="lesson:' + i + '"><span class="em">' + LS[i].em[1] + '</span><span class="tx">' + tr("Урок|Lesson") + " " + (i + 1) + ". " + tr(LS[i].t) + "<small>" + tr(LS[i].ref) + '</small></span><span class="ok">' + (ST.done[i] ? "🏅" : "➜") + "</span></button>";
+  return s;
+};
+ACT.lesson = function (i) { sfx("tap"); go("lesson", {i: +i, s: 0}); };
+function completeLesson(i) {
+  if (!ST.done[i]) {
+    ST.done[i] = 1; ST.hearts++; ST.flowers++;
+    if (doneCount() === LS.length && !ST.date) { var d = new Date(); ST.date = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+    save();
+  }
+  confetti(); sfx("win");
+}
+ACT.step = function (n) {
+  n = +n;
+  if (n === 4) completeLesson(V.i);
+  V.s = n; V.qs = null; V.q = null; V.qi = 0;
+  draw(); window.scrollTo(0, 0);
+};
+ACT.lgame = function () { go("g_" + LS[V.i].game, {st: "intro", ret: V.i}); };
+VIEWS.lesson = function () {
+  var L = LS[V.i], s = '<div class="dots">', i, st = L[LANG === "en" ? "se" : "su"], g;
+  for (i = 0; i < 5; i++) s += '<i class="' + (i <= V.s ? "on" : "") + '"></i>';
+  s += "</div>";
+  if (V.s === 0) {
+    s += illus(V.i) + "<h2>" + tr("Урок|Lesson") + " " + (V.i + 1) + ". " + tr(L.t) + '</h2><span class="chip">📖 ' + tr(L.ref) + "</span>" + say("bird", tr("Влаштовуйся зручніше — я розповім тобі історію!|Make yourself comfortable — I will tell you a story!")) + '<div class="card story">';
+    for (i = 0; i < st.length; i++) s += "<p>" + st[i] + "</p>";
+    s += "</div>" + B(tr("Далі ➜|Next ➜"), "step:1");
+  } else if (V.s === 1) {
+    s += '<div class="card"><h3>📖 ' + tr("Що каже Біблія|What the Bible says") + "</h3><p>" + tr(L.v) + '</p><span class="chip">' + tr(L.ref) + '</span></div><div class="card"><h3>💡 ' + tr("Головна думка|The main idea") + "</h3><p>" + tr(L.idea) + '</p></div><div class="card"><h3>🌟 ' + tr("У твоєму житті|In your life") + "</h3>";
+    for (i = 0; i < L.ex.length; i++) s += "<p>" + (i + 1) + ". " + tr(L.ex[i]) + "</p>";
+    s += '</div><div class="row">' + B(tr("⬅ Історія|⬅ Story"), "step:0", "b5") + B(tr("Запитання ➜|Questions ➜"), "step:2") + "</div>";
+  } else if (V.s === 2) {
+    if (!V.qs) { V.qs = L.q; V.qi = 0; V.stars = 0; }
+    s += quizHTML();
+  } else if (V.s === 3) {
+    g = gameInfo(L.game);
+    s += say("bunny", tr("Ти чудово впорався із запитаннями! А тепер — гра. Хочеш пограти?|You did great with the questions! And now — a game. Would you like to play?")) + '<div class="card center"><div style="font-size:54px">' + g[1] + "</div><h3>" + tr(g[2]) + "</h3><p>" + tr(g[3]) + "</p></div>" + B("▶ " + tr("Грати|Play"), "lgame", "b2") + B(tr("Завершити урок ➜|Finish the lesson ➜"), "step:4");
+  } else {
+    s += '<div class="starpop">🏅</div><h2 class="center">' + tr("Урок завершено!|Lesson complete!") + "</h2>" + cheer() + '<div class="card center"><p><b>' + tr(L.end) + "</b></p><p>" + tr("Твої нагороди:|Your rewards:") + " ⭐ ❤️ 🌻 🏅</p></div>";
+    if (doneCount() === LS.length) s += B("🎓 " + tr("Відкрити диплом|Open the diploma"), "go:diploma", "b3");
+    if (V.i < LS.length - 1) s += B(tr("Наступний урок ➜|Next lesson ➜"), "lesson:" + (V.i + 1), "b2");
+    s += B(tr("До списку уроків|Back to lessons"), "go:school", "b5");
+  }
+  return s;
+};
+
+/* ---------- quiz engine ---------- */
+function qInit() {
+  var Q = V.qs[V.qi];
+  V.q = {done: false, hint: false, bad: {}};
+  if (Q.k === "pair") { V.q.right = shuffle(range(Q.p.length)); V.q.m = {}; V.q.sel = null; }
+  if (Q.k === "order") { V.q.ord = shuffle(range(Q.s.length)); if (V.q.ord[0] === 0) V.q.ord.reverse(); V.q.next = 0; }
+}
+function quizHTML() {
+  if (!V.q) qInit();
+  var Q = V.qs[V.qi], q = V.q, s = '<div class="qhead"><span>' + tr("Запитання|Question") + " " + (V.qi + 1) + "/" + V.qs.length + "</span><span>⭐ " + (V.stars || 0) + '</span></div><div class="card"><div class="qtext">' + tr(Q.q) + "</div>", i, o, c;
+  if (Q.k === "mc" || Q.k === "fill" || Q.k === "tf") {
+    o = Q.k === "tf" ? [[1, "✅ " + tr("Правда|True")], [0, "❌ " + tr("Неправда|False")]] : [];
+    if (Q.k !== "tf") for (i = 0; i < Q.o.length; i++) o.push([i, tr(Q.o[i])]);
+    for (i = 0; i < o.length; i++) {
+      c = "opt" + (q.bad[o[i][0]] ? " bad" : "") + (q.done && o[i][0] === Q.a ? " good" : "");
+      s += '<button class="' + c + '" data-a="ans:' + o[i][0] + '">' + o[i][1] + "</button>";
+    }
+  } else if (Q.k === "pair") {
+    s += '<p class="small">' + tr("Торкнися слова ліворуч, а потім його пари праворуч.|Tap a word on the left, then its pair on the right.") + '</p><div class="pairs"><div>';
+    for (i = 0; i < Q.p.length; i++) s += '<button class="opt' + (q.m[i] ? " good" : (q.sel === i ? " sel" : "")) + '" data-a="pl:' + i + '">' + tr(Q.p[i][0]) + "</button>";
+    s += "</div><div>";
+    for (i = 0; i < q.right.length; i++) s += '<button class="opt' + (q.m[q.right[i]] ? " good" : "") + '" data-a="pr:' + q.right[i] + '">' + tr(Q.p[q.right[i]][1]) + "</button>";
+    s += "</div></div>";
+  } else if (Q.k === "order") {
+    s += '<p class="small">' + tr("Торкайся подій по черзі: що було спочатку, а що потім?|Tap the events one by one: what happened first, and what next?") + "</p>";
+    for (i = 0; i < q.next; i++) s += '<div class="opt good">' + (i + 1) + ". " + tr(Q.s[i]) + "</div>";
+    for (i = 0; i < q.ord.length; i++) if (q.ord[i] >= q.next) s += '<button class="opt" data-a="ord:' + q.ord[i] + '">' + tr(Q.s[q.ord[i]]) + "</button>";
+  }
+  s += "</div>";
+  if (q.done) s += '<div class="starpop">⭐</div><div class="card"><b>' + tr("Так! |Yes! ") + "</b>" + tr(Q.e) + "</div>" + B(V.qi < V.qs.length - 1 ? tr("Наступне запитання ➜|Next question ➜") : tr("Готово ➜|Done ➜"), "qnext", "b2");
+  else if (q.hint) s += say("bear", tr("Нічого страшного, спробуй ще раз! Підказка: |No worries, try again! A hint: ") + tr(Q.h));
+  return s;
+}
+function qDone() { V.q.done = true; V.stars = (V.stars || 0) + 1; ST.stars++; save(); sfx("ok"); draw(); }
+function qMiss() { V.q.hint = true; sfx("no"); draw(); }
+ACT.ans = function (i) { if (V.q.done) return; i = +i; if (i === V.qs[V.qi].a) qDone(); else { V.q.bad[i] = 1; qMiss(); } };
+ACT.pl = function (i) { if (V.q.done || V.q.m[+i]) return; V.q.sel = +i; sfx("tap"); draw(); };
+ACT.pr = function (j) {
+  var q = V.q; j = +j;
+  if (q.done || q.m[j]) return;
+  if (q.sel == null) { toast(tr("Спершу обери слово ліворуч.|First choose a word on the left.")); return; }
+  if (q.sel === j) { q.m[j] = 1; q.sel = null; var n = 0, k; for (k in q.m) n++; if (n === V.qs[V.qi].p.length) qDone(); else { sfx("pick"); draw(); } }
+  else { q.sel = null; qMiss(); }
+};
+ACT.ord = function (i) { var q = V.q; if (q.done) return; if (+i === q.next) { q.next++; if (q.next === V.qs[V.qi].s.length) qDone(); else { sfx("pick"); draw(); } } else qMiss(); };
+ACT.qnext = function () {
+  V.qi++; V.q = null;
+  if (V.qi >= V.qs.length) {
+    if (V.n === "lesson") { ST.quiz[V.i] = V.qs.length; save(); V.s = 3; V.qs = null; }
+    else { if (V.set != null) { ST.quiz[V.set] = V.qs.length; save(); } V.fin = true; confetti(); sfx("win"); }
+  }
+  draw(); window.scrollTo(0, 0);
+};
+function allQ() { var a = [], i, j; for (i = 0; i < LS.length; i++) for (j = 0; j < LS[i].q.length; j++) a.push(LS[i].q[j]); return a; }
+VIEWS.quizmenu = function () {
+  var s = say("bunny", tr("Тут немає оцінок і штрафів — лише зірочки знань. Помилятися можна, я завжди підкажу!|There are no marks or penalties here — only stars of knowledge. Mistakes are fine, I will always give a hint!")) + B("🎲 " + tr("Весела десятка (10 випадкових)|Lucky Ten (10 random)"), "quiz:mix", "b2") + B("🌟 " + tr("Велика вікторина: усі 60|The Big Quiz: all 60"), "quiz:all", "b3") + "<h3>" + tr("Запитання за уроками|Questions by lesson") + "</h3>", i;
+  for (i = 0; i < LS.length; i++) s += '<button class="item" data-a="quiz:' + i + '"><span class="em">' + LS[i].em[1] + '</span><span class="tx">' + (i + 1) + ". " + tr(LS[i].t) + '</span><span class="ok">' + (ST.quiz[i] ? "⭐" : "➜") + "</span></button>";
+  return s;
+};
+ACT.quiz = function (m) {
+  var qs, set = null;
+  if (m === "mix") qs = shuffle(allQ()).slice(0, 10); else if (m === "all") qs = allQ(); else { set = +m; qs = LS[set].q; }
+  go("quiz", {qs: qs, qi: 0, stars: 0, set: set, mode: m});
+};
+VIEWS.quiz = function () {
+  if (V.fin) return '<div class="starpop">🌟</div><h2 class="center">' + tr("Ти зібрав зірочок знань: |Stars of knowledge collected: ") + V.stars + "</h2>" + cheer() + say("sun", tr("Кожна відповідь — це крок у навчанні, а не оцінка. Ти молодець, що цікавишся!|Every answer is a step in learning, not a mark. Well done for being curious!")) + B("🔁 " + tr("Зіграти ще раз|Play again"), "quiz:" + V.mode, "b2") + B(tr("До вікторин|Back to quizzes"), "go:quizmenu", "b5");
+  return quizHTML();
+};
+
+/* ---------- book ---------- */
+function pages(c) {
+  var L = LS[c], ps = [{k: "t"}], cur = [], len = 0, i;
+  for (i = 0; i < L.su.length; i++) {
+    if (cur.length && len + L.su[i].length > 520) { ps.push({k: "s", a: cur}); cur = []; len = 0; }
+    cur.push(i); len += L.su[i].length;
+  }
+  if (cur.length) ps.push({k: "s", a: cur});
+  ps.push({k: "e"});
+  return ps;
+}
+VIEWS.book = function () {
+  var s = say("bird", tr("Це «Книга Божої любові». У ній 12 розділів. Я можу читати її вголос!|This is “The Book of God’s Love”. It has 12 chapters. I can read it aloud!")), i, b;
+  if (ST.last) s += B("📖 " + tr("Продовжити читання|Continue reading") + " (" + tr("розділ|chapter") + " " + (ST.last.c + 1) + ")", "read:" + ST.last.c + ":" + ST.last.p, "b2");
+  for (i = 0; i < LS.length; i++) s += '<button class="item" data-a="read:' + i + ':0"><span class="em">' + LS[i].em[1] + '</span><span class="tx">' + tr("Розділ|Chapter") + " " + (i + 1) + "<small>" + tr(LS[i].t) + '</small></span><span class="ok">➜</span></button>';
+  s += "<h3>🔖 " + tr("Мої закладки|My bookmarks") + "</h3>";
+  if (!ST.bm.length) s += '<p class="small">' + tr("Закладок поки немає. Натисни 🔖 під час читання.|No bookmarks yet. Tap 🔖 while reading.") + "</p>";
+  for (i = 0; i < ST.bm.length; i++) { b = ST.bm[i].split("-"); s += '<button class="item" data-a="read:' + b[0] + ":" + b[1] + '"><span class="em">🔖</span><span class="tx">' + tr("Розділ|Chapter") + " " + (+b[0] + 1) + ", " + tr("сторінка|page") + " " + (+b[1] + 1) + "</span></button>"; }
+  return s;
+};
+ACT.read = function (c, p) { sfx("tap"); go("reader", {c: +c, p: +p || 0}); };
+VIEWS.reader = function () {
+  var ps = pages(V.c), L = LS[V.c], st = L[LANG === "en" ? "se" : "su"], P, s, i, key;
+  if (V.p >= ps.length) V.p = ps.length - 1;
+  if (V.p < 0) V.p = 0;
+  P = ps[V.p]; key = V.c + "-" + V.p;
+  ST.last = {c: V.c, p: V.p}; save();
+  s = '<div class="tools"><button data-a="fs:-1" aria-label="A-">A−</button><button data-a="fs:1" aria-label="A+">A+</button><button data-a="bm" class="' + (ST.bm.indexOf(key) >= 0 ? "on" : "") + '">🔖</button><button data-a="speak" id="spk">🔊 ' + tr("Читати вголос|Read aloud") + '</button></div><div class="page" id="pg" style="font-size:' + ST.fs + 'px">';
+  if (P.k === "t") s += illus(V.c) + '<p class="center small" data-sp>' + tr("Розділ|Chapter") + " " + (V.c + 1) + '</p><h2 class="center" data-sp>' + tr(L.t) + '</h2><p class="center"><span class="chip">📖 ' + tr(L.ref) + '</span></p><p class="center small">' + tr("Гортай сторінки кнопками або пальцем ➜|Turn the pages with the buttons or by swiping ➜") + "</p>";
+  else if (P.k === "s") for (i = 0; i < P.a.length; i++) s += "<p data-sp>" + st[P.a[i]] + "</p>";
+  else s += "<h3>📖 " + tr("Що каже Біблія|What the Bible says") + "</h3><p data-sp>" + tr(L.v) + "</p><h3>💡 " + tr("Запам’ятай|Remember") + "</h3><p data-sp>" + tr(L.idea) + '</p><p data-sp class="center"><b>' + tr(L.end) + "</b></p>";
+  s += '</div><div class="pnav"><button data-a="pg:-1" aria-label="prev">◀</button><div>' + tr("Розділ|Chapter") + " " + (V.c + 1) + " · " + (V.p + 1) + "/" + ps.length + '</div><button data-a="pg:1" aria-label="next">▶</button></div>';
+  if (P.k === "e") s += B("🎓 " + tr("Відкрити урок до цього розділу|Open the lesson for this chapter"), "lesson:" + V.c, "b2");
+  return s;
+};
+AFTER.reader = function () {
+  var pg = el("pg"), x0 = null, y0 = 0;
+  pg.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive: true});
+  pg.addEventListener("touchend", function (e) {
+    if (x0 == null) return;
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) ACT.pg(dx < 0 ? 1 : -1);
+  }, {passive: true});
+};
+ACT.pg = function (d) {
+  var ps = pages(V.c), p = V.p + (+d);
+  stopSpeak();
+  if (p < 0) { if (V.c === 0) return; V.c--; p = pages(V.c).length - 1; }
+  else if (p >= ps.length) { if (V.c >= LS.length - 1) { toast(tr("Це остання сторінка книги. Дякуємо, що читав!|This is the last page of the book. Thank you for reading!")); return; } V.c++; p = 0; }
+  V.p = p; sfx("tap"); draw(); window.scrollTo(0, 0);
+};
+ACT.fs = function (d) { ST.fs = Math.max(16, Math.min(30, ST.fs + (+d) * 2)); save(); stopSpeak(); draw(); };
+ACT.bm = function () { var k = V.c + "-" + V.p, i = ST.bm.indexOf(k); if (i >= 0) ST.bm.splice(i, 1); else ST.bm.push(k); save(); stopSpeak(); sfx("pick"); draw(); };
+var SP = {on: false, t: null, started: false};
+function spBtn() { var b = el("spk"); if (b) { b.textContent = SP.on ? "⏹ " + tr("Зупинити|Stop") : "🔊 " + tr("Читати вголос|Read aloud"); b.className = SP.on ? "on" : ""; } }
+function stopSpeak() {
+  var was = SP.on; SP.on = false;
+  if (SP.t) { clearTimeout(SP.t); SP.t = null; }
+  if (was && window.speechSynthesis) { try { window.speechSynthesis.cancel(); } catch (e) {} }
+  var h = document.querySelectorAll(".hl"), i; for (i = 0; i < h.length; i++) h[i].classList.remove("hl");
+  spBtn();
+}
+var NOVOICE = "На цьому пристрої немає голосу для цієї мови. Спробуй іншу мову або почитай разом із дорослими.|This device has no voice for this language. Try the other language or read together with a grown-up.";
+ACT.speak = function () {
+  if (SP.on) { stopSpeak(); return; }
+  var syn = window.speechSynthesis, code = LANG === "en" ? "en" : "uk", vs, voice = null, i, nodes;
+  if (!syn || !window.SpeechSynthesisUtterance) { toast(tr("Озвучення недоступне в цьому браузері.|Reading aloud is not available in this browser.")); return; }
+  try { vs = syn.getVoices() || []; } catch (e) { vs = []; }
+  for (i = 0; i < vs.length; i++) if (vs[i].lang && vs[i].lang.toLowerCase().indexOf(code) === 0) { voice = vs[i]; break; }
+  if (vs.length && !voice) { toast(tr(NOVOICE)); return; }
+  nodes = document.querySelectorAll("#pg [data-sp]");
+  if (!nodes.length) return;
+  SP.on = true; SP.started = false; spBtn();
+  SP.t = setTimeout(function () { SP.t = null; if (SP.on && !SP.started) { stopSpeak(); toast(tr(NOVOICE)); } }, 5000);
+  function nxt(k) {
+    if (!SP.on) return;
+    if (k >= nodes.length) { stopSpeak(); return; }
+    var u = new window.SpeechSynthesisUtterance(nodes[k].textContent);
+    u.lang = LANG === "en" ? "en-US" : "uk-UA"; if (voice) u.voice = voice; u.rate = 0.9;
+    u.onstart = function () { SP.started = true; var h = document.querySelectorAll(".hl"), j; for (j = 0; j < h.length; j++) h[j].classList.remove("hl"); nodes[k].classList.add("hl"); };
+    u.onend = function () { nxt(k + 1); };
+    u.onerror = function () { if (SP.on) { stopSpeak(); toast(tr(NOVOICE)); } };
+    try { syn.speak(u); } catch (e) { stopSpeak(); toast(tr(NOVOICE)); }
+  }
+  nxt(0);
+};
+
+/* ---------- father ---------- */
+VIEWS.father = function () {
+  var s = say("bird", tr("Який Він — наш Небесний Отець? Торкайся карток і дізнавайся! Ісус показав нам Його.|What is our Heavenly Father like? Tap the cards and find out! Jesus showed Him to us.")) + '<div class="fgrid">', i, o;
+  for (i = 0; i < FATHER.length; i++) { o = V.fo && V.fo[i]; s += '<button class="' + (o ? "op" : "") + '" data-a="fcard:' + i + '">' + (o ? tr(FATHER[i][1]) + '<br><span class="chip">' + tr(FATHER[i][2]) + "</span>" : "<b>" + FATHER[i][3] + "</b>" + tr(FATHER[i][0])) + "</button>"; }
+  return s + "</div>" + B("🎓 " + tr("До уроків|Go to lessons"), "go:school", "b2");
+};
+ACT.fcard = function (i) { if (!V.fo) V.fo = {}; V.fo[i] = !V.fo[i]; sfx("pick"); draw(); };
+
+/* ---------- music ---------- */
+function soundCtl() {
+  return '<div class="row">' + B((ST.music ? "🎵 " : "🔇 ") + tr("Музика: |Music: ") + (ST.music ? tr("увімк.|on") : tr("вимк.|off")), "tog:music", ST.music ? "b2" : "b5") + B((ST.sfx ? "🔔 " : "🔕 ") + tr("Звуки: |Sounds: ") + (ST.sfx ? tr("увімк.|on") : tr("вимк.|off")), "tog:sfx", ST.sfx ? "b2" : "b5") + '</div><div class="card"><label for="vol"><b>🔊 ' + tr("Гучність|Volume") + '</b></label><input type="range" id="vol" min="0" max="100" value="' + Math.round(ST.vol * 100) + '"></div>';
+}
+function volBind() { var v = el("vol"); if (v) v.addEventListener("input", function () { ST.vol = (+v.value) / 100; if (MG) MG.gain.value = ST.vol; save(); }); }
+VIEWS.music = function () {
+  var s = say("sun", tr("Уся музика тут народжується просто у твоєму пристрої. Обери мелодію або заграй сам!|All the music here is born right inside your device. Choose a tune or play yourself!")) + soundCtl() + "<h3>🎼 " + tr("Мелодії|Tunes") + '</h3><div class="row">', i, c = ["#ff6b6b", "#ff9f43", "#f7c531", "#3fbf7f", "#38b6e8", "#5c7cfa", "#a66bf0", "#ff8fa3"];
+  for (i = 0; i < TUNES.length; i++) s += B(tr(TUNES[i].n), "tune:" + i, ST.tune === i ? "b3" : "b5");
+  s += "</div><h3>🎹 " + tr("Ксилофон радості|Xylophone of joy") + '</h3><div class="xy">';
+  for (i = 0; i < 8; i++) s += '<button data-f="1" data-a="xy:' + i + '" style="background:' + c[i] + ";height:" + (100 - i * 6) + '%" aria-label="' + (i + 1) + '">♪</button>';
+  return s + '</div><p class="small center">' + tr("Музика й звуки створені засобами Web Audio — без жодних записів.|Music and sounds are made with Web Audio — no recordings at all.") + "</p>";
+};
+AFTER.music = volBind;
+ACT.tune = function (i) { ST.tune = +i; save(); stopMusic(); if (!ST.music) { ST.music = true; save(); } audioInit(); startMusic(); draw(); };
+ACT.xy = function (i) { audioInit(); if (!AC) return; var f = [261.63, 293.66, 329.63, 349.23, 392, 440, 493.88, 523.25][+i], t = AC.currentTime + 0.01; tone(f * 2, t, 0.7, "sine", 0.3, SFXG); tone(f * 4, t, 0.25, "triangle", 0.08, SFXG); };
+
+/* ---------- awards & diploma ---------- */
+VIEWS.awards = function () {
+  var d = doneCount(), s = '<div class="stat"><div><b>⭐</b>' + ST.stars + "<small>" + tr("Зірочки знань|Stars of knowledge") + "</small></div><div><b>❤️</b>" + ST.hearts + "<small>" + tr("Сердечка доброти|Hearts of kindness") + "</small></div><div><b>🌻</b>" + ST.flowers + "<small>" + tr("Квіти радості|Flowers of joy") + "</small></div></div><h3>🏅 " + tr("Значки уроків|Lesson badges") + " (" + d + '/12)</h3><div class="badges">', i, g, r;
+  for (i = 0; i < LS.length; i++) s += '<div class="' + (ST.done[i] ? "on" : "") + '">' + LS[i].em[1] + "<small>" + (i + 1) + "</small></div>";
+  s += "</div>";
+  if (d === LS.length) s += B("🎓 " + tr("Мій диплом|My diploma"), "go:diploma", "b3");
+  else s += '<div class="card center">🎓 ' + tr("Диплом відкриється після 12 уроків. Залишилося: |The diploma opens after 12 lessons. Left to go: ") + (LS.length - d) + "</div>" + B(tr("До уроків ➜|Go to lessons ➜"), "go:school", "b2");
+  s += "<h3>🎮 " + tr("Ігрові рекорди|Game records") + '</h3><div class="card">';
+  for (i = 0; i < GAMES.length; i++) { g = GAMES[i]; r = ST.rec[g[0]]; s += "<p>" + g[1] + " " + tr(g[2]) + ": <b>" + (r == null ? "—" : r + " " + tr(g[4])) + "</b></p>"; }
+  return s + "</div>" + say("bear", tr("Нагороди — це спогади про твою подорож, а не оцінки. Ти цінний і без жодної зірочки!|Awards are memories of your journey, not marks. You are precious even without a single star!"));
+};
+VIEWS.diploma = function () {
+  if (doneCount() < LS.length) return say("sun", tr("Диплом чекає на тебе після 12 уроків. Ти вже на шляху!|The diploma is waiting for you after 12 lessons. You are on your way!")) + B(tr("До уроків ➜|Go to lessons ➜"), "go:school", "b2");
+  return '<label for="dn"><b>' + tr("Ім’я на дипломі|Name on the diploma") + '</b></label><input type="text" id="dn" maxlength="28" autocomplete="off" value="' + esc(ST.name) + '" placeholder="' + tr("Напиши своє ім’я|Type your name") + '"><canvas id="dc" width="1200" height="850"></canvas><div class="row">' + B("🖨 " + tr("Друк|Print"), "print", "b2") + B("⬇ PNG", "png", "b3") + '</div><p class="small center">' + tr("Ім’я зберігається лише на цьому пристрої й нікуди не надсилається.|The name is stored only on this device and is never sent anywhere.") + "</p>";
+};
+AFTER.diploma = function () {
+  var n = el("dn"); if (!n) return;
+  drawDiploma();
+  n.addEventListener("input", function () { ST.name = n.value; save(); drawDiploma(); });
+};
+function wrapText(c, text, x, y, maxW, lh) {
+  var w = text.split(" "), line = "", i, test;
+  for (i = 0; i < w.length; i++) { test = line ? line + " " + w[i] : w[i]; if (c.measureText(test).width > maxW && line) { c.fillText(line, x, y); y += lh; line = w[i]; } else line = test; }
+  c.fillText(line, x, y); return y + lh;
+}
+function drawDiploma() {
+  var cv = el("dc"); if (!cv || !cv.getContext) return;
+  var c = cv.getContext("2d"), W = 1200, H = 850, i, a, g, cols = ["#ff6b6b", "#ff9f43", "#f7c531", "#3fbf7f", "#38b6e8", "#5c7cfa", "#a66bf0"], F = '"Trebuchet MS","Segoe UI",Arial,sans-serif', y, d;
+  g = c.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#dff3ff"); g.addColorStop(0.55, "#fffaf0"); g.addColorStop(1, "#fff3d0");
+  c.fillStyle = g; c.fillRect(0, 0, W, H);
+  c.lineWidth = 9; for (i = 0; i < 7; i++) { c.strokeStyle = cols[i]; c.globalAlpha = 0.55; c.beginPath(); c.arc(W / 2, 470, 520 - i * 10, Math.PI * 1.12, Math.PI * 1.88); c.stroke(); } c.globalAlpha = 1;
+  c.strokeStyle = "#e0a200"; c.lineWidth = 14; c.strokeRect(22, 22, W - 44, H - 44);
+  c.strokeStyle = "#ffd978"; c.lineWidth = 5; c.strokeRect(42, 42, W - 84, H - 84);
+  c.save(); c.translate(140, 140); c.strokeStyle = "#ffb703"; c.lineWidth = 9; c.lineCap = "round";
+  for (i = 0; i < 12; i++) { a = i * Math.PI / 6; c.beginPath(); c.moveTo(Math.cos(a) * 62, Math.sin(a) * 62); c.lineTo(Math.cos(a) * 82, Math.sin(a) * 82); c.stroke(); }
+  c.fillStyle = "#ffd23f"; c.beginPath(); c.arc(0, 0, 52, 0, Math.PI * 2); c.fill();
+  c.fillStyle = "#5a3d1e"; c.beginPath(); c.arc(-17, -8, 6, 0, Math.PI * 2); c.fill(); c.beginPath(); c.arc(17, -8, 6, 0, Math.PI * 2); c.fill();
+  c.strokeStyle = "#5a3d1e"; c.lineWidth = 5; c.beginPath(); c.arc(0, 4, 24, Math.PI * 0.15, Math.PI * 0.85); c.stroke(); c.restore();
+  function flower(x, fy, r, col) { var k; c.strokeStyle = "#5fb85a"; c.lineWidth = 6; c.beginPath(); c.moveTo(x, fy); c.lineTo(x, fy + r * 3.2); c.stroke(); c.fillStyle = col; for (k = 0; k < 6; k++) { c.beginPath(); c.arc(x + Math.cos(k * Math.PI / 3) * r, fy + Math.sin(k * Math.PI / 3) * r, r * 0.72, 0, Math.PI * 2); c.fill(); } c.fillStyle = "#ffd23f"; c.beginPath(); c.arc(x, fy, r * 0.62, 0, Math.PI * 2); c.fill(); }
+  for (i = 0; i < 9; i++) flower(90 + i * 128, 742 - (i % 2) * 14, 15 + (i % 3) * 2, cols[(i * 2) % 7]);
+  c.fillStyle = "#ff6b6b"; c.font = "60px " + F; c.textAlign = "center"; c.fillText("❤", W - 140, 160);
+  c.fillStyle = "#e8752a"; c.font = "bold 56px " + F; c.fillText(tr("ДИПЛОМ|DIPLOMA"), W / 2, 150);
+  c.fillStyle = "#3b3a5c"; c.font = "bold 42px " + F; c.fillText(tr("ШКОЛИ БОЖОЇ ЛЮБОВІ|OF THE SCHOOL OF GOD’S LOVE"), W / 2, 210);
+  c.font = "26px " + F; c.fillStyle = "#6a6990"; c.fillText(tr("School of God’s Love · Eternal Life in Grace|Школа Божої любові · Вічне життя у благодаті"), W / 2, 252);
+  c.fillStyle = "#3b3a5c"; c.font = "30px " + F; c.fillText(tr("Цей диплом отримує|This diploma is awarded to"), W / 2, 328);
+  c.fillStyle = "#d6336c"; c.font = "bold 72px " + F; var nm = ST.name || "…………………"; while (c.measureText(nm).width > W - 220 && nm.length > 3) nm = nm.slice(0, -1); c.fillText(nm, W / 2, 418);
+  c.strokeStyle = "#ffd978"; c.lineWidth = 4; c.beginPath(); c.moveTo(250, 440); c.lineTo(W - 250, 440); c.stroke();
+  c.fillStyle = "#3b3a5c"; c.font = "30px " + F;
+  y = wrapText(c, tr("Нагороджується за завершення 12 уроків про Божу любов, благодать, доброту та біблійні історії.|Awarded for completing 12 lessons about God’s love, grace, kindness and Bible stories."), W / 2, 500, W - 320, 42);
+  c.font = "italic 28px " + F; c.fillStyle = "#e8752a"; c.fillText(tr("Бог є любов. Життя у благодаті — це радість!|God is love. Life in grace is joy!"), W / 2, y + 22);
+  d = ST.date || ""; if (d) { a = d.split("-"); d = LANG === "en" ? a[1] + "/" + a[2] + "/" + a[0] : a[2] + "." + a[1] + "." + a[0]; }
+  c.font = "26px " + F; c.fillStyle = "#3b3a5c"; c.textAlign = "left"; c.fillText(tr("Дата: |Date: ") + d, 110, 680);
+  c.textAlign = "right"; c.fillText("Leoni Studio", W - 110, 680);
+  c.textAlign = "center";
+}
+ACT.png = function () {
+  var cv = el("dc"); if (!cv) return;
+  function dl(url, revoke) { var a = document.createElement("a"); a.href = url; a.download = "diploma-school-of-gods-love.png"; document.body.appendChild(a); a.click(); document.body.removeChild(a); if (revoke) setTimeout(function () { URL.revokeObjectURL(url); }, 4000); toast(tr("Диплом збережено як PNG. Якщо файл не з’явився, утримуй палець на дипломі й обери «Зберегти зображення».|Diploma saved as PNG. If no file appeared, long-press the diploma and choose “Save image”.")); }
+  try { if (cv.toBlob) cv.toBlob(function (b) { if (b) dl(URL.createObjectURL(b), true); else dl(cv.toDataURL("image/png")); }, "image/png"); else dl(cv.toDataURL("image/png")); } catch (e) { toast(tr("Не вдалося зберегти зображення на цьому пристрої.|Could not save the image on this device.")); }
+};
+ACT.print = function () {
+  var cv = el("dc"); if (!cv) return;
+  try { el("printbox").innerHTML = '<img alt="diploma" src="' + cv.toDataURL("image/png") + '">'; setTimeout(function () { window.print(); }, 150); } catch (e) { toast(tr("Друк недоступний на цьому пристрої.|Printing is not available on this device.")); }
+};
+
+/* ---------- parents & settings ---------- */
+VIEWS.parents = function () {
+  var P = [
+    ["Мета проєкту|The aim of the project", "«Школа Божої любові» допомагає дітям через історії, ігри та запитання знайомитися з Богом як із люблячим Отцем, якого відкрив Ісус Христос, і з темами благодаті, довіри, прощення, свободи та вічного життя. Тут немає залякування, покарань і тиску.|“School of God’s Love” helps children, through stories, games and questions, to get to know God as the loving Father revealed by Jesus Christ, and to explore grace, trust, forgiveness, freedom and eternal life. There is no scaring, punishment or pressure here."],
+    ["Для якого віку|What age it is for", "Орієнтовно для дітей 7–12 років. Молодшим дітям зручно проходити уроки разом із дорослими.|Roughly for children aged 7–12. Younger children will enjoy the lessons together with a grown-up."],
+    ["Як проходити уроки разом|How to do the lessons together", "Один урок — це 10–15 хвилин: історія, біблійна думка, три приклади з життя, п’ять запитань і мінігра. Читайте вголос, зупиняйтеся, питайте: «А як би вчинив ти?» Не поспішайте — одного уроку на день або на тиждень цілком достатньо.|One lesson takes 10–15 minutes: a story, a Bible thought, three everyday examples, five questions and a mini-game. Read aloud, pause, ask, “What would you do?” Take your time — one lesson a day or a week is plenty."],
+    ["Це гра, а не тест духовності|It is a game, not a test of spirituality", "Зірочки й нагороди показують пройдений шлях, а не «рівень віри». Відповіді дитини не оцінюють її особистість. За помилки немає штрафів: Ведмедик Мирко дає підказку, і можна спробувати ще раз.|Stars and awards show the path travelled, not a “level of faith”. A child’s answers do not grade who they are. There are no penalties for mistakes: Teddy Myrko gives a hint and the child can try again."],
+    ["Біблійні тексти та адаптації|Bible texts and adaptations", "Дитячі історії — це авторські адаптації та сучасні оповідання на біблійні теми. Біблійні вірші подано простими словами з точними посиланнями — радимо читати їх разом у вашому перекладі Біблії. Посилання: Луки 15:11–32; 1 Івана 4:8, 16, 18; Івана 3:16; 11:25–26; 13:34; 14:9; 17:3; Марка 10:13–16; Ефесян 2:8–10; 4:32; Псалом 139:14; Луки 10:30–37; 12:6–7; Приповісті 3:5; Матвія 6:26; Галатів 5:1, 13; 1 Коринтян 13:4–7; Римлян 8:38–39.|The children’s stories are original adaptations and modern tales on Bible themes. Bible verses are given in simple words with exact references — we suggest reading them together in your own Bible translation. References: Luke 15:11–32; 1 John 4:8, 16, 18; John 3:16; 11:25–26; 13:34; 14:9; 17:3; Mark 10:13–16; Ephesians 2:8–10; 4:32; Psalm 139:14; Luke 10:30–37; 12:6–7; Proverbs 3:5; Matthew 6:26; Galatians 5:1, 13; 1 Corinthians 13:4–7; Romans 8:38–39."],
+    ["Про натхнення|About the inspiration", "Проєкт натхненний тематикою вчення пастора Віктора Томєва про Божу любов, благодать і вічне життя. Це не його офіційний сайт і не офіційний навчальний продукт. У текстах немає цитат пастора: усі пояснення — авторські дитячі перекази біблійних текстів.|The project is inspired by the themes of Pastor Viktor Tomev’s teaching on God’s love, grace and eternal life. It is not his official website or an official educational product. The texts contain no quotations from the pastor: all explanations are the author’s retellings of Bible texts for children."],
+    ["Збереження та приватність|Saving and privacy", "Прогрес, налаштування та ім’я на дипломі зберігаються лише в пам’яті браузера цього пристрою (localStorage). Сайт нічого не надсилає в інтернет, не має реклами, аналітики, чатів і форм. Якщо очистити дані браузера, прогрес зникне.|Progress, settings and the diploma name are stored only in this device’s browser memory (localStorage). The site sends nothing to the internet and has no ads, analytics, chats or forms. If browser data is cleared, the progress will be lost."],
+    ["Музика та анімації|Music and animations", "Музику можна вимкнути кнопкою 🎵 угорі або в «Налаштуваннях». Там само вимикаються звуки й анімації (режим зменшених ефектів) та змінюється гучність.|Music can be turned off with the 🎵 button at the top or in “Settings”. Sounds and animations (reduced-effects mode) can be switched off and the volume changed there too."]
+  ], s = "", i;
+  for (i = 0; i < P.length; i++) s += '<div class="card"><h3>' + tr(P[i][0]) + "</h3><p>" + tr(P[i][1]) + "</p></div>";
+  return s + '<p class="foot">Leoni Studio · v1.0</p>';
+};
+VIEWS.settings = function () {
+  return "<h3>🌍 " + tr("Мова|Language") + '</h3><div class="row">' + B("🇺🇦 Українська", "lang:uk", LANG === "uk" ? "" : "b5") + B("🇬🇧 English", "lang:en", LANG === "en" ? "" : "b5") + "</div><h3>🎵 " + tr("Звук|Sound") + "</h3>" + soundCtl() + "<h3>✨ " + tr("Анімації|Animations") + "</h3>" + B((ST.anim ? "✨ " : "🌙 ") + tr("Анімації: |Animations: ") + (ST.anim ? tr("увімк.|on") : tr("вимк. (зменшені ефекти)|off (reduced effects)")), "tog:anim", ST.anim ? "b2" : "b5") + "<h3>💾 " + tr("Прогрес|Progress") + '</h3><p class="small">' + tr("Прогрес зберігається лише на цьому пристрої. Якщо очистити дані браузера, він зникне.|Progress is stored only on this device. If browser data is cleared, it will be lost.") + "</p>" + B("🗑 " + tr("Скинути прогрес|Reset progress"), "reset", "b3");
+};
+AFTER.settings = volBind;
+ACT.reset = function () { modal("<h3>" + tr("Скинути весь прогрес?|Reset all progress?") + "</h3><p>" + tr("Уроки, нагороди, закладки, рекорди та ім’я на дипломі буде видалено з цього пристрою.|Lessons, awards, bookmarks, records and the diploma name will be removed from this device.") + '</p><div class="row">' + B(tr("Ні, залишити|No, keep it"), "close", "b2") + B(tr("Так, скинути|Yes, reset"), "reset2", "b3") + "</div>"); };
+ACT.reset2 = function () { var l = ST.lang, m = ST.music, x = ST.sfx, v = ST.vol, a = ST.anim; ST = defState(); ST.lang = l; ST.music = m; ST.sfx = x; ST.vol = v; ST.anim = a; save(); closeModal(); go("home"); toast(tr("Прогрес скинуто. Можна почати знову!|Progress has been reset. You can start again!")); };
+
+/* ---------- mini-games ---------- */
+var GAMES = [
+  ["hearts", "❤️", "Збери серця любові|Collect Hearts of Love", "Веди зайчика садом і збери всі 12 сердечок. Торкайся екрана або натискай стрілки на клавіатурі.|Lead the bunny through the garden and collect all 12 hearts. Touch the screen or press the arrow keys.", "с|s"],
+  ["memory", "📖", "Знайди пару|Find the Pair", "Перевертай картки й шукай дві однакові. Спробуй знайти всі пари!|Turn the cards over and look for two that match. Try to find all the pairs!", "ходів|moves"],
+  ["maze", "🏡", "Дорога додому|The Way Home", "Допоможи герою дійти до батьківського дому. Три рівні. Керуй стрілками, кнопками або проведи пальцем.|Help the hero reach the father’s house. Three levels. Use arrow keys, buttons or swipe.", "кроків|steps"],
+  ["garden", "🌻", "Сад доброти|Garden of Kindness", "Торкнися грядки, щоб посадити насінину. Полий її, а потім виконай добре завдання — і квітка розквітне!|Tap a bed to plant a seed. Water it, then take on a kind task — and the flower will bloom!", "разів|times"],
+  ["journey", "🌍", "Біблійна подорож|Bible Journey", "Відвідай п’ять місць на мапі, прочитай історії та дай відповідь на запитання.|Visit five places on the map, read the stories and answer the questions.", "разів|times"],
+  ["rainbow", "🌈", "Веселка благодаті|Rainbow of Grace", "Читай підказку й обирай колір веселки з правильним словом. Засвіти всі сім кольорів!|Read the clue and choose the rainbow colour with the right word. Light up all seven colours!", "разів|times"]
+];
+function gameInfo(id) { var i; for (i = 0; i < GAMES.length; i++) if (GAMES[i][0] === id) return GAMES[i]; return GAMES[0]; }
+VIEWS.games = function () {
+  var s = say("bunny", tr("Я Зайчик Добрик! Обирай пригоду. У кожній грі я поясню, що робити.|I am Bunny Dobryk! Choose an adventure. In every game I will explain what to do.")), i, g;
+  for (i = 0; i < GAMES.length; i++) { g = GAMES[i]; s += '<button class="item" data-a="game:' + g[0] + '"><span class="em">' + g[1] + '</span><span class="tx">' + tr(g[2]) + "<small>" + (ST.rec[g[0]] == null ? tr("Ще не грали|Not played yet") : tr("Рекорд: |Record: ") + ST.rec[g[0]] + " " + tr(g[4])) + '</small></span><span class="ok">▶</span></button>'; }
+  return s;
+};
+ACT.game = function (id) { sfx("tap"); go("g_" + id, {st: "intro"}); };
+ACT.gstart = function () { var n = V.n, r = V.ret; leave(); V = {n: n, st: "play", ret: r}; draw(); window.scrollTo(0, 0); };
+ACT.gret = function () { go("lesson", {i: V.ret, s: 3}); };
+function gWrap(id, play) {
+  var g = gameInfo(id), s;
+  if (V.st === "intro") return '<div class="card center"><div style="font-size:60px">' + g[1] + "</div><h2>" + tr(g[2]) + "</h2></div>" + say("bunny", tr(g[3])) + B("▶ " + tr("Почати|Start"), "gstart", "b2") + (V.ret != null ? B(tr("Назад до уроку|Back to the lesson"), "gret", "b5") : B(tr("До всіх ігор|All games"), "go:games", "b5"));
+  if (V.st === "end") {
+    s = '<div class="starpop">🎉</div><h2 class="center">' + tr("Гру завершено!|Game complete!") + "</h2>" + cheer() + '<div class="card center"><p><b>' + V.res + "</b></p></div>" + B("🔁 " + tr("Грати ще раз|Play again"), "gstart", "b2");
+    if (V.ret != null) s += B(tr("Назад до уроку ➜|Back to the lesson ➜"), "gret");
+    return s + B(tr("До всіх ігор|All games"), "go:games", "b5");
+  }
+  return play();
+}
+function gEnd(res, key, val, lower) {
+  if (V.stop) { V.stop(); V.stop = null; }
+  var r = ST.rec[key];
+  if (lower) { if (r == null || val < r) ST.rec[key] = val; } else ST.rec[key] = (r || 0) + 1;
+  save(); V.st = "end"; V.res = res; V.kd = null; V.ku = null;
+  confetti(); sfx("win"); draw(); window.scrollTo(0, 0);
+}
+
+/* 1. hearts */
+VIEWS.g_hearts = function () { return gWrap("hearts", function () { return '<div class="hud"><span>❤️ <b id="hc">0</b>/12</span><span>⏱ <b id="ht">0</b> ' + tr("с|s") + '</span></div><canvas id="cv" class="cv"></canvas><p class="small center">' + tr("Торкнися місця, куди бігти зайчикові, або керуй стрілками.|Touch where the bunny should run, or use the arrow keys.") + "</p>"; }); };
+AFTER.g_hearts = function () {
+  if (V.st !== "play") return;
+  var cv = el("cv"), ctx = cv.getContext("2d"), W = 300, H = 300, raf = 0, last = 0, g = V.g, i, keys = {}, run = true;
+  if (!g) {
+    g = V.g = {x: 0.5, y: 0.5, tx: 0.5, ty: 0.5, got: 0, t: 0, h: [], f: []};
+    for (i = 0; i < 12; i++) g.h.push({x: 0.08 + Math.random() * 0.84, y: 0.1 + Math.random() * 0.8, on: true});
+    for (i = 0; i < 9; i++) g.f.push({x: Math.random(), y: Math.random(), e: ["🌷", "🌼", "🌻"][i % 3]});
+  }
+  function resize() { var d = Math.min(2, window.devicePixelRatio || 1); W = cv.clientWidth || 300; H = cv.clientHeight || 300; cv.width = Math.round(W * d); cv.height = Math.round(H * d); ctx.setTransform(d, 0, 0, d, 0, 0); }
+  function pt(e) { var r = cv.getBoundingClientRect(); g.tx = Math.max(0.04, Math.min(0.96, (e.clientX - r.left) / r.width)); g.ty = Math.max(0.05, Math.min(0.95, (e.clientY - r.top) / r.height)); }
+  var down = false;
+  cv.addEventListener("pointerdown", function (e) { down = true; pt(e); e.preventDefault(); });
+  cv.addEventListener("pointermove", function (e) { if (down) pt(e); });
+  cv.addEventListener("pointerup", function () { down = false; });
+  cv.addEventListener("pointercancel", function () { down = false; });
+  V.kd = function (e) { if (e.key && e.key.indexOf("Arrow") === 0) { keys[e.key] = 1; e.preventDefault(); } };
+  V.ku = function (e) { if (e.key) delete keys[e.key]; };
+  function frame(ts) {
+    if (!run) return;
+    var dt = Math.min(0.05, (ts - last) / 1000 || 0), kx, ky, dx, dy, d, sp, k, h, grd;
+    last = ts;
+    kx = (keys.ArrowRight ? 1 : 0) - (keys.ArrowLeft ? 1 : 0); ky = (keys.ArrowDown ? 1 : 0) - (keys.ArrowUp ? 1 : 0);
+    if (kx || ky) { g.tx = Math.max(0.04, Math.min(0.96, g.x + kx * 0.15)); g.ty = Math.max(0.05, Math.min(0.95, g.y + ky * 0.15)); }
+    dx = (g.tx - g.x) * W; dy = (g.ty - g.y) * H; d = Math.sqrt(dx * dx + dy * dy); sp = 250 * dt;
+    if (d > 2) { if (d < sp) sp = d; g.x += dx / d * sp / W; g.y += dy / d * sp / H; }
+    g.t += dt;
+    for (k = 0; k < g.h.length; k++) { h = g.h[k]; if (h.on) { dx = (h.x - g.x) * W; dy = (h.y - g.y) * H; if (dx * dx + dy * dy < 900) { h.on = false; g.got++; sfx("pick"); el("hc").textContent = g.got; } } }
+    el("ht").textContent = Math.floor(g.t);
+    grd = ctx.createLinearGradient(0, 0, 0, H); grd.addColorStop(0, "#c6f3aa"); grd.addColorStop(1, "#8ed973");
+    ctx.fillStyle = grd; ctx.fillRect(0, 0, W, H);
+    ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    ctx.font = "22px sans-serif"; for (k = 0; k < g.f.length; k++) ctx.fillText(g.f[k].e, g.f[k].x * W, g.f[k].y * H);
+    ctx.font = "28px sans-serif"; for (k = 0; k < g.h.length; k++) if (g.h[k].on) ctx.fillText("❤️", g.h[k].x * W, g.h[k].y * H + (ST.anim ? Math.sin(g.t * 3 + k) * 4 : 0));
+    ctx.font = "40px sans-serif"; ctx.fillText("🐰", g.x * W, g.y * H);
+    if (g.got >= 12) { ST.hearts += 12; gEnd(tr("Ти зібрав усі 12 сердечок за |You collected all 12 hearts in ") + Math.floor(g.t) + tr(" с. Любові вистачить на всіх!| s. There is enough love for everyone!"), "hearts", Math.floor(g.t), true); return; }
+    raf = window.requestAnimationFrame(frame);
+  }
+  resize(); window.addEventListener("resize", resize);
+  el("hc").textContent = g.got;
+  V.stop = function () { run = false; window.cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
+  raf = window.requestAnimationFrame(frame);
+};
+
+/* 2. memory */
+VIEWS.g_memory = function () {
+  return gWrap("memory", function () {
+    var i, c, s, ids;
+    if (!V.cards) { ids = shuffle(range(MEMO.length)).slice(0, 6); V.cards = []; for (i = 0; i < 6; i++) { V.cards.push({m: ids[i]}); V.cards.push({m: ids[i]}); } V.cards = shuffle(V.cards); V.sel = []; V.moves = 0; }
+    s = '<div class="hud"><span>🃏 ' + tr("Ходів: |Moves: ") + V.moves + '</span></div><div class="mem">';
+    for (i = 0; i < V.cards.length; i++) { c = V.cards[i]; s += '<button class="' + (c.ok ? "ok" : (c.open ? "op" : "")) + '" data-a="mem:' + i + '" aria-label="' + (i + 1) + '">' + (c.ok || c.open ? MEMO[c.m][0] + "<small>" + tr(MEMO[c.m][1]) + "</small>" : "✨") + "</button>"; }
+    return s + "</div>";
+  });
+};
+ACT.mem = function (i) {
+  var c = V.cards[+i], a, b;
+  if (V.lock || c.open || c.ok) return;
+  c.open = true; V.sel.push(c); sfx("tap");
+  if (V.sel.length === 2) {
+    V.moves++; a = V.sel[0]; b = V.sel[1]; V.sel = [];
+    if (a.m === b.m) { a.ok = b.ok = true; sfx("ok"); for (i = 0; i < V.cards.length; i++) if (!V.cards[i].ok) { draw(); return; } gEnd(tr("Усі пари знайдено! Ходів: |All pairs found! Moves: ") + V.moves, "memory", V.moves, true); return; }
+    V.lock = true;
+    V.tm = setTimeout(function () { a.open = b.open = false; V.lock = false; V.tm = null; draw(); }, 950);
+  }
+  draw();
+};
+
+/* 3. maze */
+function mazeGen(n, seed) {
+  var S = 2 * n + 1, g = [], r = rng(seed), x, y, st = [[1, 1]], c, ds, k, j, t, nx, ny, found;
+  for (y = 0; y < S; y++) { g[y] = []; for (x = 0; x < S; x++) g[y][x] = 1; }
+  g[1][1] = 0;
+  while (st.length) {
+    c = st[st.length - 1]; ds = [[2, 0], [-2, 0], [0, 2], [0, -2]];
+    for (k = 3; k > 0; k--) { j = Math.floor(r() * (k + 1)); t = ds[k]; ds[k] = ds[j]; ds[j] = t; }
+    found = false;
+    for (k = 0; k < 4; k++) { nx = c[0] + ds[k][0]; ny = c[1] + ds[k][1]; if (nx > 0 && ny > 0 && nx < S - 1 && ny < S - 1 && g[ny][nx] === 1) { g[c[1] + ds[k][1] / 2][c[0] + ds[k][0] / 2] = 0; g[ny][nx] = 0; st.push([nx, ny]); found = true; break; } }
+    if (!found) st.pop();
+  }
+  return {g: g, S: S, px: 1, py: 1, gx: S - 2, gy: S - 2};
+}
+function mazeCells() {
+  var m = V.mz, s = "", x, y;
+  for (y = 0; y < m.S; y++) for (x = 0; x < m.S; x++) s += (m.g[y][x] ? '<div class="w"></div>' : "<div>" + (x === m.px && y === m.py ? "🧒" : (x === m.gx && y === m.gy ? "🏡" : "")) + "</div>");
+  return s;
+}
+VIEWS.g_maze = function () {
+  return gWrap("maze", function () {
+    if (V.lv == null) { V.lv = 0; V.steps = 0; }
+    if (!V.mz) V.mz = mazeGen(3 + V.lv, Math.floor(Math.random() * 1e9) + 1);
+    return '<div class="hud"><span>🏡 ' + tr("Рівень|Level") + " " + (V.lv + 1) + '/3</span><span>👣 <b id="ms">' + V.steps + '</b></span></div><div class="mz" id="mz" style="grid-template-columns:repeat(' + V.mz.S + ',1fr)">' + mazeCells() + '</div><div class="dpad"><span></span><button data-f="1" data-a="mv:0:-1" aria-label="up">▲</button><span></span><button data-f="1" data-a="mv:-1:0" aria-label="left">◀</button><button data-f="1" data-a="mv:0:1" aria-label="down">▼</button><button data-f="1" data-a="mv:1:0" aria-label="right">▶</button></div>';
+  });
+};
+AFTER.g_maze = function () {
+  if (V.st !== "play") return;
+  var mz = el("mz"), x0 = null, y0 = 0;
+  V.kd = function (e) { var d = {ArrowUp: [0, -1], ArrowDown: [0, 1], ArrowLeft: [-1, 0], ArrowRight: [1, 0]}[e.key]; if (d) { e.preventDefault(); ACT.mv(d[0], d[1]); } };
+  mz.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive: true});
+  mz.addEventListener("touchend", function (e) {
+    if (x0 == null) return;
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+    if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
+    if (Math.abs(dx) > Math.abs(dy)) ACT.mv(dx > 0 ? 1 : -1, 0); else ACT.mv(0, dy > 0 ? 1 : -1);
+  }, {passive: true});
+};
+ACT.mv = function (dx, dy) {
+  var m = V.mz, nx, ny;
+  if (!m || V.st !== "play") return;
+  nx = m.px + (+dx); ny = m.py + (+dy);
+  if (m.g[ny][nx]) return;
+  m.px = nx; m.py = ny; V.steps++; sfx("tap");
+  if (nx === m.gx && ny === m.gy) {
+    if (V.lv < 2) { V.lv++; V.mz = null; sfx("ok"); toast(tr("Рівень пройдено! Далі — складніше.|Level complete! The next one is trickier.")); draw(); }
+    else gEnd(tr("Ти вдома! Батько радо зустрічає. Кроків: |You are home! The father welcomes you with joy. Steps: ") + V.steps, "maze", V.steps, true);
+    return;
+  }
+  el("mz").innerHTML = mazeCells(); el("ms").textContent = V.steps;
+};
+
+/* 4. garden */
+VIEWS.g_garden = function () {
+  return gWrap("garden", function () {
+    var fl = ["🌻", "🌷", "🌼", "🌹", "🌸", "🌺"], lab = ["Посади 🌰|Plant 🌰", "Полий 💧|Water 💧", "Добре завдання 💛|Kind task 💛", "Цвіте!|In bloom!"], em, s, i, n = 0;
+    if (!V.pl) V.pl = [0, 0, 0, 0, 0, 0];
+    for (i = 0; i < 6; i++) if (V.pl[i] === 3) n++;
+    s = '<div class="hud"><span>🌻 ' + n + '/6</span></div><div class="plots">';
+    for (i = 0; i < 6; i++) { em = ["&nbsp;", "🌱", "🌿", fl[i]][V.pl[i]]; s += '<button class="' + (V.pl[i] === 3 ? "bl" : "") + '" data-a="plot:' + i + '">' + em + "<small>" + tr(lab[V.pl[i]]) + "</small></button>"; }
+    return s + "</div>" + say("bunny", tr("Торкайся грядок: спершу посади, потім полий, а тоді — добре завдання!|Tap the beds: first plant, then water, and then — a kind task!"));
+  });
+};
+ACT.plot = function (i) {
+  i = +i;
+  if (V.pl[i] === 3) return;
+  if (V.pl[i] < 2) { V.pl[i]++; sfx("pick"); draw(); return; }
+  modal('<div class="center" style="font-size:46px">💛</div><h3 class="center">' + tr("Добре завдання|Kind task") + '</h3><p class="center">' + tr(KIND[i]) + "</p>" + B(tr("Я це зроблю! 💛|I will do it! 💛"), "kind:" + i, "b2") + B(tr("Пізніше|Later"), "close", "b5"));
+};
+ACT.kind = function (i) {
+  var k; closeModal(); V.pl[+i] = 3; ST.flowers++; save(); sfx("ok");
+  for (k = 0; k < 6; k++) if (V.pl[k] !== 3) { draw(); return; }
+  gEnd(tr("Твій сад розквітнув! Шість квітів і шість добрих справ.|Your garden is in bloom! Six flowers and six kind deeds."), "garden", 1, false);
+};
+
+/* 5. journey */
+VIEWS.g_journey = function () {
+  return gWrap("journey", function () {
+    var s, i, J, n = 0;
+    if (!V.vis) V.vis = {};
+    for (i = 0; i < JOURNEY.length; i++) if (V.vis[i]) n++;
+    if (V.loc == null) {
+      s = '<div class="hud"><span>🌍 ' + n + "/" + JOURNEY.length + '</span></div><div class="map"><svg viewBox="0 0 100 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="110" fill="#f6e7b8"/><path d="M0 0 H26 Q18 30 22 55 Q14 85 20 110 H0Z" fill="#8fd3ff"/><ellipse cx="62" cy="14" rx="9" ry="12" fill="#8fd3ff"/><path d="M63 25 Q70 45 66 62 Q64 80 68 94" stroke="#8fd3ff" stroke-width="2.4" fill="none"/><ellipse cx="68" cy="100" rx="5" ry="8" fill="#8fd3ff"/><path d="M66 86 L30 31 L64 11 L76 50 L34 67" stroke="#e8752a" stroke-width="1" stroke-dasharray="2 2.5" fill="none"/><circle cx="34" cy="70" r="7" fill="#cfe9a8"/><circle cx="48" cy="48" r="6" fill="#cfe9a8"/><circle cx="84" cy="36" r="8" fill="#ecd9a0"/></svg>';
+      for (i = 0; i < JOURNEY.length; i++) { J = JOURNEY[i]; s += '<button class="pin' + (V.vis[i] ? " v" : "") + '" style="left:' + J.x + "%;top:" + (J.y / 1.1) + '%" data-a="pin:' + i + '"><b>' + (V.vis[i] ? "✅" : J.em) + "</b>" + tr(J.n) + "</button>"; }
+      return s + "</div>" + say("bird", n === JOURNEY.length ? tr("Ти відвідав усі місця!|You have visited every place!") : tr("Торкнися місця на мапі — і я розповім його історію.|Tap a place on the map and I will tell its story."));
+    }
+    J = JOURNEY[V.loc];
+    s = '<div class="card"><div class="center" style="font-size:48px">' + J.em + '</div><h2 class="center">' + tr(J.n) + "</h2><p>" + tr(J.s) + '</p></div><div class="card"><div class="qtext">' + tr(J.q) + "</div>";
+    for (i = 0; i < J.o.length; i++) s += '<button class="opt' + (V.jbad[i] ? " bad" : "") + (V.jok && i === J.a ? " good" : "") + '" data-a="jans:' + i + '">' + tr(J.o[i]) + "</button>";
+    s += "</div>";
+    if (V.jok) s += '<div class="starpop">⭐</div>' + B(tr("До мапи ➜|Back to the map ➜"), "jback", "b2");
+    else if (V.jhint) s += say("bear", tr("Нічого страшного! Перечитай історію ще раз — відповідь там.|No worries! Read the story once more — the answer is there."));
+    return s;
+  });
+};
+ACT.pin = function (i) { V.loc = +i; V.jok = !!V.vis[+i]; V.jbad = {}; V.jhint = false; sfx("tap"); draw(); window.scrollTo(0, 0); };
+ACT.jans = function (i) { if (V.jok) return; if (+i === JOURNEY[V.loc].a) { V.jok = true; V.vis[V.loc] = 1; ST.stars++; save(); sfx("ok"); } else { V.jbad[+i] = 1; V.jhint = true; sfx("no"); } draw(); };
+ACT.jback = function () {
+  var i; V.loc = null;
+  for (i = 0; i < JOURNEY.length; i++) if (!V.vis[i]) { draw(); window.scrollTo(0, 0); return; }
+  gEnd(tr("Подорож завершено! Ти пройшов шляхом Ісуса від Вифлеєма до Єрусалима.|Journey complete! You followed the path of Jesus from Bethlehem to Jerusalem."), "journey", 1, false);
+};
+
+/* 6. rainbow */
+VIEWS.g_rainbow = function () {
+  return gWrap("rainbow", function () {
+    var s, i, t;
+    if (!V.rq) { V.rq = shuffle(range(RAIN.length)); V.rk = 0; V.lit = {}; }
+    t = V.rq[V.rk];
+    s = '<svg class="rbw" viewBox="0 0 200 104" xmlns="http://www.w3.org/2000/svg">';
+    for (i = 0; i < 7; i++) s += '<path d="M' + (8 + i * 10) + " 102 A" + (92 - i * 10) + " " + (92 - i * 10) + " 0 0 1 " + (192 - i * 10) + ' 102" fill="none" stroke="' + (V.lit[i] ? RAIN[i][0] : "#cfd8e3") + '" stroke-width="9"/>';
+    s += '</svg><div class="card center"><span class="chip">' + (V.rk + 1) + '/7</span><div class="qtext">' + tr(RAIN[t][2]) + "</div></div>";
+    for (i = 0; i < 7; i++) s += '<button class="band' + (V.lit[i] ? " lit" : "") + '" style="background:' + RAIN[i][0] + '" data-a="rb:' + i + '">' + (V.lit[i] ? "✓ " : "") + tr(RAIN[i][1]) + "</button>";
+    if (V.rbad) s += say("bear", tr("Майже! Прочитай підказку ще раз і спробуй інший колір.|Almost! Read the clue again and try another colour."));
+    return s;
+  });
+};
+ACT.rb = function (i) {
+  i = +i; if (V.lit[i]) return;
+  if (i === V.rq[V.rk]) { V.lit[i] = 1; V.rk++; V.rbad = false; if (V.rk >= 7) { gEnd(tr("Уся веселка сяє! Любов, радість, світло, життя, мир, довіра й благодать — це Божі подарунки.|The whole rainbow is shining! Love, joy, light, life, peace, trust and grace are God’s gifts."), "rainbow", 1, false); return; } sfx("ok"); }
+  else { V.rbad = true; sfx("no"); }
+  draw();
+};
+
+/* ---------- init ---------- */
+function init() {
+  var nav = el("nav"), i, b;
+  for (i = 0; i < NAVS.length; i++) {
+    b = document.createElement("button"); b.id = "n-" + NAVS[i][0]; nav.appendChild(b);
+    (function (name) { hook(b, function () { sfx("tap"); go(name); }); })(NAVS[i][0]);
+  }
+  hook(el("bBack"), function () { sfx("tap"); goBack(); });
+  hook(el("lUk"), function () { ACT.lang("uk"); });
+  hook(el("lEn"), function () { ACT.lang("en"); });
+  hook(el("bMus"), function () { ACT.tog("music"); });
+  hook(el("modal"), function (e) { if (e.target === el("modal")) closeModal(); });
+  document.addEventListener("pointerdown", unlock, true);
+  document.addEventListener("touchstart", unlock, true);
+  document.addEventListener("keydown", unlock, true);
+  document.addEventListener("keydown", function (e) {
+    if (e.target && e.target.tagName === "INPUT") return;
+    if (V.kd) V.kd(e);
+    if (V.n === "reader") { if (e.key === "ArrowRight") ACT.pg(1); else if (e.key === "ArrowLeft") ACT.pg(-1); }
+    if (e.key === "Escape") { if (el("modal").className === "on") closeModal(); else goBack(); }
+  });
+  document.addEventListener("keyup", function (e) { if (V.ku) V.ku(e); });
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) { document.body.classList.add("paused"); stopSpeak(); if (AC && AC.state === "running") { try { AC.suspend(); } catch (e) {} } }
+    else { document.body.classList.remove("paused"); if (AC) { try { AC.resume(); } catch (e2) {} } }
+  });
+  draw();
+}
+init();
+
+</script>
+</body>
+</html>
